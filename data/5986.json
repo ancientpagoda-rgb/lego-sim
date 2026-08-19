@@ -3,17 +3,20 @@
   "name": "Amazon Ancient Ruins",
   "theme": "Adventurers / Jungle",
   "year": 1999,
-  "status": "prototype reconstruction",
+  "status": "v0.2 structural reconstruction in progress",
   "baseplateStuds": [32, 48],
+  "model": "./5986-model.json",
+  "inventory": "./5986-inventory.csv",
   "notes": [
-    "V1 is a procedural playable approximation of the set layout.",
-    "Exact 458-piece reconstruction should replace procedural structures with inventory/instruction-derived transforms.",
+    "V0.2 replaces hard-coded structure geometry with a data-driven positioned-part model.",
+    "Instruction-tied placements and temporary layout proxies are labeled separately in 5986-model.json.",
+    "Published sources disagree on the headline piece total; inventory data is used as a cross-check rather than a transform source.",
     "World-space convention: one unit equals one LEGO stud pitch."
   ],
   "simulation": {
     "gravity": 18,
     "waterLevel": 0.08,
-    "connectionBreakImpulse": 3.4,
+    "connectionBreakImpulse": 5.2,
     "agentSpeed": 1.35
   }
 }
