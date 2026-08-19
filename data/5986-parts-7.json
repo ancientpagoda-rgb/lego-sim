@@ -79,5 +79,97 @@
       "lddDesignID": "30339",
       "lddMaterialId": "28"
     }
+  },
+  {
+    "id": "temple-top-light-attachment-a",
+    "partNo": "4081b",
+    "color": "Light Gray",
+    "position": [6, 14.05, 8],
+    "verification": "instruction-page-24-step-19",
+    "assembly": "main-temple",
+    "size": [1, 1, 0.4],
+    "instructionTransform": {
+      "page": 24,
+      "step": 19,
+      "parent": "ldd-set-origin",
+      "position": [18.499996662139893, 29.853224754333496, -8.500021696090698],
+      "rotationMatrix3": [1, 0, 0, 0, 1, 0, 0, 0, 1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "664",
+      "lddDesignID": "4081",
+      "inventoryAlias": "4081 -> 4081b",
+      "lddMaterialId": "2"
+    }
+  },
+  {
+    "id": "temple-top-light-attachment-b",
+    "partNo": "4081b",
+    "color": "Light Gray",
+    "position": [6, 15.25, 5],
+    "verification": "instruction-page-24-step-19",
+    "assembly": "main-temple",
+    "size": [1, 1, 0.4],
+    "instructionTransform": {
+      "page": 24,
+      "step": 19,
+      "parent": "ldd-set-origin",
+      "position": [18.499995470046997, 29.853224754333496, 0.49997687339782715],
+      "rotationMatrix3": [-1, 0, 0, 0, 1, 0, 0, 0, -1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "660",
+      "lddDesignID": "4081",
+      "inventoryAlias": "4081 -> 4081b",
+      "lddMaterialId": "2"
+    }
+  },
+  {
+    "id": "temple-roof-blue-slope-a",
+    "partNo": "3039",
+    "color": "Blue",
+    "position": [7.5, 16.75, -2],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [22.499995231628418, 31.853222846984863, -5.500019192695618],
+      "rotationMatrix3": [1, 0, 0, 0, 1, 0, 0, 0, 1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "432",
+      "lddDesignID": "3039",
+      "lddMaterialId": "23"
+    }
+  },
+  {
+    "id": "temple-roof-blue-slope-b",
+    "partNo": "3039",
+    "color": "Blue",
+    "position": [10.5, 16.75, -2],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [23.499996662139893, 31.853222846984863, -2.500019669532776],
+      "rotationMatrix3": [-1, 0, 0, 0, 1, 0, 0, 0, -1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "434",
+      "lddDesignID": "3039",
+      "lddMaterialId": "23"
+    }
   }
 ]
