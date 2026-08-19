@@ -10,20 +10,21 @@
   "instructionSources": "./5986-instruction-sources.json",
   "coverage": {
     "regularInventoryParts": 420,
-    "placedRegularParts": 179,
-    "instructionExactTransforms": 21,
-    "positionedReconstructionTransforms": 158,
-    "unpositionedInventorySlots": 241,
-    "exactTransformsRemaining": 399,
+    "placedRegularParts": 184,
+    "instructionExactTransforms": 32,
+    "positionedReconstructionTransforms": 152,
+    "unpositionedInventorySlots": 236,
+    "exactTransformsRemaining": 388,
     "minifiguresRendered": 8,
     "majorAssembliesRendered": ["main temple", "bridge gateway", "trap platform", "boat", "off-road car"],
     "playFeaturesRendered": ["collapsing bridge", "trapdoor", "spider web"]
   },
   "notes": [
     "V0.4 defines completion as 420/420 regular-part inventory slots carrying instruction-page provenance plus exact position and orientation transforms.",
+    "Pages 7-8 now lock the expedition car chassis, two tan pinned axle plates, four wheel hubs, two smaller front tires and two larger rear tires as instruction-derived transforms.",
+    "The black 2x10 plate previously used as a boat photo-proxy was corrected to the car chassis so the inventory ledger no longer double-spends that occurrence.",
     "The complete V0.3 scene remains available while exact instruction-derived transforms replace reconstructed placements in build order.",
     "The transform ledger is deterministic and CI-validated, so exact progress is measurable rather than visual-only.",
-    "Published sources disagree on headline piece totals; BrickLink's 420 regular parts plus 8 minifigures is the digital-twin ledger boundary.",
     "World-space convention: one unit equals one LEGO stud pitch."
   ],
   "simulation": {
