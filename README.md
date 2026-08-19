@@ -2,32 +2,39 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.5.2 — temple exactification
+## V0.5.3 — temple exactification
 
-The playable full-set scene now sits on top of a strict **420 regular-part transform ledger**. A part only counts as **instruction-exact** when manual provenance and an explicit `instructionTransform` are both present. Photo-aligned or CAD-only geometry does not count.
+The playable full-set scene sits on top of a strict **420 regular-part transform ledger**. A part only counts as **instruction-exact** when manual provenance and an explicit `instructionTransform` are both present. Photo-aligned or CAD-only geometry does not count.
 
 Current ledger:
 
 - **420** regular-part inventory slots
-- **185** individually positioned regular parts
-- **33** instruction-exact transforms
+- **187** individually positioned regular parts
+- **35** instruction-exact transforms
 - **152** positioned reconstruction transforms waiting to be replaced
-- **235** inventory slots not yet positioned
-- **387** exact transforms remaining
+- **233** inventory slots not yet positioned
+- **385** exact transforms remaining
 - **9 / 44** manual pages indexed
-- **5** pages currently contributing exact transforms
+- **6** pages currently contributing exact transforms
 
-### Latest exact promotion — page 22
+### Latest exact promotions — pages 22 and 24
 
-Page 22's hanging chain is now resolved as the set's single **30104 Light Gray** chain. The community LDD model uses later design ID `60169`; the importer normalizes that alternate ID to the 1999 inventory part. LDD material `2` is the legacy Grey used as BrickLink Light Gray, producing one unique candidate matrix. Because page 22 visibly supplies the chain step, this occurrence now satisfies both the manual-provenance and exact-transform requirements.
+Page 22's hanging chain is resolved as the set's single **30104 Light Gray** chain. The community LDD model uses later design ID `60169`; the importer normalizes that alternate ID to the 1999 inventory part. LDD material `2` is the legacy Grey used as BrickLink Light Gray, producing one unique candidate matrix.
 
-The ledger also now stores exact `instructionTransform` data separately from the playable scene's `presentationTransform`, preventing a visually convenient world position from being mistaken for the authoritative transform.
+Page 24 step 19 now contributes two more one-to-one anchors:
+
+- **30103 Black bat**
+- **30339 Green four-frond palm leaf**
+
+Both are visibly present in the final temple step, each occurs once in the regular inventory, and each maps to one unique LDD transform. Repeated flames and small repeated hinge details remain pending rather than being guessed.
+
+The ledger stores exact `instructionTransform` data separately from the playable scene's `presentationTransform`, preventing a visually convenient scene position from being mistaken for the authoritative transform.
 
 ### CAD geometry cross-check
 
 The community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` remains secondary evidence only. The automated cross-check parses **969 / 969 transformation matrices** without committing the original LXF.
 
-After normalizing the later chain ID and the 1999 legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys**. It also exposes **57 one-to-one inventory anchors**. None of these numbers automatically increase exact coverage.
+After normalizing the later chain ID and the 1999 legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys** and exposes **57 one-to-one inventory anchors**. These numbers never increase exact coverage by themselves.
 
 Persisted cross-check files are derived reconciliation data:
 
@@ -48,7 +55,7 @@ Validation runs through:
 
 ### Captured instruction batches
 
-Indexed pages include the set overview, character/animal reference, expedition car pages 7–8, temple pages 20, 22 and 24, and bridge/gateway pages 28 and 30. Page 24 remains captured-pending while its upper-temple transforms are reconciled.
+Indexed pages include the set overview, character/animal reference, expedition car pages 7–8, temple pages 20, 22 and 24, and bridge/gateway pages 28 and 30. Page 24 now contributes exact parts, while its repeated upper-temple details remain occurrence-level pending.
 
 Open `twin-status.html` (or **Exact twin** in the simulation HUD) for the live 420-part coverage dashboard and 44-page transcription map.
 
@@ -96,9 +103,6 @@ Then open `http://localhost:8000`.
 
 ```bash
 npm run check
-```
-
-```bash
 npm run ledger
 npm run page-ledger
 ```
