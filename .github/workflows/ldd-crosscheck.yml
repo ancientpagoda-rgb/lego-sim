@@ -7,10 +7,11 @@ on:
       - ".github/workflows/ldd-crosscheck.yml"
       - "scripts/ldd-import.mjs"
       - "data/5986-instruction-sources.json"
+      - "data/5986-inventory.csv"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   crosscheck:
@@ -18,13 +19,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Fetch community LDD model temporarily
         run: curl --fail --location --retry 3 --output /tmp/5986.lxf https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf
-      - name: Parse and summarize candidate geometry
-        run: node scripts/ldd-import.mjs /tmp/5986.lxf
+      - name: Parse and retain safe reconciliation summary
+        run: node scripts/ldd-import.mjs /tmp/5986.lxf --summary-out data/5986-ldd-summary.json
       - name: Confirm source-integrity rules
         run: node scripts/source-integrity.mjs
+      - name: Commit summary counts only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/5986-ldd-summary.json
+          if git diff --cached --quiet; then
+            echo "LDD reconciliation summary unchanged"
+            exit 0
+          fi
+          git commit -m "Update LDD cross-check summary"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
