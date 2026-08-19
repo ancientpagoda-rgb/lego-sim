@@ -3,22 +3,27 @@
   "name": "Amazon Ancient Ruins",
   "theme": "Adventurers / Jungle",
   "year": 1999,
-  "status": "v0.3 full-set scene / transform reconstruction in progress",
+  "status": "v0.4 exact digital-twin transcription phase",
   "baseplateStuds": [32, 48],
   "model": "./5986-model.json",
   "inventory": "./5986-inventory.csv",
+  "instructionSources": "./5986-instruction-sources.json",
   "coverage": {
-    "placedRegularParts": 179,
     "regularInventoryParts": 420,
+    "placedRegularParts": 179,
+    "instructionExactTransforms": 21,
+    "positionedReconstructionTransforms": 158,
+    "unpositionedInventorySlots": 241,
+    "exactTransformsRemaining": 399,
     "minifiguresRendered": 8,
     "majorAssembliesRendered": ["main temple", "bridge gateway", "trap platform", "boat", "off-road car"],
     "playFeaturesRendered": ["collapsing bridge", "trapdoor", "spider web"]
   },
   "notes": [
-    "V0.3 renders the complete set scene: both ruin areas, bridge, boat, car, all eight minifigures, animals, hazards, foliage and treasures.",
-    "179 regular LEGO part instances are individually positioned and checked against the 172-lot / 420-part BrickLink inventory snapshot.",
-    "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans; other assemblies are inventory-bounded, photo-aligned reconstructions while page-by-page transform transcription continues.",
-    "Published sources disagree on the headline piece total, so the repository preserves source provenance instead of forcing one total.",
+    "V0.4 defines completion as 420/420 regular-part inventory slots carrying instruction-page provenance plus exact position and orientation transforms.",
+    "The complete V0.3 scene remains available while exact instruction-derived transforms replace reconstructed placements in build order.",
+    "The transform ledger is deterministic and CI-validated, so exact progress is measurable rather than visual-only.",
+    "Published sources disagree on headline piece totals; BrickLink's 420 regular parts plus 8 minifigures is the digital-twin ledger boundary.",
     "World-space convention: one unit equals one LEGO stud pitch."
   ],
   "simulation": {
