@@ -13,6 +13,8 @@
   "capturedPages": [
     { "page": 1, "image": "https://lego.brickinstructions.com/instructions/05000/5986/001.jpg", "content": "cover / complete-set reference" },
     { "page": 4, "image": "https://lego.brickinstructions.com/instructions/05000/5986/004.jpg", "content": "minifigure, skeleton, crocodile and palm assemblies" },
+    { "page": 7, "image": "https://lego.brickinstructions.com/instructions/05000/5986/007.jpg", "content": "expedition car steps 1-7; black 2x10 chassis and tan pinned axle plates" },
+    { "page": 8, "image": "https://lego.brickinstructions.com/instructions/05000/5986/008.jpg", "content": "expedition car steps 8-10; wheel/tire installation and final car" },
     { "page": 20, "image": "https://lego.brickinstructions.com/instructions/05000/5986/020.jpg", "content": "main raised-platform temple stage" },
     { "page": 22, "image": "https://lego.brickinstructions.com/instructions/05000/5986/022.jpg", "content": "tower steps 9-12 and chain/crank subassembly" },
     { "page": 28, "image": "https://lego.brickinstructions.com/instructions/05000/5986/028.jpg", "content": "gateway/bridge steps 1-6" },
@@ -26,7 +28,7 @@
       "orientation",
       "attachment to an already resolved parent/base reference"
     ],
-    "verificationPrefix": "manual-page-N",
+    "verificationPrefix": "manual-page-N or instruction-page-N",
     "photoAlignedTransformsCountAsExact": false
   }
 }
