@@ -1,10 +1,11 @@
 {
   "name": "lego-sim-5986",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "check": "node --check src/main.js && node --check src/brick-engine.js && node scripts/validate-model.mjs"
+    "ledger": "node scripts/transform-ledger.mjs --write",
+    "check": "node --check src/main.js && node --check src/brick-engine.js && node --check src/twin-status.js && node scripts/validate-model.mjs && node scripts/transform-ledger.mjs --check"
   }
 }
