@@ -11,11 +11,17 @@ Every regular inventory occurrence receives a deterministic ledger slot. A place
 Current ledger state:
 
 - **420** regular-part inventory slots
-- **179** individually positioned regular parts
-- **21** instruction-exact transforms
-- **158** positioned reconstruction transforms waiting to be replaced
-- **241** inventory slots not yet positioned
-- **399** exact transforms remaining
+- **184** individually positioned regular parts
+- **32** instruction-exact transforms
+- **152** positioned reconstruction transforms waiting to be replaced
+- **236** inventory slots not yet positioned
+- **388** exact transforms remaining
+
+### Latest exact batch — expedition car, pages 7–8
+
+The first post-gateway transcription batch locks the car's black 2×10 chassis plate, the two tan pinned axle plates, all four light-gray wheel hubs, two smaller front tires and two larger rear tires. These parts now carry instruction-page provenance plus local transforms relative to the car subassembly.
+
+This pass also corrected an inventory conflict: the single black 2×10 plate had previously been used as a photo-aligned boat proxy. It is now assigned to the car where the instruction sequence actually uses it.
 
 Open `twin-status.html` (or use the **Exact twin** button in the simulation HUD) for a live coverage dashboard generated from the current inventory and model chunks.
 
