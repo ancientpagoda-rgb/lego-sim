@@ -1,0 +1,290 @@
+{
+  "manualPage": 24,
+  "exactAuthority": false,
+  "policy": "Filtered CAD geometry candidates only. Promotion still requires visible page-24 instruction evidence plus inventory occurrence reconciliation.",
+  "counts": {
+    "3009|Blue": 1,
+    "30103|Black": 1,
+    "30339|Green": 1,
+    "6081|Light Gray": 2,
+    "6126|Trans-Neon Orange": 7
+  },
+  "candidates": [
+    {
+      "partNo": "3009",
+      "color": "Blue",
+      "lddRef": "476",
+      "lddDesignID": "3009",
+      "materialId": "23",
+      "position": [
+        16.499993801116943,
+        16.25322937965393,
+        -6.500019431114197
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "30103",
+      "color": "Black",
+      "lddRef": "658",
+      "lddDesignID": "30103",
+      "materialId": "26",
+      "position": [
+        23.499996662139893,
+        33.053221702575684,
+        -2.5000202655792236
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "30339",
+      "color": "Green",
+      "lddRef": "748",
+      "lddDesignID": "30339",
+      "materialId": "28",
+      "position": [
+        -4.604335725307465,
+        21.442582607269287,
+        -12.999999523162842
+      ],
+      "rotationMatrix3": [
+        -0.9659258127212524,
+        -0.2588191032409668,
+        0,
+        -0.2588191032409668,
+        0.9659258127212524,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "partNo": "6081",
+      "color": "Light Gray",
+      "lddRef": "820",
+      "lddDesignID": "6081",
+      "materialId": "2",
+      "position": [
+        -12.5150465965271,
+        2.347397357225418,
+        17.5
+      ],
+      "rotationMatrix3": [
+        -0.9993908405303955,
+        -0.03489954024553299,
+        0,
+        -0.03489954024553299,
+        0.9993908405303955,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "partNo": "6081",
+      "color": "Light Gray",
+      "lddRef": "821",
+      "lddDesignID": "6081",
+      "materialId": "2",
+      "position": [
+        -15.513222217559814,
+        2.242698222398758,
+        14.499996900558472
+      ],
+      "rotationMatrix3": [
+        0.9993908405303955,
+        0.03489954024553299,
+        0,
+        -0.03489954024553299,
+        0.9993908405303955,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "438",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        19.499993324279785,
+        29.05322551727295,
+        -5.500019192695618
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "659",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        19.499995708465576,
+        28.97822380065918,
+        -2.500021457672119
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "676",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        22.99999237060547,
+        8.353227376937866,
+        5.499986410140991
+      ],
+      "rotationMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "695",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        22.99999475479126,
+        8.353227376937866,
+        2.4999868869781494
+      ],
+      "rotationMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "713",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        22.99999475479126,
+        8.353225588798523,
+        -13.500003814697266
+      ],
+      "rotationMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "714",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        22.99999237060547,
+        8.353225588798523,
+        -10.500004291534424
+      ],
+      "rotationMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "lddRef": "760",
+      "lddDesignID": "6126",
+      "materialId": "47",
+      "position": [
+        -11.000010967254639,
+        8.153228759765625,
+        -10.000008344650269
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}
