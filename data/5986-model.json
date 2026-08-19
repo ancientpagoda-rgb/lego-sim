@@ -1,26 +1,32 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "coordinateSystem": "x/z in LEGO stud pitches; y is bottom elevation; one brick = 1.2 units; one plate = 0.4 units",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
     "officialPdf": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/4124784.pdf",
     "instructionIndex": "./5986-instruction-sources.json",
     "inventory": "https://www.bricklink.com/catalogItemInv.asp?S=5986-1",
-    "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins"
+    "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins",
+    "geometryCrosscheck": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf"
   },
   "transformGoal": {
     "regularParts": 420,
+    "manualPages": 44,
     "completionRule": "420/420 regular inventory slots must have instruction-page provenance and exact position/orientation transforms",
     "photoAlignedTransformsAreExact": false,
-    "ledgerScript": "scripts/transform-ledger.mjs"
+    "digitalModelTransformsAreExactWithoutManual": false,
+    "ledgerScript": "scripts/transform-ledger.mjs",
+    "pageLedgerScript": "scripts/page-ledger.mjs"
   },
   "sourceNotes": [
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
-    "Main temple, trap platform, boat and car remain inventory-bounded reconstructions until their instruction pages are transcribed.",
+    "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
+    "A community LDD 4.3.8 reconstruction by penguinz is retained only as a geometry cross-check; it substitutes the Sun Disc and raised baseplate and lacks correct decorations.",
+    "Main temple, trap platform, boat and the remainder of the car remain inventory-bounded reconstructions until their instruction pages are transcribed.",
     "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository.",
-    "V0.4 adds a deterministic 420-slot transform ledger so exact completion is machine-countable."
+    "The deterministic transform and page ledgers prevent CAD/photo geometry from being mislabeled as instruction-exact."
   ],
   "simulation": {
     "gravity": 18,
