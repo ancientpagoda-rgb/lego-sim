@@ -26,11 +26,11 @@ const assemblies = new Set(model.parts.map(p => p.assembly).filter(Boolean));
 for (const name of ['main-temple','bridge-gateway','trap-platform','boat','car']) {
   if (!assemblies.has(name)) errors.push(`missing assembly: ${name}`);
 }
-if (model.parts.some(p => String(p.verification).includes('layout-proxy'))) errors.push('layout-proxy placements remain in v0.3 model');
+if (model.parts.some(p => String(p.verification).includes('layout-proxy'))) errors.push('layout-proxy placements remain in current model');
 if (model.parts.length < 150) errors.push(`expected at least 150 placed regular parts, found ${model.parts.length}`);
 if (errors.length) {
   console.error('5986 model validation failed:\n' + errors.join('\n'));
   process.exit(1);
 }
-const tied = model.parts.filter(p => String(p.verification).startsWith('manual-page')).length;
-console.log(`5986 inventory OK: ${model.parts.length} placed regular parts, ${tied} instruction-tied placements, ${assemblies.size} assemblies.`);
+const exact = model.parts.filter(p => /^(?:manual|instruction)-page-\d+/i.test(String(p.verification ?? ''))).length;
+console.log(`5986 inventory OK: ${model.parts.length} placed regular parts, ${exact} instruction-exact placements, ${assemblies.size} assemblies.`);
