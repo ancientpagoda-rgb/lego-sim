@@ -2,13 +2,13 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.5 — bulk 420-transform solver
+## V0.5.1 — bulk 420-transform solver
 
-The complete scene remains playable, but the reconstruction pipeline has moved from hand-entered batches to a bulk solver designed around the **420 regular-part inventory ledger**.
+The complete scene remains playable, but reconstruction now uses a bulk solver around the **420 regular-part inventory ledger**.
 
 A placement only counts as **instruction-exact** when its part/color, position (or local subassembly transform), orientation, attachment reference and captured instruction-page provenance are resolved. Photo-aligned or CAD-only geometry never increases the exact count.
 
-Current ledger state:
+Current exact ledger:
 
 - **420** regular-part inventory slots
 - **184** individually positioned regular parts
@@ -16,32 +16,38 @@ Current ledger state:
 - **152** positioned reconstruction transforms waiting to be replaced
 - **236** inventory slots not yet positioned
 - **388** exact transforms remaining
-- **9 / 44** manual pages captured
+- **9 / 44** manual pages inspected/indexed
 - **4** manual pages currently contributing exact transforms
 
-### Bulk geometry cross-check
+### Working LDD geometry cross-check
 
-The repository records the community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` as a secondary geometry source. It is useful for solving candidate transforms quickly, but it is deliberately non-authoritative because its author documented substitutions for the raised baseplate and Sun Disc plus missing/incorrect decorations.
+The repository records the community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` as a secondary geometry source. Its documented raised-baseplate and Sun-Disc substitutions plus missing/incorrect decorations mean it is deliberately non-authoritative.
 
-`scripts/ldd-import.mjs` parses an `.lxf` or raw `IMAGE100.LXFML`, extracts LDD design IDs, material IDs and transform matrices, and normalizes translations into LEGO-stud units. Imported data is candidate geometry only.
+The GitHub cross-check job now fetches the LXF temporarily and parses it without committing the third-party model. The fixed importer extracts **969 / 969 transformation matrices**. A small persisted summary currently reconciles **241 / 420 inventory units** across **102 part/color keys**. Those 241 are geometry candidates, not instruction-exact parts.
+
+Only `data/5986-ldd-summary.json` is retained by the automated job; it contains aggregate reconciliation counts rather than the LXF or its full transform list.
 
 ```bash
-npm run ldd:import -- /path/to/secret_jungle_temple.lxf --write
+npm run ldd:import -- /path/to/secret_jungle_temple.lxf
 ```
+
+Use `--write` only for a local candidate dump. Use `--summary-out <path>` to write counts-only reconciliation data.
 
 ### Source-integrity guardrails
 
-V0.5 uses three independent checks:
+V0.5.1 uses three independent checks:
 
 1. `transform-ledger.mjs` — deterministic 420-slot inventory/transform ledger.
-2. `page-ledger.mjs` — 44-page manual provenance ledger; exact tags cannot reference uncaptured pages.
-3. `source-integrity.mjs` — CAD/digital-model provenance cannot masquerade as exact, and every instruction-exact part must carry an explicit local `instructionTransform`.
+2. `page-ledger.mjs` — 44-page manual provenance ledger; exact tags cannot reference uninspected pages.
+3. `source-integrity.mjs` — CAD/digital-model provenance cannot masquerade as exact, every instruction-exact part must carry an explicit local `instructionTransform`, and the persisted LDD file must remain non-authoritative summary data.
 
-The earlier gateway/bridge batch has now been backfilled with explicit local transforms, so it satisfies the same rule as the newer expedition-car batch.
+The earlier gateway/bridge batch has explicit local transforms, so it satisfies the same rule as the expedition-car batch.
 
 ### Captured instruction batches
 
-Current captured pages include the set overview, character/animal assembly reference, expedition car pages 7–8, raised-temple stages around pages 20 and 22, temple completion page 24, and bridge/gateway pages 28 and 30. Capturing a page does **not** automatically promote its parts; unresolved pages remain `captured-pending` until each transform is solved.
+Indexed pages currently include the set overview, character/animal assembly reference, expedition car pages 7–8, raised-temple stages around pages 20 and 22, temple completion page 24, and bridge/gateway pages 28 and 30. Capturing a page does **not** automatically promote its parts; unresolved pages remain pending until each transform is solved.
+
+The Exact Twin dashboard links all 44 manual pages, while its colors distinguish uninspected pages from indexed pages and pages already supplying exact transforms.
 
 ## Full-set scene already present
 
@@ -61,19 +67,19 @@ Current captured pages include the set overview, character/animal assembly refer
 ## Transform pipeline
 
 ```text
-Official instruction pages ───────┐
-                                  │ provenance gate
-Community LDD model ── candidate ─┤
-                                  ▼
-BrickLink inventory ───────► 420 deterministic slots
-                                  │
-                         ┌────────┼────────┐
-                         ▼        ▼        ▼
-                  instruction  positioned  unpositioned
-                     exact     reconstruction
-                         │
-                         ▼
-                  CI + Exact Twin dashboard
+Official instruction pages ─────────────┐
+                                        │ provenance gate
+Community LDD ── 969 matrices ─ candidate ┤
+                                        ▼
+BrickLink inventory ─────────────► 420 deterministic slots
+                                        │
+                               ┌────────┼────────┐
+                               ▼        ▼        ▼
+                        instruction  positioned  unpositioned
+                           exact     reconstruction
+                               │
+                               ▼
+                        CI + Exact Twin dashboard
 ```
 
 ## Run locally
@@ -108,7 +114,7 @@ npm run page-ledger
 index.html
   simulation HUD + Exact twin link
 twin-status.html
-  live 420-part transform coverage dashboard
+  live exact / positioned / CAD-cross-check coverage dashboard
 src/
   main.js             scene, minifigs, animals, controls, trap simulation
   brick-engine.js     reusable part proxies, connections, break physics
@@ -117,6 +123,7 @@ data/
   5986.json                       scenario metadata / coverage
   5986-model.json                 model manifest and exact-completion policy
   5986-instruction-sources.json   manual + LDD provenance index
+  5986-ldd-summary.json           counts-only CAD reconciliation summary
   5986-parts-*.json               positioned regular-part chunks
   5986-inventory.csv              420-part inventory boundary
 scripts/
@@ -124,11 +131,11 @@ scripts/
   transform-ledger.mjs            deterministic 420-slot transform ledger
   page-ledger.mjs                 44-page provenance ledger
   source-integrity.mjs            prevents CAD-only exact promotion
-  ldd-import.mjs                  optional LXF/LXFML candidate importer
+  ldd-import.mjs                  LXF/LXFML candidate importer
 ```
 
 ## Sources and provenance
 
-The transform source of truth is the LEGO building-instruction sequence. The inventory is used to define the 420 regular-part ledger and prevent part/color overuse. The community LDD model is only a geometric cross-check. Published headline piece totals differ across databases, so those totals are not used to infer transforms.
+The transform source of truth is the LEGO building-instruction sequence. The inventory defines the 420 regular-part ledger and prevents part/color overuse. The community LDD model is only a geometric cross-check. Published headline piece totals differ across databases, so those totals are not used to infer transforms.
 
 This is a fan-made simulation prototype and is not affiliated with or endorsed by the LEGO Group.
