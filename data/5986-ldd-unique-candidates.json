@@ -1,6 +1,32 @@
 {
   "exactAuthority": false,
   "policy": "Unique one-to-one CAD candidates are geometry anchors only; manual-page corroboration is still required for exact promotion.",
+  "diagnostics": {
+    "30104": [
+      {
+        "lddRef": "847",
+        "lddDesignID": "60169",
+        "materialId": "2",
+        "materialName": null,
+        "translationStud": [
+          21.499993801116943,
+          26.278223991394043,
+          -2.7474814653396606
+        ],
+        "matrix3": [
+          0.7545786499977112,
+          0.6562096476554871,
+          0,
+          0,
+          0,
+          -1,
+          -0.6562096476554871,
+          0.7545786499977112,
+          0
+        ]
+      }
+    ]
+  },
   "count": 38,
   "candidates": [
     {
