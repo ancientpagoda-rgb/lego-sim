@@ -21,6 +21,18 @@ for (const c of candidates) {
   byKey.get(k).push(c);
 }
 
+const probeDesigns = ['30104'];
+const diagnostics = Object.fromEntries(probeDesigns.map(design => [design, candidates
+  .filter(c => c.normalizedDesign === design)
+  .map(c => ({
+    lddRef:c.lddRef,
+    lddDesignID:c.designID,
+    materialId:c.materialId,
+    materialName:c.materialName,
+    translationStud:c.transform?.translationStud ?? null,
+    matrix3:c.transform?.matrix3 ?? null,
+  }))]));
+
 const unique = [];
 for (const row of rows) {
   if (row.qty !== 1) continue;
@@ -41,8 +53,9 @@ unique.sort((a,b)=>a.inventoryPartNo.localeCompare(b.inventoryPartNo));
 const output = {
   exactAuthority: false,
   policy: 'Unique one-to-one CAD candidates are geometry anchors only; manual-page corroboration is still required for exact promotion.',
+  diagnostics,
   count: unique.length,
   candidates: unique,
 };
 if (outPath) fs.writeFileSync(outPath, JSON.stringify(output,null,2)+'\n');
-console.log(JSON.stringify({uniqueOneToOneCandidates:unique.length},null,2));
+console.log(JSON.stringify({uniqueOneToOneCandidates:unique.length, diagnostics:Object.fromEntries(Object.entries(diagnostics).map(([k,v])=>[k,v.length]))},null,2));
