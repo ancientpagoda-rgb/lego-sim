@@ -1,7 +1,7 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "coordinateSystem": "presentation x/z in LEGO stud pitches; exact instruction transforms may use local subassembly coordinates or LDD stud-normalized coordinates when manual-corroborated",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
@@ -10,7 +10,8 @@
     "inventory": "https://www.bricklink.com/catalogItemInv.asp?S=5986-1",
     "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins",
     "geometryCrosscheck": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf",
-    "geometryCrosscheckSummary": "./5986-ldd-summary.json"
+    "geometryCrosscheckSummary": "./5986-ldd-summary.json",
+    "ledgerExclusions": "./5986-ledger-exclusions.json"
   },
   "transformGoal": {
     "regularParts": 420,
@@ -18,6 +19,7 @@
     "completionRule": "420/420 regular inventory slots must have manual-page provenance plus an explicit instructionTransform carrying position and orientation",
     "photoAlignedTransformsAreExact": false,
     "digitalModelTransformsAreExactWithoutManual": false,
+    "visualPlaceholdersConsumeInventory": false,
     "ledgerScript": "scripts/transform-ledger.mjs",
     "pageLedgerScript": "scripts/page-ledger.mjs",
     "lddImporter": "scripts/ldd-import.mjs",
@@ -26,13 +28,14 @@
   "sourceNotes": [
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
-    "Page 22 contributes the Light Gray 30104 chain: manual step, one inventory occurrence, normalized LDD alias 60169 and a unique matrix agree.",
-    "Page 24 step 19 now contributes the unique Black 30103 bat and Green 30339 palm leaf; both are visible in the final temple step and each maps to one inventory occurrence plus one LDD matrix.",
+    "Page 22 contributes the Light Gray 30104 chain using the manual plus the unique LDD 60169/legacy-Grey candidate.",
+    "Page 24 now contributes the bat, palm leaf, two 6126 flame occurrences, two 6091 curved fixture bodies, two 4081b light-attachment plates and two Blue 3039 crown slopes.",
+    "The paired 6091 and 4081b records share x/z coordinates in the upper-temple CAD region and correspond to the two identical gray fixtures shown in the page-24 completion step.",
     "A community LDD 4.3.8 reconstruction by penguinz remains a geometry cross-check; its known raised-baseplate, Sun Disc and decoration substitutions remain non-authoritative.",
-    "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys and yields 57 one-to-one anchors.",
+    "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys.",
+    "Two legacy 6081 roof presentation shapes are retained visually but excluded from the inventory ledger because the spatial CAD extract disproved that assignment.",
     "Imported CAD candidates cannot increase the instruction-exact count without matching manual provenance.",
-    "Repeated page-24 elements are intentionally left unresolved until occurrence-level matching is proven.",
-    "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
+    "All ledger-counted regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
   ],
   "simulation": {
     "gravity": 18,
