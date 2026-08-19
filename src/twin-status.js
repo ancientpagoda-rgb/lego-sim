@@ -57,7 +57,7 @@ async function boot() {
   unpositionedEl.textContent = unpositioned;
   exactBar.style.width = `${exact / total * 100}%`;
   positionedBar.style.width = `${positioned / total * 100}%`;
-  subtitle.textContent = `${exact} exact transforms locked · ${total - exact} exact transforms remaining`;
+  subtitle.textContent = `${exact} exact transforms locked · ${total - exact} exact transforms remaining · bulk solver ready`;
 
   const missing = [];
   for (const row of inventory) {
@@ -67,19 +67,20 @@ async function boot() {
   missing.sort((a, b) => b.remain - a.remain || a.partNo.localeCompare(b.partNo));
   missingEl.innerHTML = missing.map(row => `<div><strong>${row.remain}×</strong> ${row.partNo} · ${row.color}</div>`).join('');
 
-  const official = document.createElement('a');
-  official.href = sourceIndex.official.productPage; official.target = '_blank'; official.rel = 'noreferrer'; official.textContent = 'Official LEGO manual';
-  const pdf = document.createElement('a');
-  pdf.href = sourceIndex.official.pdf; pdf.target = '_blank'; pdf.rel = 'noreferrer'; pdf.textContent = 'Official PDF';
-  const mirror = document.createElement('a');
-  mirror.href = sourceIndex.mirror.index; mirror.target = '_blank'; mirror.rel = 'noreferrer'; mirror.textContent = '44-page image mirror';
-  sourcesEl.append(official, pdf, mirror);
-  if (sourceIndex.geometryCrosscheck?.forum) {
-    const ldd = document.createElement('a');
-    ldd.href = sourceIndex.geometryCrosscheck.forum; ldd.target = '_blank'; ldd.rel = 'noreferrer'; ldd.textContent = 'LDD geometry cross-check';
-    sourcesEl.append(ldd);
-  }
-  pagesEl.textContent = `${sourceIndex.capturedPages.length}/${sourceIndex.manualPages} manual pages captured · ${exactPages.size} pages currently contribute exact transforms. Digital-model geometry never increases the exact count without a captured manual page.`;
+  const addSource = (href, label) => {
+    if (!href) return;
+    const link = document.createElement('a');
+    link.href = href; link.target = '_blank'; link.rel = 'noreferrer'; link.textContent = label;
+    sourcesEl.append(link);
+  };
+  addSource(sourceIndex.official.productPage, 'Official LEGO manual');
+  addSource(sourceIndex.official.pdf, 'Official PDF');
+  addSource(sourceIndex.mirror.index, '44-page image mirror');
+  addSource(sourceIndex.geometryCrosscheck?.forum, 'LDD cross-check notes');
+  addSource(sourceIndex.geometryCrosscheck?.file, 'LDD model file');
+
+  const lddRule = sourceIndex.geometryCrosscheck?.policy ? ' LDD matrices are candidate geometry only and cannot promote exact coverage by themselves.' : '';
+  pagesEl.textContent = `${sourceIndex.capturedPages.length}/${sourceIndex.manualPages} manual pages captured · ${exactPages.size} pages currently contribute exact transforms.${lddRule}`;
 
   const errors = [];
   if (total !== 420) errors.push(`Inventory expands to ${total}, expected 420 regular parts.`);
@@ -89,12 +90,14 @@ async function boot() {
   for (const part of parts) {
     const page = instructionPage(part.verification);
     if (page != null && !captured.has(page)) errors.push(`${part.id}: exact transform references uncaptured manual page ${page}`);
+    if (page != null && !part.instructionTransform) errors.push(`${part.id}: exact transform missing local instructionTransform data`);
     if (page != null && part.instructionTransform?.page != null && Number(part.instructionTransform.page) !== page) {
       errors.push(`${part.id}: instructionTransform page mismatch`);
     }
+    if (/^(?:ldd|digital-model)/i.test(String(part.verification ?? ''))) errors.push(`${part.id}: CAD-only verification cannot count as exact`);
   }
   validationEl.className = errors.length ? 'error' : 'ok';
-  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} positioned instances, ${exactPages.size} exact-source pages, no part/color overuse.`;
+  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} positioned instances, ${exactPages.size} exact-source pages, explicit local transforms on every exact part, no part/color overuse.`;
 }
 
 boot().catch(error => {
