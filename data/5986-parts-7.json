@@ -25,5 +25,59 @@
       "lddMaterialId": "2",
       "inventoryColorMapping": "LDD Grey 2 -> BrickLink Light Gray"
     }
+  },
+  {
+    "id": "temple-top-bat",
+    "partNo": "30103",
+    "color": "Black",
+    "position": [12.2, 17.7, -2.8],
+    "rotation": [0, 0.35, 0.18],
+    "verification": "instruction-page-24-step-19",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "size": [1.8, 1.0, 0.2],
+    "studs": false,
+    "interactive": false,
+    "instructionTransform": {
+      "page": 24,
+      "step": 19,
+      "parent": "ldd-set-origin",
+      "position": [23.499996662139893, 33.053221702575684, -2.5000202655792236],
+      "rotationMatrix3": [0, 0, -1, 0, 1, 0, 1, 0, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "658",
+      "lddDesignID": "30103",
+      "lddMaterialId": "26"
+    }
+  },
+  {
+    "id": "temple-top-palm-leaf",
+    "partNo": "30339",
+    "color": "Green",
+    "position": [5.7, 16.0, -0.4],
+    "rotation": [0, 1.05, -0.42],
+    "verification": "instruction-page-24-step-19",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "size": [0.35, 5.0, 0.2],
+    "studs": false,
+    "interactive": false,
+    "instructionTransform": {
+      "page": 24,
+      "step": 19,
+      "parent": "ldd-set-origin",
+      "position": [-4.604335725307465, 21.442582607269287, -12.999999523162842],
+      "rotationMatrix3": [-0.9659258127212524, -0.2588191032409668, 0, -0.2588191032409668, 0.9659258127212524, 0, 0, 0, -1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "748",
+      "lddDesignID": "30339",
+      "lddMaterialId": "28"
+    }
   }
 ]
