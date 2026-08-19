@@ -10,6 +10,9 @@ if (!input) {
 
 const STUD_CM = 0.8;
 const root = new URL('../', import.meta.url);
+const DESIGN_ALIASES = new Map([
+  ['60169', '30104'], // later LDD chain design id -> 1999 inventory chain id
+]);
 const inventoryText = fs.readFileSync(new URL('data/5986-inventory.csv', root), 'utf8').trim();
 const inventory = inventoryText.split(/\r?\n/).slice(1).map(line => {
   const [partNo, color, qty] = line.split(',');
@@ -18,7 +21,8 @@ const inventory = inventoryText.split(/\r?\n/).slice(1).map(line => {
 
 function baseDesign(value = '') {
   const text = String(value).trim();
-  return text.match(/^\d+/)?.[0] ?? text.replace(/(?:px|pb|pr).*$/i, '');
+  const raw = text.match(/^\d+/)?.[0] ?? text.replace(/(?:px|pb|pr).*$/i, '');
+  return DESIGN_ALIASES.get(raw) ?? raw;
 }
 
 const inventoryCapacity = new Map();
@@ -137,6 +141,7 @@ const summary = {
   unmatchedDesignCount: unmatchedDesigns.length,
   unmatchedDesigns: unmatchedDesigns.slice(0, 80),
   unknownMaterialIds,
+  designAliasesApplied: Object.fromEntries(DESIGN_ALIASES),
   retainedData: 'summary counts only; the third-party LXF and its full transform matrix list are not committed by the cross-check workflow',
   policy: 'Imported LDD poses are geometry candidates only. They do not count as instruction-exact without a captured manual-page provenance tag.',
 };
