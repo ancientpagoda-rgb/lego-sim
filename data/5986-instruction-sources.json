@@ -16,6 +16,7 @@
     "lddVersion": "4.3.8",
     "forum": "https://www.eurobricks.com/forum/forums/topic/41226-key-topic-official-lego-sets-made-in-ldd/page/74/",
     "file": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf",
+    "importCommand": "npm run ldd:import -- /path/to/secret_jungle_temple.lxf --write",
     "knownLimitations": [
       "Sun Disc x276 is replaced by 3068b in the LDD model.",
       "Raised baseplate 30271px1 is replaced by a brick-built solution in the LDD model.",
@@ -30,6 +31,7 @@
     { "page": 8, "image": "https://lego.brickinstructions.com/instructions/05000/5986/008.jpg", "content": "expedition car steps 8-10; wheel/tire installation and final car" },
     { "page": 20, "image": "https://lego.brickinstructions.com/instructions/05000/5986/020.jpg", "content": "main raised-platform temple stage" },
     { "page": 22, "image": "https://lego.brickinstructions.com/instructions/05000/5986/022.jpg", "content": "tower steps 9-12 and chain/crank subassembly" },
+    { "page": 24, "image": "https://lego.brickinstructions.com/instructions/05000/5986/024.jpg", "content": "temple completion steps 17-19; upper facade, flame ornaments, foliage and top figure" },
     { "page": 28, "image": "https://lego.brickinstructions.com/instructions/05000/5986/028.jpg", "content": "gateway/bridge steps 1-6" },
     { "page": 30, "image": "https://lego.brickinstructions.com/instructions/05000/5986/030.jpg", "content": "curved bridge attachment / gateway completion" }
   ],
