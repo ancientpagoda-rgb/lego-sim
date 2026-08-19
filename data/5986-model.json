@@ -1,17 +1,26 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "coordinateSystem": "x/z in LEGO stud pitches; y is bottom elevation; one brick = 1.2 units; one plate = 0.4 units",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
+    "officialPdf": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/4124784.pdf",
+    "instructionIndex": "./5986-instruction-sources.json",
     "inventory": "https://www.bricklink.com/catalogItemInv.asp?S=5986-1",
     "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins"
   },
+  "transformGoal": {
+    "regularParts": 420,
+    "completionRule": "420/420 regular inventory slots must have instruction-page provenance and exact position/orientation transforms",
+    "photoAlignedTransformsAreExact": false,
+    "ledgerScript": "scripts/transform-ledger.mjs"
+  },
   "sourceNotes": [
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
-    "Main temple, trap platform, boat and car are inventory-bounded reconstructions aligned to published photographs while full page-by-page transform transcription continues.",
-    "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
+    "Main temple, trap platform, boat and car remain inventory-bounded reconstructions until their instruction pages are transcribed.",
+    "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository.",
+    "V0.4 adds a deterministic 420-slot transform ledger so exact completion is machine-countable."
   ],
   "simulation": {
     "gravity": 18,
