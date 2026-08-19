@@ -4,13 +4,25 @@ const sources = JSON.parse(fs.readFileSync(new URL('data/5986-instruction-source
 const manifest = JSON.parse(fs.readFileSync(new URL('data/5986-model.json', root), 'utf8'));
 const parts = (manifest.partFiles ?? []).flatMap(rel => JSON.parse(fs.readFileSync(new URL(`data/${rel.replace('./', '')}`, root), 'utf8')));
 const errors = [];
+const finiteVector = (value, length) => Array.isArray(value) && value.length === length && value.every(Number.isFinite);
+
 if (!sources.geometryCrosscheck?.file) errors.push('missing geometryCrosscheck.file');
 if (sources.geometryCrosscheck?.policy?.toLowerCase().includes('never counts') !== true) errors.push('geometry cross-check policy must explicitly prevent automatic exact promotion');
+
 for (const part of parts) {
   const verification = String(part.verification ?? '');
+  const exact = /^(?:manual|instruction)-page-/i.test(verification);
   if (/^(?:ldd|digital-model)/i.test(verification)) errors.push(`${part.id}: digital-model provenance cannot be used as an exact verification prefix`);
-  if (/^(?:manual|instruction)-page-/i.test(verification) && !part.instructionTransform) errors.push(`${part.id}: instruction-exact part missing instructionTransform`);
+  if (exact && !part.instructionTransform) errors.push(`${part.id}: instruction-exact part missing instructionTransform`);
+
+  if (exact && part.instructionTransform?.parent === 'ldd-set-origin') {
+    if (!finiteVector(part.instructionTransform.position, 3)) errors.push(`${part.id}: LDD-backed exact transform needs a finite position[3]`);
+    if (!finiteVector(part.instructionTransform.rotationMatrix3, 9)) errors.push(`${part.id}: LDD-backed exact transform needs rotationMatrix3[9]`);
+    if (!part.geometryCrosscheck?.lddRef) errors.push(`${part.id}: LDD-backed exact transform missing geometryCrosscheck.lddRef`);
+    if (!part.geometryCrosscheck?.lddDesignID) errors.push(`${part.id}: LDD-backed exact transform missing geometryCrosscheck.lddDesignID`);
+  }
 }
+
 const summaryUrl = new URL('data/5986-ldd-summary.json', root);
 if (fs.existsSync(summaryUrl)) {
   const summary = JSON.parse(fs.readFileSync(summaryUrl, 'utf8'));
@@ -19,8 +31,9 @@ if (fs.existsSync(summaryUrl)) {
   if (summary.inventoryRegularPartTarget !== 420) errors.push(`persisted LDD summary target must be 420, got ${summary.inventoryRegularPartTarget}`);
   if (!String(summary.retainedData ?? '').includes('summary counts only')) errors.push('persisted LDD data must be summary counts only');
 }
+
 if (errors.length) {
   console.error('5986 source-integrity validation failed:\n' + errors.join('\n'));
   process.exit(1);
 }
-console.log(`5986 source integrity OK: ${parts.length} positioned parts; digital-model data is cross-check only.`);
+console.log(`5986 source integrity OK: ${parts.length} positioned parts; manual provenance gates exact transforms and CAD remains cross-check only.`);
