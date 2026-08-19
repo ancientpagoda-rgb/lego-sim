@@ -4,7 +4,7 @@ import { spawnSync } from 'node:child_process';
 
 const input = process.argv[2];
 if (!input) {
-  console.error('Usage: node scripts/ldd-import.mjs <5986.lxf|IMAGE100.LXFML> [--write]');
+  console.error('Usage: node scripts/ldd-import.mjs <5986.lxf|IMAGE100.LXFML> [--write] [--summary-out path]');
   process.exit(2);
 }
 
@@ -15,7 +15,20 @@ const inventory = inventoryText.split(/\r?\n/).slice(1).map(line => {
   const [partNo, color, qty] = line.split(',');
   return { partNo, color, qty: Number(qty) };
 });
-const availableDesigns = new Set(inventory.map(row => row.partNo.replace(/(?:px|pb|pr).*$/i, '')));
+
+function baseDesign(value = '') {
+  const text = String(value).trim();
+  return text.match(/^\d+/)?.[0] ?? text.replace(/(?:px|pb|pr).*$/i, '');
+}
+
+const inventoryCapacity = new Map();
+const inventoryDesignCapacity = new Map();
+for (const row of inventory) {
+  const design = baseDesign(row.partNo);
+  inventoryCapacity.set(`${design}|${row.color}`, (inventoryCapacity.get(`${design}|${row.color}`) ?? 0) + row.qty);
+  inventoryDesignCapacity.set(design, (inventoryDesignCapacity.get(design) ?? 0) + row.qty);
+}
+const availableDesigns = new Set(inventoryDesignCapacity.keys());
 
 function readLxfml(file) {
   if (/\.lxfml$/i.test(file)) return fs.readFileSync(file, 'utf8');
@@ -67,19 +80,38 @@ for (const brickMatch of brickBlocks) {
     const boneAttrs = attrs(boneTag);
     const designID = partAttrs.designID || brickAttrs.designID || null;
     const materialId = firstMaterial(partAttrs.materials || brickAttrs.materials);
-    const normalizedDesign = String(designID ?? '').replace(/[^0-9A-Za-z]/g, '');
+    const normalizedDesign = baseDesign(designID);
+    const materialName = materialNames.get(materialId) ?? null;
     parts.push({
       lddRef: partAttrs.refID || brickAttrs.refID || null,
       designID,
       normalizedDesign,
       materialId,
-      materialName: materialNames.get(materialId) ?? null,
+      materialName,
       transform: parseTransform(boneAttrs.transformation),
       inventoryDesignCandidate: availableDesigns.has(normalizedDesign),
     });
   }
 }
 
+const lddKeyCounts = new Map();
+for (const part of parts) {
+  if (!part.materialName) continue;
+  const key = `${part.normalizedDesign}|${part.materialName}`;
+  lddKeyCounts.set(key, (lddKeyCounts.get(key) ?? 0) + 1);
+}
+let inventoryUnitsRepresented = 0;
+let overflowAgainstInventory = 0;
+let inventoryKeysRepresented = 0;
+for (const [key, count] of lddKeyCounts) {
+  const capacity = inventoryCapacity.get(key) ?? 0;
+  if (capacity > 0) inventoryKeysRepresented += 1;
+  inventoryUnitsRepresented += Math.min(count, capacity);
+  overflowAgainstInventory += Math.max(0, count - capacity);
+}
+
+const unmatchedDesigns = [...new Set(parts.filter(p => !p.inventoryDesignCandidate && p.normalizedDesign).map(p => p.normalizedDesign))].sort();
+const unknownMaterialIds = [...new Set(parts.filter(p => !p.materialName && p.materialId).map(p => p.materialId))].sort();
 const summary = {
   sourceFile: path.basename(input),
   sourceType: 'LEGO Digital Designer LXF cross-check',
@@ -87,12 +119,29 @@ const summary = {
   brickPartRecords: parts.length,
   recordsWithTransforms: parts.filter(p => p.transform).length,
   recordsMatchingInventoryDesign: parts.filter(p => p.inventoryDesignCandidate).length,
-  unknownMaterialIds: [...new Set(parts.filter(p => !p.materialName && p.materialId).map(p => p.materialId))].sort(),
+  recordsWithKnownMaterial: parts.filter(p => p.materialName).length,
+  inventoryUnitsRepresented,
+  inventoryKeysRepresented,
+  inventoryRegularPartTarget: inventory.reduce((sum, row) => sum + row.qty, 0),
+  overflowAgainstInventory,
+  unmatchedDesignCount: unmatchedDesigns.length,
+  unmatchedDesigns: unmatchedDesigns.slice(0, 80),
+  unknownMaterialIds,
+  retainedData: 'summary counts only; the third-party LXF and its full transform matrix list are not committed by the cross-check workflow',
   policy: 'Imported LDD poses are geometry candidates only. They do not count as instruction-exact without a captured manual-page provenance tag.',
 };
 
 const out = { summary, parts };
 if (process.argv.includes('--write')) {
   fs.writeFileSync(new URL('data/5986-ldd-candidates.json', root), JSON.stringify(out, null, 2) + '\n');
+}
+const summaryIndex = process.argv.indexOf('--summary-out');
+if (summaryIndex >= 0) {
+  const target = process.argv[summaryIndex + 1];
+  if (!target) {
+    console.error('--summary-out requires a repository-relative or absolute path');
+    process.exit(2);
+  }
+  fs.writeFileSync(new URL(target, root), JSON.stringify(summary, null, 2) + '\n');
 }
 console.log(JSON.stringify(summary, null, 2));
