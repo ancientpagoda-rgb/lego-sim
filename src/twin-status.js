@@ -11,6 +11,10 @@ const sourcesEl = document.querySelector('#sources');
 const pagesEl = document.querySelector('#pages');
 
 const key = (partNo, color) => `${partNo}|${color}`;
+const instructionPage = verification => {
+  const match = String(verification ?? '').match(/^(?:manual|instruction)-page-(\d+)/i);
+  return match ? Number(match[1]) : null;
+};
 
 async function loadJSON(url) {
   const res = await fetch(url);
@@ -33,11 +37,13 @@ async function boot() {
 
   const available = new Map(inventory.map(row => [key(row.partNo, row.color), row.qty]));
   const used = new Map();
+  const exactPages = new Set();
   let exact = 0;
   for (const part of parts) {
     const k = key(part.partNo, part.color);
     used.set(k, (used.get(k) ?? 0) + 1);
-    if (/^(manual|instruction)-page-\d+/i.test(String(part.verification ?? ''))) exact += 1;
+    const page = instructionPage(part.verification);
+    if (page != null) { exact += 1; exactPages.add(page); }
   }
 
   const total = [...available.values()].reduce((a, b) => a + b, 0);
@@ -68,14 +74,27 @@ async function boot() {
   const mirror = document.createElement('a');
   mirror.href = sourceIndex.mirror.index; mirror.target = '_blank'; mirror.rel = 'noreferrer'; mirror.textContent = '44-page image mirror';
   sourcesEl.append(official, pdf, mirror);
-  pagesEl.textContent = `${sourceIndex.capturedPages.length} manual pages have already been captured into the provenance index; exact transforms currently come from instruction-tagged placements in the model chunks.`;
+  if (sourceIndex.geometryCrosscheck?.forum) {
+    const ldd = document.createElement('a');
+    ldd.href = sourceIndex.geometryCrosscheck.forum; ldd.target = '_blank'; ldd.rel = 'noreferrer'; ldd.textContent = 'LDD geometry cross-check';
+    sourcesEl.append(ldd);
+  }
+  pagesEl.textContent = `${sourceIndex.capturedPages.length}/${sourceIndex.manualPages} manual pages captured · ${exactPages.size} pages currently contribute exact transforms. Digital-model geometry never increases the exact count without a captured manual page.`;
 
   const errors = [];
   if (total !== 420) errors.push(`Inventory expands to ${total}, expected 420 regular parts.`);
   for (const [k, qty] of used) if (qty > (available.get(k) ?? 0)) errors.push(`${k}: positioned ${qty}, inventory ${(available.get(k) ?? 0)}`);
   if (new Set(parts.map(p => p.id)).size !== parts.length) errors.push('Duplicate positioned part ids detected.');
+  const captured = new Set(sourceIndex.capturedPages.map(row => Number(row.page)));
+  for (const part of parts) {
+    const page = instructionPage(part.verification);
+    if (page != null && !captured.has(page)) errors.push(`${part.id}: exact transform references uncaptured manual page ${page}`);
+    if (page != null && part.instructionTransform?.page != null && Number(part.instructionTransform.page) !== page) {
+      errors.push(`${part.id}: instructionTransform page mismatch`);
+    }
+  }
   validationEl.className = errors.length ? 'error' : 'ok';
-  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} positioned instances, no part/color overuse.`;
+  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} positioned instances, ${exactPages.size} exact-source pages, no part/color overuse.`;
 }
 
 boot().catch(error => {
