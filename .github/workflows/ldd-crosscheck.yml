@@ -1,0 +1,30 @@
+name: Cross-check 5986 LDD geometry
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/ldd-crosscheck.yml"
+      - "scripts/ldd-import.mjs"
+      - "data/5986-instruction-sources.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crosscheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch community LDD model temporarily
+        run: curl --fail --location --retry 3 --output /tmp/5986.lxf https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf
+      - name: Parse and summarize candidate geometry
+        run: node scripts/ldd-import.mjs /tmp/5986.lxf
+      - name: Confirm source-integrity rules
+        run: node scripts/source-integrity.mjs
