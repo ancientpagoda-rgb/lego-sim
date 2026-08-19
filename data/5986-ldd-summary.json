@@ -11,13 +11,13 @@
     "part": 0,
     "brick": 0
   },
-  "recordsMatchingInventoryDesign": 497,
+  "recordsMatchingInventoryDesign": 498,
   "recordsWithKnownMaterial": 825,
   "inventoryUnitsRepresented": 241,
   "inventoryKeysRepresented": 102,
   "inventoryRegularPartTarget": 420,
   "overflowAgainstInventory": 584,
-  "unmatchedDesignCount": 46,
+  "unmatchedDesignCount": 45,
   "unmatchedDesigns": [
     "2748",
     "30127",
@@ -52,7 +52,6 @@
     "57505",
     "57506",
     "60033",
-    "60169",
     "60479",
     "60481",
     "6141",
@@ -73,6 +72,9 @@
     "309",
     "310"
   ],
+  "designAliasesApplied": {
+    "60169": "30104"
+  },
   "retainedData": "summary counts only; the third-party LXF and its full transform matrix list are not committed by the cross-check workflow",
   "policy": "Imported LDD poses are geometry candidates only. They do not count as instruction-exact without a captured manual-page provenance tag."
 }
