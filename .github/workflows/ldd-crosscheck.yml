@@ -7,6 +7,7 @@ on:
       - ".github/workflows/ldd-crosscheck.yml"
       - "scripts/ldd-import.mjs"
       - "scripts/ldd-reconcile.mjs"
+      - "scripts/ldd-unique-inventory.mjs"
       - "data/5986-instruction-sources.json"
       - "data/5986-inventory.csv"
       - "data/5986-model.json"
@@ -34,6 +35,8 @@ jobs:
         run: node scripts/ldd-import.mjs /tmp/5986.lxf --write --summary-out data/5986-ldd-summary.json
       - name: Reconcile candidates to current model
         run: node scripts/ldd-reconcile.mjs data/5986-ldd-candidates.json --out data/5986-ldd-model-matches.json
+      - name: Extract unique inventory anchors
+        run: node scripts/ldd-unique-inventory.mjs data/5986-ldd-candidates.json --out data/5986-ldd-unique-candidates.json
       - name: Upload transient full transform candidates
         uses: actions/upload-artifact@v4
         with:
@@ -46,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/5986-ldd-summary.json data/5986-ldd-model-matches.json
+          git add data/5986-ldd-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json
           if git diff --cached --quiet; then
             echo "LDD reconciliation outputs unchanged"
             exit 0
