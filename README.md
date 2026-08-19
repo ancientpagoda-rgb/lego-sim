@@ -2,64 +2,66 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.5.1 — bulk 420-transform solver
+## V0.5.2 — temple exactification
 
-The complete scene remains playable, but reconstruction now uses a bulk solver around the **420 regular-part inventory ledger**.
+The playable full-set scene now sits on top of a strict **420 regular-part transform ledger**. A part only counts as **instruction-exact** when manual provenance and an explicit `instructionTransform` are both present. Photo-aligned or CAD-only geometry does not count.
 
-A placement only counts as **instruction-exact** when its part/color, position (or local subassembly transform), orientation, attachment reference and captured instruction-page provenance are resolved. Photo-aligned or CAD-only geometry never increases the exact count.
-
-Current exact ledger:
+Current ledger:
 
 - **420** regular-part inventory slots
-- **184** individually positioned regular parts
-- **32** instruction-exact transforms
+- **185** individually positioned regular parts
+- **33** instruction-exact transforms
 - **152** positioned reconstruction transforms waiting to be replaced
-- **236** inventory slots not yet positioned
-- **388** exact transforms remaining
-- **9 / 44** manual pages inspected/indexed
-- **4** manual pages currently contributing exact transforms
+- **235** inventory slots not yet positioned
+- **387** exact transforms remaining
+- **9 / 44** manual pages indexed
+- **5** pages currently contributing exact transforms
 
-### Working LDD geometry cross-check
+### Latest exact promotion — page 22
 
-The repository records the community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` as a secondary geometry source. Its documented raised-baseplate and Sun-Disc substitutions plus missing/incorrect decorations mean it is deliberately non-authoritative.
+Page 22's hanging chain is now resolved as the set's single **30104 Light Gray** chain. The community LDD model uses later design ID `60169`; the importer normalizes that alternate ID to the 1999 inventory part. LDD material `2` is the legacy Grey used as BrickLink Light Gray, producing one unique candidate matrix. Because page 22 visibly supplies the chain step, this occurrence now satisfies both the manual-provenance and exact-transform requirements.
 
-The GitHub cross-check job now fetches the LXF temporarily and parses it without committing the third-party model. The fixed importer extracts **969 / 969 transformation matrices**. A small persisted summary currently reconciles **241 / 420 inventory units** across **102 part/color keys**. Those 241 are geometry candidates, not instruction-exact parts.
+The ledger also now stores exact `instructionTransform` data separately from the playable scene's `presentationTransform`, preventing a visually convenient world position from being mistaken for the authoritative transform.
 
-Only `data/5986-ldd-summary.json` is retained by the automated job; it contains aggregate reconciliation counts rather than the LXF or its full transform list.
+### CAD geometry cross-check
 
-```bash
-npm run ldd:import -- /path/to/secret_jungle_temple.lxf
-```
+The community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` remains secondary evidence only. The automated cross-check parses **969 / 969 transformation matrices** without committing the original LXF.
 
-Use `--write` only for a local candidate dump. Use `--summary-out <path>` to write counts-only reconciliation data.
+After normalizing the later chain ID and the 1999 legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys**. It also exposes **57 one-to-one inventory anchors**. None of these numbers automatically increase exact coverage.
+
+Persisted cross-check files are derived reconciliation data:
+
+- `data/5986-ldd-summary.json` — aggregate coverage counts
+- `data/5986-ldd-model-matches.json` — non-authoritative matches against current presentation instances
+- `data/5986-ldd-unique-candidates.json` — one-to-one inventory anchors and diagnostics
+
+The original third-party LXF is fetched temporarily in GitHub Actions and discarded.
 
 ### Source-integrity guardrails
 
-V0.5.1 uses three independent checks:
+Validation runs through:
 
-1. `transform-ledger.mjs` — deterministic 420-slot inventory/transform ledger.
-2. `page-ledger.mjs` — 44-page manual provenance ledger; exact tags cannot reference uninspected pages.
-3. `source-integrity.mjs` — CAD/digital-model provenance cannot masquerade as exact, every instruction-exact part must carry an explicit local `instructionTransform`, and the persisted LDD file must remain non-authoritative summary data.
-
-The earlier gateway/bridge batch has explicit local transforms, so it satisfies the same rule as the expedition-car batch.
+1. `validate-model.mjs` — inventory limits and required assemblies.
+2. `transform-ledger.mjs` — deterministic 420-slot ledger; exact slots store explicit instruction transforms and presentation transforms separately.
+3. `page-ledger.mjs` — exact tags cannot cite an unindexed manual page.
+4. `source-integrity.mjs` — CAD-only provenance cannot masquerade as instruction-exact.
 
 ### Captured instruction batches
 
-Indexed pages currently include the set overview, character/animal assembly reference, expedition car pages 7–8, raised-temple stages around pages 20 and 22, temple completion page 24, and bridge/gateway pages 28 and 30. Capturing a page does **not** automatically promote its parts; unresolved pages remain pending until each transform is solved.
+Indexed pages include the set overview, character/animal reference, expedition car pages 7–8, temple pages 20, 22 and 24, and bridge/gateway pages 28 and 30. Page 24 remains captured-pending while its upper-temple transforms are reconciled.
 
-The Exact Twin dashboard links all 44 manual pages, while its colors distinguish uninspected pages from indexed pages and pages already supplying exact transforms.
+Open `twin-status.html` (or **Exact twin** in the simulation HUD) for the live 420-part coverage dashboard and 44-page transcription map.
 
 ## Full-set scene already present
 
 - 32×48 raised-baseplate world and river corridor
 - multilevel main temple
 - bridge gateway
-- collapsing brown suspension bridge and spider web
-- opposite-bank statue / ruby / trapdoor area
+- collapsing suspension bridge and spider web
+- trap platform / ruby / trapdoor area
 - expedition boat and four-wheel car
 - all 8 included minifigures
-- crocodile, snakes, spiders, scorpion, bat and parrot stand-ins
-- palms, jungle foliage, torches, Sun Disc, ruby and tools
+- animals, foliage, torches, Sun Disc, ruby and tools
 - `Run traps` control
 - orbit, ground and overhead cameras
 - breakable structural connection graph
@@ -69,7 +71,7 @@ The Exact Twin dashboard links all 44 manual pages, while its colors distinguish
 ```text
 Official instruction pages ─────────────┐
                                         │ provenance gate
-Community LDD ── 969 matrices ─ candidate ┤
+Community LDD ── 969 matrices ──────────┤ candidate geometry
                                         ▼
 BrickLink inventory ─────────────► 420 deterministic slots
                                         │
@@ -96,15 +98,8 @@ Then open `http://localhost:8000`.
 npm run check
 ```
 
-Generate the full transform ledger:
-
 ```bash
 npm run ledger
-```
-
-Generate the 44-page provenance ledger:
-
-```bash
 npm run page-ledger
 ```
 
@@ -114,28 +109,32 @@ npm run page-ledger
 index.html
   simulation HUD + Exact twin link
 twin-status.html
-  live exact / positioned / CAD-cross-check coverage dashboard
+  exact / positioned / CAD-cross-check coverage dashboard
 src/
-  main.js             scene, minifigs, animals, controls, trap simulation
-  brick-engine.js     reusable part proxies, connections, break physics
-  twin-status.js      browser-side ledger/coverage calculation
+  main.js
+  brick-engine.js
+  twin-status.js
 data/
-  5986.json                       scenario metadata / coverage
-  5986-model.json                 model manifest and exact-completion policy
-  5986-instruction-sources.json   manual + LDD provenance index
-  5986-ldd-summary.json           counts-only CAD reconciliation summary
-  5986-parts-*.json               positioned regular-part chunks
-  5986-inventory.csv              420-part inventory boundary
+  5986.json
+  5986-model.json
+  5986-instruction-sources.json
+  5986-inventory.csv
+  5986-parts-*.json
+  5986-ldd-summary.json
+  5986-ldd-model-matches.json
+  5986-ldd-unique-candidates.json
 scripts/
-  validate-model.mjs              inventory + assembly validation
-  transform-ledger.mjs            deterministic 420-slot transform ledger
-  page-ledger.mjs                 44-page provenance ledger
-  source-integrity.mjs            prevents CAD-only exact promotion
-  ldd-import.mjs                  LXF/LXFML candidate importer
+  validate-model.mjs
+  transform-ledger.mjs
+  page-ledger.mjs
+  source-integrity.mjs
+  ldd-import.mjs
+  ldd-reconcile.mjs
+  ldd-unique-inventory.mjs
 ```
 
 ## Sources and provenance
 
-The transform source of truth is the LEGO building-instruction sequence. The inventory defines the 420 regular-part ledger and prevents part/color overuse. The community LDD model is only a geometric cross-check. Published headline piece totals differ across databases, so those totals are not used to infer transforms.
+The LEGO building-instruction sequence is the transform source of truth. The inventory defines the 420-part boundary. The community LDD model is only a geometric cross-check and includes known substitutions, so CAD data cannot become exact without matching manual-page evidence.
 
 This is a fan-made simulation prototype and is not affiliated with or endorsed by the LEGO Group.
