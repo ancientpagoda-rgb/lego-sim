@@ -24,6 +24,7 @@ for (const row of inventory) {
       occurrence: index,
       state: 'unpositioned',
       transform: null,
+      presentationTransform: null,
       modelPartId: null,
       verification: null,
     };
@@ -40,6 +41,7 @@ for (const rel of manifest.partFiles ?? []) {
   modelParts.push(...chunk);
 }
 
+const finiteVector = (value, length) => Array.isArray(value) && value.length === length && value.every(Number.isFinite);
 const errors = [];
 const ids = new Set();
 let exact = 0;
@@ -53,12 +55,8 @@ for (const part of modelParts) {
     errors.push(`${part?.id ?? '<unknown>'}: missing partNo/color`);
     continue;
   }
-  if (!Array.isArray(part.position) || part.position.length !== 3 || part.position.some(n => !Number.isFinite(n))) {
-    errors.push(`${part.id}: position must be three finite numbers`);
-  }
-  if (part.rotation && (!Array.isArray(part.rotation) || part.rotation.length !== 3 || part.rotation.some(n => !Number.isFinite(n)))) {
-    errors.push(`${part.id}: rotation must be three finite numbers when present`);
-  }
+  if (!finiteVector(part.position, 3)) errors.push(`${part.id}: presentation position must be three finite numbers`);
+  if (part.rotation && !finiteVector(part.rotation, 3)) errors.push(`${part.id}: presentation rotation must be three finite numbers when present`);
 
   const key = `${part.partNo}|${part.color}`;
   const queue = queues.get(key);
@@ -70,13 +68,25 @@ for (const part of modelParts) {
 
   const verification = String(part.verification ?? '');
   const instructionExact = /^(manual|instruction)-page-\d+/i.test(verification);
+  const presentationTransform = { position: part.position, rotation: part.rotation ?? [0, 0, 0] };
   slot.state = instructionExact ? 'instruction-exact' : 'positioned-reconstruction';
   slot.modelPartId = part.id;
   slot.verification = verification || null;
-  slot.transform = {
-    position: part.position,
-    rotation: part.rotation ?? [0, 0, 0],
-  };
+  slot.presentationTransform = presentationTransform;
+
+  if (instructionExact) {
+    const exactTransform = part.instructionTransform;
+    if (!exactTransform) errors.push(`${part.id}: instruction-exact part missing instructionTransform`);
+    else {
+      if (!finiteVector(exactTransform.position, 3)) errors.push(`${part.id}: instructionTransform.position must be three finite numbers`);
+      const hasEuler = finiteVector(exactTransform.rotation, 3);
+      const hasMatrix = finiteVector(exactTransform.rotationMatrix3, 9);
+      if (!hasEuler && !hasMatrix) errors.push(`${part.id}: instructionTransform requires rotation[3] or rotationMatrix3[9]`);
+      slot.transform = exactTransform;
+    }
+  } else {
+    slot.transform = presentationTransform;
+  }
   positioned += 1;
   if (instructionExact) exact += 1;
 }
@@ -93,18 +103,15 @@ const ledger = {
   set: manifest.id,
   target: 420,
   generatedFrom: 'data/5986-inventory.csv + data/5986-model.json partFiles',
-  policy: 'Only manual-page-N / instruction-page-N provenance counts as an exact transform.',
+  policy: 'Instruction-exact slots store the explicit instructionTransform; playable scene coordinates are retained separately as presentationTransform.',
   summary: { total, positioned, instructionExact: exact, positionedReconstruction: reconstructed, unpositioned, exactRemaining },
   slots,
 };
 
-if (process.argv.includes('--write')) {
-  fs.writeFileSync(new URL('data/5986-transform-ledger.json', root), JSON.stringify(ledger, null, 2) + '\n');
-}
+if (process.argv.includes('--write')) fs.writeFileSync(new URL('data/5986-transform-ledger.json', root), JSON.stringify(ledger, null, 2) + '\n');
 
 if (errors.length) {
   console.error('5986 transform ledger errors:\n' + errors.join('\n'));
   process.exit(1);
 }
-
 console.log(`5986 transform ledger OK: ${exact}/${total} instruction-exact, ${positioned}/${total} positioned, ${exactRemaining} exact transforms remaining.`);
