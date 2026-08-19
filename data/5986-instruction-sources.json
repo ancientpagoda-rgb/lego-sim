@@ -10,6 +10,19 @@
     "index": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins",
     "imageTemplate": "https://lego.brickinstructions.com/instructions/05000/5986/{NNN}.jpg"
   },
+  "geometryCrosscheck": {
+    "type": "LEGO Digital Designer model",
+    "author": "penguinz",
+    "lddVersion": "4.3.8",
+    "forum": "https://www.eurobricks.com/forum/forums/topic/41226-key-topic-official-lego-sets-made-in-ldd/page/74/",
+    "file": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf",
+    "knownLimitations": [
+      "Sun Disc x276 is replaced by 3068b in the LDD model.",
+      "Raised baseplate 30271px1 is replaced by a brick-built solution in the LDD model.",
+      "Decorations are missing or incorrect."
+    ],
+    "policy": "LDD geometry may accelerate transform solving and detect reconstruction errors, but never counts as instruction-exact without matching manual-page provenance."
+  },
   "capturedPages": [
     { "page": 1, "image": "https://lego.brickinstructions.com/instructions/05000/5986/001.jpg", "content": "cover / complete-set reference" },
     { "page": 4, "image": "https://lego.brickinstructions.com/instructions/05000/5986/004.jpg", "content": "minifigure, skeleton, crocodile and palm assemblies" },
@@ -29,6 +42,7 @@
       "attachment to an already resolved parent/base reference"
     ],
     "verificationPrefix": "manual-page-N or instruction-page-N",
-    "photoAlignedTransformsCountAsExact": false
+    "photoAlignedTransformsCountAsExact": false,
+    "digitalModelTransformsCountAsExactWithoutManual": false
   }
 }
