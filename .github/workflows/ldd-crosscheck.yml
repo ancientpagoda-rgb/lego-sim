@@ -27,8 +27,14 @@ jobs:
           node-version: 22
       - name: Fetch community LDD model temporarily
         run: curl --fail --location --retry 3 --output /tmp/5986.lxf https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf
-      - name: Parse and retain safe reconciliation summary
-        run: node scripts/ldd-import.mjs /tmp/5986.lxf --summary-out data/5986-ldd-summary.json
+      - name: Parse geometry candidates and safe summary
+        run: node scripts/ldd-import.mjs /tmp/5986.lxf --write --summary-out data/5986-ldd-summary.json
+      - name: Upload transient transform candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: 5986-ldd-candidates
+          path: data/5986-ldd-candidates.json
+          retention-days: 1
       - name: Confirm source-integrity rules
         run: node scripts/source-integrity.mjs
       - name: Commit summary counts only
