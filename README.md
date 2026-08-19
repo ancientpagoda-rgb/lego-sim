@@ -2,11 +2,11 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.4 — 420-transform digital twin phase
+## V0.5 — bulk 420-transform solver
 
-The complete V0.3 scene remains playable, but V0.4 changes the definition of completion: the target is now a **420/420 regular-part digital twin**.
+The complete scene remains playable, but the reconstruction pipeline has moved from hand-entered batches to a bulk solver designed around the **420 regular-part inventory ledger**.
 
-Every regular inventory occurrence receives a deterministic ledger slot. A placement only counts as **instruction-exact** when its part/color, position (or local subassembly transform), orientation, attachment reference and instruction-page provenance are resolved. Photo-aligned reconstruction does not count toward the exact total.
+A placement only counts as **instruction-exact** when its part/color, position (or local subassembly transform), orientation, attachment reference and captured instruction-page provenance are resolved. Photo-aligned or CAD-only geometry never increases the exact count.
 
 Current ledger state:
 
@@ -16,14 +16,32 @@ Current ledger state:
 - **152** positioned reconstruction transforms waiting to be replaced
 - **236** inventory slots not yet positioned
 - **388** exact transforms remaining
+- **9 / 44** manual pages captured
+- **4** manual pages currently contributing exact transforms
 
-### Latest exact batch — expedition car, pages 7–8
+### Bulk geometry cross-check
 
-The first post-gateway transcription batch locks the car's black 2×10 chassis plate, the two tan pinned axle plates, all four light-gray wheel hubs, two smaller front tires and two larger rear tires. These parts now carry instruction-page provenance plus local transforms relative to the car subassembly.
+The repository records the community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` as a secondary geometry source. It is useful for solving candidate transforms quickly, but it is deliberately non-authoritative because its author documented substitutions for the raised baseplate and Sun Disc plus missing/incorrect decorations.
 
-This pass also corrected an inventory conflict: the single black 2×10 plate had previously been used as a photo-aligned boat proxy. It is now assigned to the car where the instruction sequence actually uses it.
+`scripts/ldd-import.mjs` parses an `.lxf` or raw `IMAGE100.LXFML`, extracts LDD design IDs, material IDs and transform matrices, and normalizes translations into LEGO-stud units. Imported data is candidate geometry only.
 
-Open `twin-status.html` (or use the **Exact twin** button in the simulation HUD) for a live coverage dashboard generated from the current inventory and model chunks.
+```bash
+npm run ldd:import -- /path/to/secret_jungle_temple.lxf --write
+```
+
+### Source-integrity guardrails
+
+V0.5 uses three independent checks:
+
+1. `transform-ledger.mjs` — deterministic 420-slot inventory/transform ledger.
+2. `page-ledger.mjs` — 44-page manual provenance ledger; exact tags cannot reference uncaptured pages.
+3. `source-integrity.mjs` — CAD/digital-model provenance cannot masquerade as exact, and every instruction-exact part must carry an explicit local `instructionTransform`.
+
+The earlier gateway/bridge batch has now been backfilled with explicit local transforms, so it satisfies the same rule as the newer expedition-car batch.
+
+### Captured instruction batches
+
+Current captured pages include the set overview, character/animal assembly reference, expedition car pages 7–8, raised-temple stages around pages 20 and 22, temple completion page 24, and bridge/gateway pages 28 and 30. Capturing a page does **not** automatically promote its parts; unresolved pages remain `captured-pending` until each transform is solved.
 
 ## Full-set scene already present
 
@@ -43,23 +61,20 @@ Open `twin-status.html` (or use the **Exact twin** button in the simulation HUD)
 ## Transform pipeline
 
 ```text
-data/5986-inventory.csv
-        │
-        ▼
-420 deterministic inventory slots
-        │
-        ├── instruction-exact
-        ├── positioned-reconstruction
-        └── unpositioned
-        │
-        ▼
-scripts/transform-ledger.mjs
-        │
-        ▼
-CI validation + twin-status.html
+Official instruction pages ───────┐
+                                  │ provenance gate
+Community LDD model ── candidate ─┤
+                                  ▼
+BrickLink inventory ───────► 420 deterministic slots
+                                  │
+                         ┌────────┼────────┐
+                         ▼        ▼        ▼
+                  instruction  positioned  unpositioned
+                     exact     reconstruction
+                         │
+                         ▼
+                  CI + Exact Twin dashboard
 ```
-
-The source index in `data/5986-instruction-sources.json` records the official LEGO manual/PDF, the 44-page image mirror, captured pages and the provenance rules used during transcription.
 
 ## Run locally
 
@@ -75,12 +90,16 @@ Then open `http://localhost:8000`.
 npm run check
 ```
 
-The check now validates JavaScript syntax, inventory limits, assembly coverage, unique part ids, transform shape, the 420-slot ledger and the exact-transform count.
-
-To generate a full JSON ledger locally:
+Generate the full transform ledger:
 
 ```bash
 npm run ledger
+```
+
+Generate the 44-page provenance ledger:
+
+```bash
+npm run page-ledger
 ```
 
 ## Architecture
@@ -97,16 +116,19 @@ src/
 data/
   5986.json                       scenario metadata / coverage
   5986-model.json                 model manifest and exact-completion policy
-  5986-instruction-sources.json   manual provenance index
+  5986-instruction-sources.json   manual + LDD provenance index
   5986-parts-*.json               positioned regular-part chunks
   5986-inventory.csv              420-part inventory boundary
 scripts/
   validate-model.mjs              inventory + assembly validation
-  transform-ledger.mjs            deterministic 420-slot exact-transform ledger
+  transform-ledger.mjs            deterministic 420-slot transform ledger
+  page-ledger.mjs                 44-page provenance ledger
+  source-integrity.mjs            prevents CAD-only exact promotion
+  ldd-import.mjs                  optional LXF/LXFML candidate importer
 ```
 
 ## Sources and provenance
 
-The transform source of truth is the LEGO building instruction sequence. BrickLink's inventory is used to define the 420 regular-part ledger and to prevent part/color overuse. Published headline piece totals differ across databases, so those totals are not used to infer transforms.
+The transform source of truth is the LEGO building-instruction sequence. The inventory is used to define the 420 regular-part ledger and prevent part/color overuse. The community LDD model is only a geometric cross-check. Published headline piece totals differ across databases, so those totals are not used to infer transforms.
 
 This is a fan-made simulation prototype and is not affiliated with or endorsed by the LEGO Group.
