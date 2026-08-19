@@ -9,6 +9,7 @@ const missingEl = document.querySelector('#missing');
 const validationEl = document.querySelector('#validation');
 const sourcesEl = document.querySelector('#sources');
 const pagesEl = document.querySelector('#pages');
+const pageGridEl = document.querySelector('#pageGrid');
 
 const key = (partNo, color) => `${partNo}|${color}`;
 const instructionPage = verification => {
@@ -37,13 +38,16 @@ async function boot() {
 
   const available = new Map(inventory.map(row => [key(row.partNo, row.color), row.qty]));
   const used = new Map();
-  const exactPages = new Set();
+  const exactPages = new Map();
   let exact = 0;
   for (const part of parts) {
     const k = key(part.partNo, part.color);
     used.set(k, (used.get(k) ?? 0) + 1);
     const page = instructionPage(part.verification);
-    if (page != null) { exact += 1; exactPages.add(page); }
+    if (page != null) {
+      exact += 1;
+      exactPages.set(page, (exactPages.get(page) ?? 0) + 1);
+    }
   }
 
   const total = [...available.values()].reduce((a, b) => a + b, 0);
@@ -79,8 +83,33 @@ async function boot() {
   addSource(sourceIndex.geometryCrosscheck?.forum, 'LDD cross-check notes');
   addSource(sourceIndex.geometryCrosscheck?.file, 'LDD model file');
 
+  const capturedByPage = new Map(sourceIndex.capturedPages.map(row => [Number(row.page), row]));
   const lddRule = sourceIndex.geometryCrosscheck?.policy ? ' LDD matrices are candidate geometry only and cannot promote exact coverage by themselves.' : '';
-  pagesEl.textContent = `${sourceIndex.capturedPages.length}/${sourceIndex.manualPages} manual pages captured · ${exactPages.size} pages currently contribute exact transforms.${lddRule}`;
+  pagesEl.textContent = `${capturedByPage.size}/${sourceIndex.manualPages} manual pages captured · ${exactPages.size} pages currently contribute exact transforms.${lddRule}`;
+
+  pageGridEl.replaceChildren();
+  for (let page = 1; page <= sourceIndex.manualPages; page += 1) {
+    const captured = capturedByPage.get(page);
+    const exactCount = exactPages.get(page) ?? 0;
+    const cell = document.createElement(captured?.image ? 'a' : 'div');
+    cell.className = `page-cell${captured ? ' captured' : ''}${exactCount ? ' exact' : ''}`;
+    if (captured?.image) {
+      cell.href = captured.image;
+      cell.target = '_blank';
+      cell.rel = 'noreferrer';
+      cell.title = captured.content ?? `Manual page ${page}`;
+    } else {
+      cell.title = `Manual page ${page}: unresolved`;
+    }
+    const number = document.createElement('span');
+    number.className = 'page-no';
+    number.textContent = String(page).padStart(2, '0');
+    const count = document.createElement('span');
+    count.className = 'page-count';
+    count.textContent = exactCount ? `${exactCount} exact` : captured ? 'captured' : '—';
+    cell.append(number, count);
+    pageGridEl.append(cell);
+  }
 
   const errors = [];
   if (total !== 420) errors.push(`Inventory expands to ${total}, expected 420 regular parts.`);
