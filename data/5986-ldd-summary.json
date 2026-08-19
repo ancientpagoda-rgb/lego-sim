@@ -3,13 +3,20 @@
   "sourceType": "LEGO Digital Designer LXF cross-check",
   "exactAuthority": false,
   "brickPartRecords": 969,
-  "recordsWithTransforms": 0,
+  "boneTagsFound": 969,
+  "transformationAttributesFound": 969,
+  "recordsWithTransforms": 969,
+  "transformSources": {
+    "bone": 969,
+    "part": 0,
+    "brick": 0
+  },
   "recordsMatchingInventoryDesign": 497,
-  "recordsWithKnownMaterial": 808,
-  "inventoryUnitsRepresented": 226,
-  "inventoryKeysRepresented": 99,
+  "recordsWithKnownMaterial": 825,
+  "inventoryUnitsRepresented": 241,
+  "inventoryKeysRepresented": 102,
   "inventoryRegularPartTarget": 420,
-  "overflowAgainstInventory": 582,
+  "overflowAgainstInventory": 584,
   "unmatchedDesignCount": 46,
   "unmatchedDesigns": [
     "2748",
@@ -64,10 +71,7 @@
     "25",
     "27",
     "309",
-    "310",
-    "41",
-    "44",
-    "47"
+    "310"
   ],
   "retainedData": "summary counts only; the third-party LXF and its full transform matrix list are not committed by the cross-check workflow",
   "policy": "Imported LDD poses are geometry candidates only. They do not count as instruction-exact without a captured manual-page provenance tag."
