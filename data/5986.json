@@ -16,7 +16,7 @@
     "unpositionedInventorySlots": 236,
     "exactTransformsRemaining": 388,
     "manualPages": 44,
-    "capturedManualPages": 8,
+    "capturedManualPages": 9,
     "manualPagesContributingExactTransforms": 4,
     "bulkCadImporterReady": true,
     "bulkCadCandidatesImported": false,
@@ -27,6 +27,7 @@
   "notes": [
     "V0.5 adds an LXF/LXFML bulk transform importer so the community LDD reconstruction can be reconciled against the 420-slot inventory without hand-entering every CAD matrix.",
     "CAD candidates remain non-authoritative until corroborated by captured instruction pages; CI explicitly rejects digital-model-only exact verification.",
+    "Manual page 24 is now captured as a pending temple-completion source but contributes no exact transforms until its local poses are resolved.",
     "Pages 7-8 lock the expedition car chassis, two tan pinned axle plates, four wheel hubs, two smaller front tires and two larger rear tires as instruction-derived transforms.",
     "Pages 28 and 30 provide the current bridge-gateway exact transforms.",
     "CI validates the 420-part transform ledger, 44-page provenance ledger, inventory usage and source-integrity rules.",
