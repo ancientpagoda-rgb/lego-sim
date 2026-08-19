@@ -1,7 +1,7 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "coordinateSystem": "x/z in LEGO stud pitches; y is bottom elevation; one brick = 1.2 units; one plate = 0.4 units",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
@@ -9,7 +9,8 @@
     "instructionIndex": "./5986-instruction-sources.json",
     "inventory": "https://www.bricklink.com/catalogItemInv.asp?S=5986-1",
     "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins",
-    "geometryCrosscheck": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf"
+    "geometryCrosscheck": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf",
+    "geometryCrosscheckSummary": "./5986-ldd-summary.json"
   },
   "transformGoal": {
     "regularParts": 420,
@@ -26,7 +27,7 @@
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
     "A community LDD 4.3.8 reconstruction by penguinz is retained only as a geometry cross-check; it substitutes the Sun Disc and raised baseplate and lacks correct decorations.",
-    "V0.5 adds a bulk LXF/LXFML importer that extracts raw CAD matrices and converts translations to LEGO-stud units for candidate reconciliation.",
+    "The LDD importer now parses all 969 source transformation matrices and a workflow persists only safe reconciliation counts: 241 inventory units across 102 part/color keys currently overlap the 420-part ledger.",
     "Imported CAD candidates cannot increase the instruction-exact count; source-integrity CI enforces that rule.",
     "Main temple, trap platform, boat and the remainder of the car remain inventory-bounded reconstructions until their instruction pages are transcribed.",
     "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
