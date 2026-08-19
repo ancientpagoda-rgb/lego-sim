@@ -1,8 +1,8 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.5.1",
-  "coordinateSystem": "x/z in LEGO stud pitches; y is bottom elevation; one brick = 1.2 units; one plate = 0.4 units",
+  "version": "0.5.2",
+  "coordinateSystem": "presentation x/z in LEGO stud pitches; exact instruction transforms may use local subassembly coordinates or LDD stud-normalized coordinates when manual-corroborated",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
     "officialPdf": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/4124784.pdf",
@@ -15,7 +15,7 @@
   "transformGoal": {
     "regularParts": 420,
     "manualPages": 44,
-    "completionRule": "420/420 regular inventory slots must have instruction-page provenance and exact position/orientation transforms",
+    "completionRule": "420/420 regular inventory slots must have manual-page provenance plus an explicit instructionTransform carrying position and orientation",
     "photoAlignedTransformsAreExact": false,
     "digitalModelTransformsAreExactWithoutManual": false,
     "ledgerScript": "scripts/transform-ledger.mjs",
@@ -26,10 +26,10 @@
   "sourceNotes": [
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
-    "A community LDD 4.3.8 reconstruction by penguinz is retained only as a geometry cross-check; it substitutes the Sun Disc and raised baseplate and lacks correct decorations.",
-    "The LDD importer now parses all 969 source transformation matrices and a workflow persists only safe reconciliation counts: 241 inventory units across 102 part/color keys currently overlap the 420-part ledger.",
-    "Imported CAD candidates cannot increase the instruction-exact count; source-integrity CI enforces that rule.",
-    "Main temple, trap platform, boat and the remainder of the car remain inventory-bounded reconstructions until their instruction pages are transcribed.",
+    "Page 22 now contributes the Light Gray 30104 chain: the manual identifies the chain step, BrickLink inventory supplies the one occurrence, and LDD alternate design 60169/material 2 supplies a unique corroborating matrix.",
+    "A community LDD 4.3.8 reconstruction by penguinz remains a geometry cross-check; its known raised-baseplate, Sun Disc and decoration substitutions remain non-authoritative.",
+    "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys.",
+    "Imported CAD candidates cannot increase the instruction-exact count without matching manual provenance.",
     "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
   ],
   "simulation": {
@@ -43,6 +43,7 @@
     "./5986-parts-3.json",
     "./5986-parts-4.json",
     "./5986-parts-5.json",
-    "./5986-parts-6.json"
+    "./5986-parts-6.json",
+    "./5986-parts-7.json"
   ]
 }
