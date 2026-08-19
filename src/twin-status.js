@@ -34,14 +34,17 @@ async function loadOptionalJSON(url) {
 }
 
 async function boot() {
-  const [manifest, sourceIndex, inventoryText, cadSummary] = await Promise.all([
+  const [manifest, sourceIndex, inventoryText, cadSummary, exclusions] = await Promise.all([
     loadJSON('./data/5986-model.json'),
     loadJSON('./data/5986-instruction-sources.json'),
     fetch('./data/5986-inventory.csv').then(r => { if (!r.ok) throw new Error(`inventory: ${r.status}`); return r.text(); }),
     loadOptionalJSON('./data/5986-ldd-summary.json'),
+    loadOptionalJSON('./data/5986-ledger-exclusions.json'),
   ]);
 
-  const parts = (await Promise.all((manifest.partFiles ?? []).map(path => loadJSON(`./data/${path.replace('./', '')}`)))).flat();
+  const renderedParts = (await Promise.all((manifest.partFiles ?? []).map(path => loadJSON(`./data/${path.replace('./', '')}`)))).flat();
+  const excludedIds = new Set((exclusions?.items ?? []).map(item => item.id));
+  const parts = renderedParts.filter(part => !excludedIds.has(part.id));
   const inventory = inventoryText.trim().split(/\r?\n/).slice(1).map(line => {
     const [partNo, color, qty] = line.split(',');
     return { partNo, color, qty: Number(qty) };
@@ -66,6 +69,7 @@ async function boot() {
   const reconstructed = positioned - exact;
   const unpositioned = total - positioned;
   const cadMatched = cadSummary?.inventoryUnitsRepresented ?? 0;
+  const visualPlaceholders = renderedParts.length - positioned;
 
   exactEl.textContent = exact;
   positionedEl.textContent = positioned;
@@ -75,12 +79,12 @@ async function boot() {
   exactBar.style.width = `${exact / total * 100}%`;
   positionedBar.style.width = `${positioned / total * 100}%`;
   cadBar.style.width = `${cadMatched / total * 100}%`;
-  subtitle.textContent = `${exact} exact transforms locked · ${total - exact} exact transforms remaining · bulk solver active`;
+  subtitle.textContent = `${exact} exact transforms locked · ${total - exact} exact transforms remaining · ${visualPlaceholders} visual-only placeholder${visualPlaceholders === 1 ? '' : 's'}`;
 
   if (cadSummary) {
-    cadDetailsEl.textContent = `${cadMatched}/${total} inventory units reconcile by LDD design + mapped color; ${cadSummary.recordsWithTransforms}/${cadSummary.brickPartRecords} LDD records contain usable matrices across ${cadSummary.inventoryKeysRepresented} inventory part/color keys. This is candidate geometry only and contributes 0 parts to the instruction-exact total.`;
+    cadDetailsEl.textContent = `${cadMatched}/${total} inventory units reconcile by LDD design + mapped color; ${cadSummary.recordsWithTransforms}/${cadSummary.brickPartRecords} LDD records contain usable matrices across ${cadSummary.inventoryKeysRepresented} inventory part/color keys. This is candidate geometry only and contributes 0 parts to the instruction-exact total. ${visualPlaceholders} disproven presentation placeholder${visualPlaceholders === 1 ? ' is' : 's are'} rendered but excluded from inventory coverage.`;
   } else {
-    cadDetailsEl.textContent = 'No persisted LDD reconciliation summary yet. CAD geometry never increases the instruction-exact total by itself.';
+    cadDetailsEl.textContent = `No persisted LDD reconciliation summary yet. CAD geometry never increases the instruction-exact total by itself. ${visualPlaceholders} visual placeholder${visualPlaceholders === 1 ? ' is' : 's are'} excluded from the ledger.`;
   }
 
   const missing = [];
@@ -130,7 +134,13 @@ async function boot() {
   const errors = [];
   if (total !== 420) errors.push(`Inventory expands to ${total}, expected 420 regular parts.`);
   for (const [k, qty] of used) if (qty > (available.get(k) ?? 0)) errors.push(`${k}: positioned ${qty}, inventory ${(available.get(k) ?? 0)}`);
-  if (new Set(parts.map(p => p.id)).size !== parts.length) errors.push('Duplicate positioned part ids detected.');
+  if (new Set(renderedParts.map(p => p.id)).size !== renderedParts.length) errors.push('Duplicate rendered part ids detected.');
+  for (const item of exclusions?.items ?? []) {
+    const part = renderedParts.find(candidate => candidate.id === item.id);
+    if (!part) errors.push(`Ledger exclusion references missing visual part ${item.id}.`);
+    if (!item.reason) errors.push(`Ledger exclusion ${item.id} has no reason.`);
+    if (part && instructionPage(part.verification) != null) errors.push(`${item.id}: exact part cannot be excluded from inventory coverage.`);
+  }
   const captured = new Set(sourceIndex.capturedPages.map(row => Number(row.page)));
   for (const part of parts) {
     const page = instructionPage(part.verification);
@@ -144,7 +154,7 @@ async function boot() {
   if (cadSummary && cadSummary.recordsWithTransforms < 1) errors.push('LDD cross-check contains no usable transforms.');
 
   validationEl.className = errors.length ? 'error' : 'ok';
-  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} positioned instances, ${exactPages.size} exact-source pages, ${cadMatched} CAD-matched inventory candidates, explicit local transforms on every exact part, no part/color overuse.`;
+  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} ledger-positioned instances, ${exactPages.size} exact-source pages, ${cadMatched} CAD-matched inventory candidates, ${visualPlaceholders} visual placeholders excluded, explicit local transforms on every exact part, no part/color overuse.`;
 }
 
 boot().catch(error => {
