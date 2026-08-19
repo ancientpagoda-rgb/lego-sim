@@ -1,0 +1,19 @@
+{
+  "id": "5986-1",
+  "name": "Amazon Ancient Ruins",
+  "theme": "Adventurers / Jungle",
+  "year": 1999,
+  "status": "prototype reconstruction",
+  "baseplateStuds": [32, 48],
+  "notes": [
+    "V1 is a procedural playable approximation of the set layout.",
+    "Exact 458-piece reconstruction should replace procedural structures with inventory/instruction-derived transforms.",
+    "World-space convention: one unit equals one LEGO stud pitch."
+  ],
+  "simulation": {
+    "gravity": 18,
+    "waterLevel": 0.08,
+    "connectionBreakImpulse": 3.4,
+    "agentSpeed": 1.35
+  }
+}
