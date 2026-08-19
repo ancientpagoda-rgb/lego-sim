@@ -9,9 +9,15 @@ if (sources.geometryCrosscheck?.policy?.toLowerCase().includes('never counts') !
 for (const part of parts) {
   const verification = String(part.verification ?? '');
   if (/^(?:ldd|digital-model)/i.test(verification)) errors.push(`${part.id}: digital-model provenance cannot be used as an exact verification prefix`);
-  if (/^(?:manual|instruction)-page-/i.test(verification) && !part.instructionTransform) {
-    errors.push(`${part.id}: instruction-exact part missing instructionTransform`);
-  }
+  if (/^(?:manual|instruction)-page-/i.test(verification) && !part.instructionTransform) errors.push(`${part.id}: instruction-exact part missing instructionTransform`);
+}
+const summaryUrl = new URL('data/5986-ldd-summary.json', root);
+if (fs.existsSync(summaryUrl)) {
+  const summary = JSON.parse(fs.readFileSync(summaryUrl, 'utf8'));
+  if (summary.exactAuthority !== false) errors.push('persisted LDD summary must declare exactAuthority=false');
+  if ((summary.recordsWithTransforms ?? 0) < 1) errors.push('persisted LDD summary has no parsed transforms');
+  if (summary.inventoryRegularPartTarget !== 420) errors.push(`persisted LDD summary target must be 420, got ${summary.inventoryRegularPartTarget}`);
+  if (!String(summary.retainedData ?? '').includes('summary counts only')) errors.push('persisted LDD data must be summary counts only');
 }
 if (errors.length) {
   console.error('5986 source-integrity validation failed:\n' + errors.join('\n'));
