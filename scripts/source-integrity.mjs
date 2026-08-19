@@ -3,11 +3,22 @@ const root = new URL('../', import.meta.url);
 const sources = JSON.parse(fs.readFileSync(new URL('data/5986-instruction-sources.json', root), 'utf8'));
 const manifest = JSON.parse(fs.readFileSync(new URL('data/5986-model.json', root), 'utf8'));
 const parts = (manifest.partFiles ?? []).flatMap(rel => JSON.parse(fs.readFileSync(new URL(`data/${rel.replace('./', '')}`, root), 'utf8')));
+const exclusionsUrl = new URL('data/5986-ledger-exclusions.json', root);
+const exclusions = fs.existsSync(exclusionsUrl) ? JSON.parse(fs.readFileSync(exclusionsUrl, 'utf8')) : { items: [] };
+const excludedIds = new Set((exclusions.items ?? []).map(item => item.id));
+const partById = new Map(parts.map(part => [part.id, part]));
 const errors = [];
 const finiteVector = (value, length) => Array.isArray(value) && value.length === length && value.every(Number.isFinite);
 
 if (!sources.geometryCrosscheck?.file) errors.push('missing geometryCrosscheck.file');
 if (sources.geometryCrosscheck?.policy?.toLowerCase().includes('never counts') !== true) errors.push('geometry cross-check policy must explicitly prevent automatic exact promotion');
+
+for (const item of exclusions.items ?? []) {
+  const part = partById.get(item.id);
+  if (!part) errors.push(`ledger exclusion references missing visual part: ${item.id}`);
+  if (!item.reason) errors.push(`ledger exclusion missing reason: ${item.id}`);
+  if (part && /^(?:manual|instruction)-page-/i.test(String(part.verification ?? ''))) errors.push(`${item.id}: instruction-exact part cannot be excluded from the 420-part ledger`);
+}
 
 for (const part of parts) {
   const verification = String(part.verification ?? '');
@@ -36,4 +47,4 @@ if (errors.length) {
   console.error('5986 source-integrity validation failed:\n' + errors.join('\n'));
   process.exit(1);
 }
-console.log(`5986 source integrity OK: ${parts.length} positioned parts; manual provenance gates exact transforms and CAD remains cross-check only.`);
+console.log(`5986 source integrity OK: ${parts.length - excludedIds.size} ledger-positioned parts, ${excludedIds.size} visual placeholders excluded; manual provenance gates exact transforms and CAD remains cross-check only.`);
