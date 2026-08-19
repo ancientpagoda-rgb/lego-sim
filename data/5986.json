@@ -3,7 +3,7 @@
   "name": "Amazon Ancient Ruins",
   "theme": "Adventurers / Jungle",
   "year": 1999,
-  "status": "v0.4 exact digital-twin transcription phase",
+  "status": "v0.4.2 exact digital-twin transcription phase",
   "baseplateStuds": [32, 48],
   "model": "./5986-model.json",
   "inventory": "./5986-inventory.csv",
@@ -15,16 +15,20 @@
     "positionedReconstructionTransforms": 152,
     "unpositionedInventorySlots": 236,
     "exactTransformsRemaining": 388,
+    "manualPages": 44,
+    "capturedManualPages": 8,
+    "manualPagesContributingExactTransforms": 4,
     "minifiguresRendered": 8,
     "majorAssembliesRendered": ["main temple", "bridge gateway", "trap platform", "boat", "off-road car"],
     "playFeaturesRendered": ["collapsing bridge", "trapdoor", "spider web"]
   },
   "notes": [
     "V0.4 defines completion as 420/420 regular-part inventory slots carrying instruction-page provenance plus exact position and orientation transforms.",
-    "Pages 7-8 now lock the expedition car chassis, two tan pinned axle plates, four wheel hubs, two smaller front tires and two larger rear tires as instruction-derived transforms.",
-    "The black 2x10 plate previously used as a boat photo-proxy was corrected to the car chassis so the inventory ledger no longer double-spends that occurrence.",
+    "Pages 7-8 lock the expedition car chassis, two tan pinned axle plates, four wheel hubs, two smaller front tires and two larger rear tires as instruction-derived transforms.",
+    "Pages 28 and 30 provide the current bridge-gateway exact transforms.",
+    "A community LDD 4.3.8 reconstruction is now recorded as a secondary geometry cross-check only; it cannot increase the instruction-exact count without matching captured manual pages.",
+    "CI now validates both the 420-part transform ledger and a 44-page provenance ledger.",
     "The complete V0.3 scene remains available while exact instruction-derived transforms replace reconstructed placements in build order.",
-    "The transform ledger is deterministic and CI-validated, so exact progress is measurable rather than visual-only.",
     "World-space convention: one unit equals one LEGO stud pitch."
   ],
   "simulation": {
