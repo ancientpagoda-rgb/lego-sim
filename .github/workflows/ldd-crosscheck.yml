@@ -6,8 +6,11 @@ on:
     paths:
       - ".github/workflows/ldd-crosscheck.yml"
       - "scripts/ldd-import.mjs"
+      - "scripts/ldd-reconcile.mjs"
       - "data/5986-instruction-sources.json"
       - "data/5986-inventory.csv"
+      - "data/5986-model.json"
+      - "data/5986-parts-*.json"
   workflow_dispatch:
 
 permissions:
@@ -29,7 +32,9 @@ jobs:
         run: curl --fail --location --retry 3 --output /tmp/5986.lxf https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf
       - name: Parse geometry candidates and safe summary
         run: node scripts/ldd-import.mjs /tmp/5986.lxf --write --summary-out data/5986-ldd-summary.json
-      - name: Upload transient transform candidates
+      - name: Reconcile candidates to current model
+        run: node scripts/ldd-reconcile.mjs data/5986-ldd-candidates.json --out data/5986-ldd-model-matches.json
+      - name: Upload transient full transform candidates
         uses: actions/upload-artifact@v4
         with:
           name: 5986-ldd-candidates
@@ -37,16 +42,16 @@ jobs:
           retention-days: 1
       - name: Confirm source-integrity rules
         run: node scripts/source-integrity.mjs
-      - name: Commit summary counts only
+      - name: Commit safe reconciliation outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/5986-ldd-summary.json
+          git add data/5986-ldd-summary.json data/5986-ldd-model-matches.json
           if git diff --cached --quiet; then
-            echo "LDD reconciliation summary unchanged"
+            echo "LDD reconciliation outputs unchanged"
             exit 0
           fi
-          git commit -m "Update LDD cross-check summary"
+          git commit -m "Update LDD model reconciliation"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
