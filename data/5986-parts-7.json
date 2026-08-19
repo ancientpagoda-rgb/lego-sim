@@ -1,0 +1,29 @@
+[
+  {
+    "id": "temple-chain-30104",
+    "partNo": "30104",
+    "color": "Light Gray",
+    "position": [9, 13.6, -1.5],
+    "verification": "instruction-page-22-step-12",
+    "assembly": "main-temple",
+    "shape": "chain",
+    "size": [0.25, 4.8, 0.25],
+    "studs": false,
+    "instructionTransform": {
+      "page": 22,
+      "step": 12,
+      "parent": "ldd-set-origin",
+      "position": [21.499993801116943, 26.278223991394043, -2.7474814653396606],
+      "rotationMatrix3": [0.7545786499977112, 0.6562096476554871, 0, 0, 0, -1, -0.6562096476554871, 0.7545786499977112, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "847",
+      "lddDesignID": "60169",
+      "inventoryAlias": "60169 -> 30104",
+      "lddMaterialId": "2",
+      "inventoryColorMapping": "LDD Grey 2 -> BrickLink Light Gray"
+    }
+  }
+]
