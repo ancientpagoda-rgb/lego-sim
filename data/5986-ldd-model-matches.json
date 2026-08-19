@@ -2,7 +2,7 @@
   "summary": {
     "source": "temporary LDD candidate artifact reconciled to the current model",
     "exactAuthority": false,
-    "currentPositionedParts": 187,
+    "currentPositionedParts": 191,
     "cadCandidateRecords": 969,
     "uniqueAnchorPairs": 15,
     "fit": {
@@ -17,11 +17,11 @@
       "score": 13.937759209144243,
       "anchorCount": 15
     },
-    "matchedCurrentParts": 156,
+    "matchedCurrentParts": 158,
     "within1Stud": 0,
     "within2Studs": 0,
     "within4Studs": 7,
-    "templeMatches": 88,
+    "templeMatches": 90,
     "policy": "These are non-authoritative geometry candidates. A match cannot become instruction-exact without captured manual-page provenance and an explicit instructionTransform."
   },
   "matches": [
@@ -1235,6 +1235,37 @@
       ]
     },
     {
+      "modelPartId": "temple-roof-blue-slope-b",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "instruction-page-24-visible",
+      "lddRef": "390",
+      "lddDesignID": "3039",
+      "residualStuds": 10.838,
+      "alignedCandidatePosition": [
+        21,
+        15.2106,
+        0.2
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        20.6532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
       "modelPartId": "temple-red-plate-4",
       "assembly": "main-temple",
       "partNo": "3022",
@@ -1700,37 +1731,6 @@
       ]
     },
     {
-      "modelPartId": "temple-blue-slope-4",
-      "assembly": "main-temple",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "390",
-      "lddDesignID": "3039",
-      "residualStuds": 12.583,
-      "alignedCandidatePosition": [
-        21,
-        15.2106,
-        0.2
-      ],
-      "rawCandidateTranslationStud": [
-        22.5,
-        20.6532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
       "modelPartId": "pickaxe-2",
       "assembly": "accessories",
       "partNo": "3841",
@@ -1759,6 +1759,37 @@
         0,
         0,
         1
+      ]
+    },
+    {
+      "modelPartId": "temple-blue-slope-4",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "416",
+      "lddDesignID": "3039",
+      "residualStuds": 12.783,
+      "alignedCandidatePosition": [
+        20,
+        2.4106,
+        3.2
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        7.8532,
+        3.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
       ]
     },
     {
@@ -2413,6 +2444,37 @@
       ]
     },
     {
+      "modelPartId": "temple-roof-blue-slope-a",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "instruction-page-24-visible",
+      "lddRef": "519",
+      "lddDesignID": "3039",
+      "residualStuds": 16.089,
+      "alignedCandidatePosition": [
+        22,
+        15.2106,
+        -8.8
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        20.6532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
       "modelPartId": "gate-red-lower-a",
       "assembly": "bridge-gateway",
       "partNo": "3020",
@@ -2565,37 +2627,6 @@
         0,
         0,
         1
-      ]
-    },
-    {
-      "modelPartId": "temple-blue-slope-3",
-      "assembly": "main-temple",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "416",
-      "lddDesignID": "3039",
-      "residualStuds": 17.188,
-      "alignedCandidatePosition": [
-        20,
-        2.4106,
-        3.2
-      ],
-      "rawCandidateTranslationStud": [
-        21.5,
-        7.8532,
-        3.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
       ]
     },
     {
@@ -3622,6 +3653,37 @@
       ]
     },
     {
+      "modelPartId": "temple-blue-slope-3",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "434",
+      "lddDesignID": "3039",
+      "residualStuds": 24.607,
+      "alignedCandidatePosition": [
+        22,
+        26.4106,
+        -2.8
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        31.8532,
+        -2.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
       "modelPartId": "car-body-9",
       "assembly": "car",
       "partNo": "3022",
@@ -4273,37 +4335,6 @@
       ]
     },
     {
-      "modelPartId": "gate-blue-slope-b1",
-      "assembly": "bridge-gateway",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "manual-page-28-step-3",
-      "lddRef": "519",
-      "lddDesignID": "3039",
-      "residualStuds": 31.435,
-      "alignedCandidatePosition": [
-        22,
-        15.2106,
-        -8.8
-      ],
-      "rawCandidateTranslationStud": [
-        23.5,
-        20.6532,
-        -8.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
       "modelPartId": "car-wheel-2",
       "assembly": "car",
       "partNo": "30155",
@@ -4569,6 +4600,37 @@
         16.5,
         14.2532,
         -15.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-slope-b1",
+      "assembly": "bridge-gateway",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "manual-page-28-step-3",
+      "lddRef": "432",
+      "lddDesignID": "3039",
+      "residualStuds": 35.508,
+      "alignedCandidatePosition": [
+        21,
+        26.4106,
+        -5.8
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        31.8532,
+        -5.5
       ],
       "rawCandidateMatrix3": [
         1,
