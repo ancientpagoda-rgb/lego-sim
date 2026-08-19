@@ -50,12 +50,13 @@ function firstMaterial(value = '') {
 
 const materialNames = new Map([
   ['1', 'White'], ['5', 'Tan'], ['21', 'Red'], ['23', 'Blue'], ['24', 'Yellow'], ['26', 'Black'],
-  ['28', 'Green'], ['37', 'Green'], ['40', 'Trans-Clear'], ['106', 'Trans-Neon Orange'],
-  ['194', 'Light Gray'], ['199', 'Dark Gray'], ['192', 'Brown'], ['308', 'Brown'],
+  ['28', 'Green'], ['37', 'Green'], ['40', 'Trans-Clear'], ['41', 'Trans-Red'], ['44', 'Trans-Yellow'],
+  ['47', 'Trans-Neon Orange'], ['106', 'Trans-Neon Orange'], ['194', 'Light Gray'], ['199', 'Dark Gray'],
+  ['192', 'Brown'], ['308', 'Brown'],
 ]);
 
 function parseTransform(raw = '') {
-  const n = raw.split(',').map(Number);
+  const n = String(raw).split(',').map(Number);
   if (n.length !== 12 || n.some(v => !Number.isFinite(v))) return null;
   return {
     matrix3: n.slice(0, 9),
@@ -76,19 +77,24 @@ for (const brickMatch of brickBlocks) {
     const partBlock = partMatch[0];
     const partTag = partBlock.match(/<Part\b[^>]*>/)?.[0] ?? partBlock.match(/<Part\b[^>]*\/>/)?.[0] ?? '';
     const partAttrs = attrs(partTag);
-    const boneTag = partBlock.match(/<Bone\b[^>]*\/>/)?.[0] ?? '';
+    const boneTag = partBlock.match(/<Bone\b[^>]*>/)?.[0] ?? '';
     const boneAttrs = attrs(boneTag);
     const designID = partAttrs.designID || brickAttrs.designID || null;
     const materialId = firstMaterial(partAttrs.materials || brickAttrs.materials);
     const normalizedDesign = baseDesign(designID);
     const materialName = materialNames.get(materialId) ?? null;
+    const transformationRaw = boneAttrs.transformation || partAttrs.transformation || brickAttrs.transformation || null;
+    const transformSource = boneAttrs.transformation ? 'bone' : partAttrs.transformation ? 'part' : brickAttrs.transformation ? 'brick' : null;
     parts.push({
       lddRef: partAttrs.refID || brickAttrs.refID || null,
       designID,
       normalizedDesign,
       materialId,
       materialName,
-      transform: parseTransform(boneAttrs.transformation),
+      transform: parseTransform(transformationRaw),
+      transformSource,
+      boneTagFound: Boolean(boneTag),
+      transformationAttributeFound: Boolean(transformationRaw),
       inventoryDesignCandidate: availableDesigns.has(normalizedDesign),
     });
   }
@@ -112,12 +118,16 @@ for (const [key, count] of lddKeyCounts) {
 
 const unmatchedDesigns = [...new Set(parts.filter(p => !p.inventoryDesignCandidate && p.normalizedDesign).map(p => p.normalizedDesign))].sort();
 const unknownMaterialIds = [...new Set(parts.filter(p => !p.materialName && p.materialId).map(p => p.materialId))].sort();
+const transformSources = Object.fromEntries(['bone', 'part', 'brick'].map(source => [source, parts.filter(p => p.transformSource === source).length]));
 const summary = {
   sourceFile: path.basename(input),
   sourceType: 'LEGO Digital Designer LXF cross-check',
   exactAuthority: false,
   brickPartRecords: parts.length,
+  boneTagsFound: parts.filter(p => p.boneTagFound).length,
+  transformationAttributesFound: parts.filter(p => p.transformationAttributeFound).length,
   recordsWithTransforms: parts.filter(p => p.transform).length,
+  transformSources,
   recordsMatchingInventoryDesign: parts.filter(p => p.inventoryDesignCandidate).length,
   recordsWithKnownMaterial: parts.filter(p => p.materialName).length,
   inventoryUnitsRepresented,
