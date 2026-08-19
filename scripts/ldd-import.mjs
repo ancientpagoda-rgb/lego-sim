@@ -53,8 +53,8 @@ function firstMaterial(value = '') {
 }
 
 const materialNames = new Map([
-  ['1', 'White'], ['5', 'Tan'], ['21', 'Red'], ['23', 'Blue'], ['24', 'Yellow'], ['26', 'Black'],
-  ['28', 'Green'], ['37', 'Green'], ['40', 'Trans-Clear'], ['41', 'Trans-Red'], ['44', 'Trans-Yellow'],
+  ['1', 'White'], ['2', 'Light Gray'], ['5', 'Tan'], ['21', 'Red'], ['23', 'Blue'], ['24', 'Yellow'], ['26', 'Black'],
+  ['27', 'Dark Gray'], ['28', 'Green'], ['37', 'Green'], ['40', 'Trans-Clear'], ['41', 'Trans-Red'], ['44', 'Trans-Yellow'],
   ['47', 'Trans-Neon Orange'], ['106', 'Trans-Neon Orange'], ['194', 'Light Gray'], ['199', 'Dark Gray'],
   ['192', 'Brown'], ['308', 'Brown'],
 ]);
@@ -142,6 +142,7 @@ const summary = {
   unmatchedDesigns: unmatchedDesigns.slice(0, 80),
   unknownMaterialIds,
   designAliasesApplied: Object.fromEntries(DESIGN_ALIASES),
+  legacyMaterialMappingsApplied: { '2':'Light Gray', '27':'Dark Gray' },
   retainedData: 'summary counts only; the third-party LXF and its full transform matrix list are not committed by the cross-check workflow',
   policy: 'Imported LDD poses are geometry candidates only. They do not count as instruction-exact without a captured manual-page provenance tag.',
 };
