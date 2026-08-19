@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#101510" />
+  <title>5986 Digital Twin — Transform Ledger</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#101510;color:#f4f1df}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 10%,#31452f,#101510 58%);min-height:100vh}.wrap{width:min(980px,calc(100% - 28px));margin:auto;padding:28px 0 60px}a{color:#f1cf67}.top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}.eyebrow{font-size:11px;letter-spacing:.17em;opacity:.62}h1{margin:5px 0 8px;font-size:clamp(28px,6vw,52px);line-height:.95}p{line-height:1.5;opacity:.78}.back{border:1px solid #ffffff24;border-radius:12px;padding:9px 12px;text-decoration:none;background:#ffffff0d}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.card,.panel{border:1px solid #ffffff20;background:#0c110ccc;border-radius:17px;padding:16px;box-shadow:0 18px 60px #0005}.big{font-size:32px;font-weight:850;letter-spacing:-.04em}.label{font-size:11px;opacity:.58;margin-top:2px}.bar{height:11px;background:#ffffff12;border-radius:999px;overflow:hidden;margin:11px 0 4px}.fill{height:100%;background:#e1b63d;border-radius:inherit}.fill.positioned{background:#789c77}.panel{margin-top:12px}.panel h2{font-size:17px;margin:0 0 10px}.muted{font-size:12px;opacity:.58}.rows{display:grid;grid-template-columns:1fr auto;gap:7px 14px;font-size:13px}.source{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.source a{border:1px solid #ffffff1f;border-radius:10px;padding:7px 9px;text-decoration:none;font-size:12px}.missing{columns:3;column-gap:24px;font-size:12px;line-height:1.65}.missing div{break-inside:avoid}.exact-rule{border-left:3px solid #e1b63d;padding-left:12px}.error{color:#ffafa5}.ok{color:#b9dfad}@media(max-width:720px){.grid{grid-template-columns:repeat(2,1fr)}.missing{columns:1}.wrap{padding-top:16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top"><div><div class="eyebrow">LEGO SIM / 5986 / DIGITAL TWIN</div><h1>420-part transform ledger</h1><p id="subtitle">Loading exact-transform coverage…</p></div><a class="back" href="./">← Simulation</a></div>
+    <section class="grid">
+      <div class="card"><div class="big" id="exact">—</div><div class="label">instruction-exact / 420</div><div class="bar"><div class="fill" id="exactBar"></div></div></div>
+      <div class="card"><div class="big" id="positioned">—</div><div class="label">positioned / 420</div><div class="bar"><div class="fill positioned" id="positionedBar"></div></div></div>
+      <div class="card"><div class="big" id="reconstructed">—</div><div class="label">positioned, not yet exact</div></div>
+      <div class="card"><div class="big" id="unpositioned">—</div><div class="label">inventory slots not placed</div></div>
+    </section>
+    <section class="panel exact-rule"><h2>Definition of “done”</h2><p class="muted">A part only counts as exact when its part/color, stud-grid position (or local subassembly transform), orientation, attachment reference, and instruction page are all resolved. Photo-aligned reconstruction does not count.</p></section>
+    <section class="panel"><h2>Instruction sources</h2><div class="source" id="sources"></div><p class="muted" id="pages"></p></section>
+    <section class="panel"><h2>Inventory still missing from positioned model</h2><div id="missing" class="missing">Loading…</div></section>
+    <section class="panel"><h2>Validation</h2><div id="validation" class="muted">Checking…</div></section>
+  </main>
+  <script type="module" src="./src/twin-status.js"></script>
+</body>
+</html>
