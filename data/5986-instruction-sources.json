@@ -1,0 +1,32 @@
+{
+  "set": "5986-1",
+  "manualPages": 44,
+  "official": {
+    "productPage": "https://www.lego.com/service/building-instructions/5986",
+    "pdf": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/4124784.pdf",
+    "pdfAssetId": "4124784"
+  },
+  "mirror": {
+    "index": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins",
+    "imageTemplate": "https://lego.brickinstructions.com/instructions/05000/5986/{NNN}.jpg"
+  },
+  "capturedPages": [
+    { "page": 1, "image": "https://lego.brickinstructions.com/instructions/05000/5986/001.jpg", "content": "cover / complete-set reference" },
+    { "page": 4, "image": "https://lego.brickinstructions.com/instructions/05000/5986/004.jpg", "content": "minifigure, skeleton, crocodile and palm assemblies" },
+    { "page": 20, "image": "https://lego.brickinstructions.com/instructions/05000/5986/020.jpg", "content": "main raised-platform temple stage" },
+    { "page": 22, "image": "https://lego.brickinstructions.com/instructions/05000/5986/022.jpg", "content": "tower steps 9-12 and chain/crank subassembly" },
+    { "page": 28, "image": "https://lego.brickinstructions.com/instructions/05000/5986/028.jpg", "content": "gateway/bridge steps 1-6" },
+    { "page": 30, "image": "https://lego.brickinstructions.com/instructions/05000/5986/030.jpg", "content": "curved bridge attachment / gateway completion" }
+  ],
+  "transcriptionPolicy": {
+    "exactTransformRequires": [
+      "instruction page number",
+      "part number and color matched to inventory",
+      "stud-grid position or local subassembly transform",
+      "orientation",
+      "attachment to an already resolved parent/base reference"
+    ],
+    "verificationPrefix": "manual-page-N",
+    "photoAlignedTransformsCountAsExact": false
+  }
+}
