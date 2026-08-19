@@ -3,19 +3,27 @@
   "name": "Amazon Ancient Ruins",
   "theme": "Adventurers / Jungle",
   "year": 1999,
-  "status": "v0.2 structural reconstruction in progress",
+  "status": "v0.3 full-set scene / transform reconstruction in progress",
   "baseplateStuds": [32, 48],
   "model": "./5986-model.json",
   "inventory": "./5986-inventory.csv",
+  "coverage": {
+    "placedRegularParts": 179,
+    "regularInventoryParts": 420,
+    "minifiguresRendered": 8,
+    "majorAssembliesRendered": ["main temple", "bridge gateway", "trap platform", "boat", "off-road car"],
+    "playFeaturesRendered": ["collapsing bridge", "trapdoor", "spider web"]
+  },
   "notes": [
-    "V0.2 replaces hard-coded structure geometry with a data-driven positioned-part model.",
-    "Instruction-tied placements and temporary layout proxies are labeled separately in 5986-model.json.",
-    "Published sources disagree on the headline piece total; inventory data is used as a cross-check rather than a transform source.",
+    "V0.3 renders the complete set scene: both ruin areas, bridge, boat, car, all eight minifigures, animals, hazards, foliage and treasures.",
+    "179 regular LEGO part instances are individually positioned and checked against the 172-lot / 420-part BrickLink inventory snapshot.",
+    "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans; other assemblies are inventory-bounded, photo-aligned reconstructions while page-by-page transform transcription continues.",
+    "Published sources disagree on the headline piece total, so the repository preserves source provenance instead of forcing one total.",
     "World-space convention: one unit equals one LEGO stud pitch."
   ],
   "simulation": {
     "gravity": 18,
-    "waterLevel": 0.08,
+    "waterLevel": 0.22,
     "connectionBreakImpulse": 5.2,
     "agentSpeed": 1.35
   }
