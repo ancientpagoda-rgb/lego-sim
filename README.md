@@ -1,23 +1,38 @@
 # LEGO Sim — 5986 Amazon Ancient Ruins
 
-A browser-based LEGO-world simulation centered on Adventurers set **5986-1 Amazon Ancient Ruins**.
+Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## What works in V0.2
+## V0.3 — full-set scene
 
-- data-driven part placement from `data/5986-model.json`
-- a canonical regular-part inventory snapshot in `data/5986-inventory.csv`
-- validation that modeled part/color counts never exceed the inventory snapshot
-- reusable LEGO-scale brick/plate proxies with studs and color/material mapping
-- a structural connection graph inferred from vertical stud-overlap contact
-- support propagation: knock a connected piece free and unsupported components can fall
-- first instruction-tied bridge/gateway placements reconstructed from the original build sequence
-- explicit `verification` labels separating instruction-tied transforms from temporary layout proxies
-- 3D orbit/touch camera, gravity, reset, time controls and autonomous minifigure stand-ins
-- GitHub Pages deployment workflow
+The scene now includes the whole playset rather than only the first ruin prototype:
 
-## Run it
+- 32×48 raised-baseplate world and full river corridor
+- tall multilevel main temple with the characteristic red/blue/gray banding
+- bridge gateway reconstructed from instruction pages 28–30
+- collapsing brown suspension bridge and spider web
+- opposite-bank statue / ruby / trapdoor area
+- brown expedition boat with fittings and gentle river drift
+- four-wheel off-road expedition car
+- all **8 included minifigures**: Johnny Thunder, Miss Gail Storm, Dr. Charles Lightning, Achu, Gabarro, Señor Palomar, and two skeletons
+- crocodile, two snakes, spider, scorpion, bat and parrot stand-ins
+- palms, jungle foliage, torches, Sun Disc, ruby and loose expedition tools
+- `Run traps` control that drops the bridge and opens the trapdoor
+- orbit, ground and overhead camera modes
+- structural connection graph: tapping structural parts can break their support path and release unsupported pieces
 
-Because this uses ES modules, serve the folder over HTTP rather than opening `index.html` directly:
+## Reconstruction status
+
+V0.3 deliberately separates **scene completeness** from **transform certainty**.
+
+- `data/5986-inventory.csv` stores the 172-lot / 420-regular-part BrickLink inventory snapshot used by the validator.
+- The six `data/5986-parts-*.json` chunks currently contain **179 individually positioned regular part instances**.
+- **21 placements** are explicitly tied to visible instruction pages 28–30.
+- The main temple, trap platform, boat and car use the real inventory and published set photographs for an inventory-bounded reconstruction while the remaining manual pages are transcribed.
+- No placement is labeled as an exact instruction transform unless it has an instruction-page provenance tag.
+
+This means the current page looks and behaves like the complete set, while the longer-term goal remains a full 420-part transform-by-transform digital twin.
+
+## Run locally
 
 ```bash
 python3 -m http.server 8000
@@ -25,42 +40,32 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`.
 
-Validate the reconstruction data with:
+## Validation
 
 ```bash
 npm run check
 ```
+
+The check validates JavaScript syntax, loads all model chunks, verifies that modeled part/color counts do not exceed the set inventory, requires all major assemblies, and rejects the old `layout-proxy` tags.
 
 ## Architecture
 
 ```text
 index.html
 src/
-  main.js             scene, controls, agents, world loading
-  brick-engine.js     part proxies, connection graph, break/fall physics
-  styles.css          responsive UI
+  main.js             scene, minifigs, animals, controls, trap simulation
+  brick-engine.js     reusable part proxies, connections, break physics
 data/
-  5986.json           scenario metadata
-  5986-model.json     positioned part instances + verification state
-  5986-inventory.csv  inventory cross-check snapshot
+  5986.json           scenario metadata / coverage
+  5986-model.json     model manifest and provenance
+  5986-parts-*.json   positioned regular-part chunks
+  5986-inventory.csv  inventory cross-check
 scripts/
-  validate-model.mjs  inventory/model consistency check
+  validate-model.mjs  inventory + coverage validation
 ```
 
-## Reconstruction status
+## Sources
 
-V0.2 is the **exact-model pipeline**, not a claim that all of set 5986 has already been transcribed. The current model has an instruction-tied bridge/gateway seed plus clearly marked `layout-proxy` temple pieces. Those proxies are replaced as successive instruction pages are encoded.
-
-Published sources disagree on the headline piece count, so the simulator keeps provenance instead of treating one number as unquestioned truth. The regular-part inventory snapshot is used as a part/color upper-bound check, while the build instructions remain the authority for assembly order and transforms.
-
-## Next reconstruction pass
-
-1. Transcribe the remaining instruction pages into positioned part instances.
-2. Add precise proxy geometry for slopes, arches, clips, hinges, rope bridge and decorated elements.
-3. Replace inferred connections with authored stud/clip/hinge constraints where needed.
-4. Add connection strength based on engaged studs and connection type.
-5. Add articulated minifigures and inventory-correct accessories.
-6. Add buoyancy and hinge/play-feature constraints for the river/bridge mechanisms.
-7. Generalize the model loader so additional LEGO sets can use the same engine.
+The reconstruction cross-checks the official LEGO building instructions, the BrickLink inventory, Brickset set metadata, and photographs of complete physical copies. Published headline piece totals are inconsistent across databases, so source provenance is preserved in the model instead of hiding the discrepancy.
 
 This is a fan-made simulation prototype and is not affiliated with or endorsed by the LEGO Group.
