@@ -4,106 +4,106 @@
     "exactAuthority": false,
     "currentPositionedParts": 184,
     "cadCandidateRecords": 969,
-    "uniqueAnchorPairs": 10,
+    "uniqueAnchorPairs": 12,
     "fit": {
       "swap": false,
       "sx": 1,
-      "sz": -1,
+      "sz": 1,
       "translation": [
         -0.49997663497924805,
-        -4.503233683109283,
-        3.000009536743164
+        -2.665281820297241,
+        -0.674973726272583
       ],
-      "score": 18.842685601578935,
-      "anchorCount": 10
+      "score": 16.06069233798279,
+      "anchorCount": 12
     },
-    "matchedCurrentParts": 99,
+    "matchedCurrentParts": 153,
     "within1Stud": 0,
     "within2Studs": 0,
-    "within4Studs": 0,
-    "templeMatches": 46,
+    "within4Studs": 1,
+    "templeMatches": 85,
     "policy": "These are non-authoritative geometry candidates. A match cannot become instruction-exact without captured manual-page provenance and an explicit instructionTransform."
   },
   "matches": [
     {
-      "modelPartId": "trap-floor",
-      "assembly": "trap-platform",
-      "partNo": "3031",
-      "color": "Green",
+      "modelPartId": "revolver",
+      "assembly": "accessories",
+      "partNo": "30132",
+      "color": "Dark Gray",
       "verification": "inventory+set-photo",
-      "lddRef": "728",
-      "lddDesignID": "3031",
-      "residualStuds": 4.949,
+      "lddRef": "885",
+      "lddDesignID": "30132",
+      "residualStuds": 3.219,
       "alignedCandidatePosition": [
-        -12,
-        3.35,
-        -2.5
+        7.7855,
+        0.3121,
+        14.175
       ],
       "rawCandidateTranslationStud": [
-        -11.5,
+        8.2855,
+        2.9773,
+        14.8499
+      ],
+      "rawCandidateMatrix3": [
+        -0.96567,
+        -0.258818,
+        -0.022248,
+        -0.258818,
+        0.951251,
+        0.167731,
+        -0.022248,
+        0.167731,
+        -0.985582
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-2",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "764",
+      "lddDesignID": "6091",
+      "residualStuds": 5.033,
+      "alignedCandidatePosition": [
+        15,
+        16.3879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        15.5,
+        19.0532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-2",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "503",
+      "lddDesignID": "2454",
+      "residualStuds": 5.051,
+      "alignedCandidatePosition": [
+        16,
+        5.1879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
         7.8532,
-        5.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "trap-yellow-core",
-      "assembly": "trap-platform",
-      "partNo": "3020",
-      "color": "Yellow",
-      "verification": "inventory+set-photo",
-      "lddRef": "722",
-      "lddDesignID": "3020",
-      "residualStuds": 6.344,
-      "alignedCandidatePosition": [
-        -10,
-        6.55,
-        -1.5
-      ],
-      "rawCandidateTranslationStud": [
-        -9.5,
-        11.0532,
-        4.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "car-body-9",
-      "assembly": "car",
-      "partNo": "3022",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "585",
-      "lddDesignID": "3022",
-      "residualStuds": 7.148,
-      "alignedCandidatePosition": [
-        14,
-        4.95,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        9.4532,
         -7.5
       ],
       "rawCandidateMatrix3": [
@@ -119,23 +119,54 @@
       ]
     },
     {
-      "modelPartId": "ruby",
-      "assembly": "trap-platform",
-      "partNo": "30153",
-      "color": "Trans-Red",
+      "modelPartId": "temple-printed-band-3",
+      "assembly": "main-temple",
+      "partNo": "3008px24",
+      "color": "Dark Gray",
       "verification": "inventory+set-photo",
-      "lddRef": "744",
-      "lddDesignID": "30153",
-      "residualStuds": 7.378,
+      "lddRef": "396",
+      "lddDesignID": "3008",
+      "residualStuds": 5.105,
       "alignedCandidatePosition": [
-        -9,
-        8.95,
-        -1
+        16,
+        13.1879,
+        6.825
       ],
       "rawCandidateTranslationStud": [
-        -8.5,
-        13.4532,
-        4
+        16.5,
+        15.8532,
+        7.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-8",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "680",
+      "lddDesignID": "6091",
+      "residualStuds": 5.212,
+      "alignedCandidatePosition": [
+        16,
+        16.7879,
+        5.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        19.4532,
+        6.5
       ],
       "rawCandidateMatrix3": [
         1,
@@ -150,18 +181,142 @@
       ]
     },
     {
-      "modelPartId": "temple-blue-slope-8",
+      "modelPartId": "temple-printed-band-2",
+      "assembly": "main-temple",
+      "partNo": "3008px24",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "571",
+      "lddDesignID": "3008",
+      "residualStuds": 5.227,
+      "alignedCandidatePosition": [
+        15,
+        14.3879,
+        -1.175
+      ],
+      "rawCandidateTranslationStud": [
+        15.5,
+        17.0532,
+        -0.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-4",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "502",
+      "lddDesignID": "2454",
+      "residualStuds": 5.558,
+      "alignedCandidatePosition": [
+        16,
+        5.1879,
+        -1.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        7.8532,
+        -0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-6",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "770",
+      "lddDesignID": "6091",
+      "residualStuds": 5.629,
+      "alignedCandidatePosition": [
+        15,
+        16.3879,
+        -1.175
+      ],
+      "rawCandidateTranslationStud": [
+        15.5,
+        19.0532,
+        -0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-blue-slope-2",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "595",
+      "lddDesignID": "3039",
+      "residualStuds": 5.654,
+      "alignedCandidatePosition": [
+        13,
+        5.5879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        13.5,
+        8.2532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-blue-slope-6",
       "assembly": "main-temple",
       "partNo": "3039",
       "color": "Blue",
       "verification": "inventory+set-photo",
       "lddRef": "591",
       "lddDesignID": "3039",
-      "residualStuds": 7.417,
+      "residualStuds": 5.854,
       "alignedCandidatePosition": [
         12,
-        3.75,
-        3.5
+        5.5879,
+        -1.175
       ],
       "rawCandidateTranslationStud": [
         12.5,
@@ -181,18 +336,235 @@
       ]
     },
     {
-      "modelPartId": "temple-band-2",
+      "modelPartId": "temple-large-arch-1",
+      "assembly": "main-temple",
+      "partNo": "3308",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "573",
+      "lddDesignID": "3308",
+      "residualStuds": 5.959,
+      "alignedCandidatePosition": [
+        14,
+        10.7879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        13.4532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-6",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "412",
+      "lddDesignID": "2454",
+      "residualStuds": 5.964,
+      "alignedCandidatePosition": [
+        16,
+        5.1879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        7.8532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "car-body-5",
+      "assembly": "car",
+      "partNo": "3020",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "911",
+      "lddDesignID": "3020",
+      "residualStuds": 6.367,
+      "alignedCandidatePosition": [
+        16,
+        0.1722,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        2.8375,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-red-plate-2",
+      "assembly": "main-temple",
+      "partNo": "3022",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "585",
+      "lddDesignID": "3022",
+      "residualStuds": 6.428,
+      "alignedCandidatePosition": [
+        14,
+        6.7879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        9.4532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-side-arch-4",
+      "assembly": "main-temple",
+      "partNo": "3455",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "401",
+      "lddDesignID": "3455",
+      "residualStuds": 6.485,
+      "alignedCandidatePosition": [
+        16,
+        11.5879,
+        0.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        14.2532,
+        1.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-blue-slope-8",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "580",
+      "lddDesignID": "3039",
+      "residualStuds": 6.709,
+      "alignedCandidatePosition": [
+        14,
+        5.5879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        8.2532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-upper-brick-4",
+      "assembly": "main-temple",
+      "partNo": "3009",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "385",
+      "lddDesignID": "3009",
+      "residualStuds": 6.947,
+      "alignedCandidatePosition": [
+        18,
+        11.5879,
+        6.825
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        14.2532,
+        7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-band-1",
       "assembly": "main-temple",
       "partNo": "3008",
       "color": "Red",
       "verification": "inventory+set-photo",
       "lddRef": "498",
       "lddDesignID": "3008",
-      "residualStuds": 7.457,
+      "residualStuds": 7.111,
       "alignedCandidatePosition": [
         16,
-        9.35,
-        10.5
+        11.1879,
+        -8.175
       ],
       "rawCandidateTranslationStud": [
         16.5,
@@ -212,23 +584,240 @@
       ]
     },
     {
-      "modelPartId": "temple-band-4",
+      "modelPartId": "car-body-10",
+      "assembly": "car",
+      "partNo": "4863",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "913",
+      "lddDesignID": "4863",
+      "residualStuds": 7.261,
+      "alignedCandidatePosition": [
+        16,
+        0.5722,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        3.2375,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-band-3",
       "assembly": "main-temple",
       "partNo": "3008",
       "color": "Blue",
       "verification": "inventory+set-photo",
       "lddRef": "484",
       "lddDesignID": "3008",
-      "residualStuds": 7.457,
+      "residualStuds": 7.414,
       "alignedCandidatePosition": [
         16,
-        11.75,
-        10.5
+        13.5879,
+        -8.175
       ],
       "rawCandidateTranslationStud": [
         16.5,
         16.2532,
         -7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-upper-brick-2",
+      "assembly": "main-temple",
+      "partNo": "3009",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "533",
+      "lddDesignID": "3009",
+      "residualStuds": 7.897,
+      "alignedCandidatePosition": [
+        18,
+        11.5879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        14.2532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-print-pillar-2",
+      "assembly": "main-temple",
+      "partNo": "2454px6",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "411",
+      "lddDesignID": "2454",
+      "residualStuds": 8.573,
+      "alignedCandidatePosition": [
+        16,
+        5.1879,
+        5.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        7.8532,
+        6.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-upper-brick-5",
+      "assembly": "main-temple",
+      "partNo": "3009",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "495",
+      "lddDesignID": "3009",
+      "residualStuds": 8.685,
+      "alignedCandidatePosition": [
+        17,
+        11.1879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        17.5,
+        13.8532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-4",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "686",
+      "lddDesignID": "6091",
+      "residualStuds": 9.337,
+      "alignedCandidatePosition": [
+        16,
+        16.7879,
+        0.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        19.4532,
+        1.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-mid-6",
+      "assembly": "main-temple",
+      "partNo": "3004",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "430",
+      "lddDesignID": "3004",
+      "residualStuds": 9.468,
+      "alignedCandidatePosition": [
+        17,
+        13.1879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        17.5,
+        15.8532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-red-plate-4",
+      "assembly": "main-temple",
+      "partNo": "3022",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "579",
+      "lddDesignID": "3022",
+      "residualStuds": 9.561,
+      "alignedCandidatePosition": [
+        14,
+        6.7879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        9.4532,
+        0.5
       ],
       "rawCandidateMatrix3": [
         1,
@@ -250,11 +839,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "269",
       "lddDesignID": "3020",
-      "residualStuds": 7.778,
+      "residualStuds": 9.598,
       "alignedCandidatePosition": [
         -8,
-        4.95,
-        0.5
+        6.788,
+        1.825
       ],
       "rawCandidateTranslationStud": [
         -7.5,
@@ -274,395 +863,23 @@
       ]
     },
     {
-      "modelPartId": "temple-blue-slope-4",
+      "modelPartId": "temple-blue-slope-1",
       "assembly": "main-temple",
       "partNo": "3039",
       "color": "Blue",
       "verification": "inventory+set-photo",
-      "lddRef": "595",
-      "lddDesignID": "3039",
-      "residualStuds": 7.875,
-      "alignedCandidatePosition": [
-        13,
-        3.75,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        13.5,
-        8.2532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-upper-brick-6",
-      "assembly": "main-temple",
-      "partNo": "3009",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "494",
-      "lddDesignID": "3009",
-      "residualStuds": 8.675,
-      "alignedCandidatePosition": [
-        17,
-        9.35,
-        3.5
-      ],
-      "rawCandidateTranslationStud": [
-        17.5,
-        13.8532,
-        -0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "trap-tan-cap",
-      "assembly": "trap-platform",
-      "partNo": "3020",
-      "color": "Tan",
-      "verification": "inventory+set-photo",
-      "lddRef": "819",
-      "lddDesignID": "3020",
-      "residualStuds": 8.915,
-      "alignedCandidatePosition": [
-        -14.9998,
-        -2.6254,
-        -11.5
-      ],
-      "rawCandidateTranslationStud": [
-        -14.4999,
-        1.8778,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        -0.0349,
-        0.999391,
-        0,
-        -0.999391,
-        -0.0349,
-        0
-      ]
-    },
-    {
-      "modelPartId": "temple-red-plate-4",
-      "assembly": "main-temple",
-      "partNo": "3022",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "579",
-      "lddDesignID": "3022",
-      "residualStuds": 9.166,
-      "alignedCandidatePosition": [
-        14,
-        4.95,
-        2.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        9.4532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-blue-slope-6",
-      "assembly": "main-temple",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "580",
-      "lddDesignID": "3039",
-      "residualStuds": 9.435,
-      "alignedCandidatePosition": [
-        14,
-        3.75,
-        2.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        8.2532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "gate-blue-slope-b2",
-      "assembly": "bridge-gateway",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "manual-page-28-step-3",
       "lddRef": "586",
       "lddDesignID": "3039",
-      "residualStuds": 10.665,
+      "residualStuds": 9.745,
       "alignedCandidatePosition": [
         14,
-        3.75,
-        10.5
+        5.5879,
+        -8.175
       ],
       "rawCandidateTranslationStud": [
         14.5,
         8.2532,
         -7.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-mid-8",
-      "assembly": "main-temple",
-      "partNo": "3004",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "395",
-      "lddDesignID": "3004",
-      "residualStuds": 11,
-      "alignedCandidatePosition": [
-        16,
-        12.55,
-        -1.5
-      ],
-      "rawCandidateTranslationStud": [
-        16.5,
-        17.0532,
-        4.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        -1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "gate-red-upper-a",
-      "assembly": "bridge-gateway",
-      "partNo": "3020",
-      "color": "Red",
-      "verification": "manual-page-28-step-5",
-      "lddRef": "582",
-      "lddDesignID": "3020",
-      "residualStuds": 11.599,
-      "alignedCandidatePosition": [
-        14,
-        3.35,
-        4.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        7.8532,
-        -1.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "gate-red-upper-b",
-      "assembly": "bridge-gateway",
-      "partNo": "3020",
-      "color": "Red",
-      "verification": "manual-page-28-step-5",
-      "lddRef": "588",
-      "lddDesignID": "3020",
-      "residualStuds": 11.599,
-      "alignedCandidatePosition": [
-        14,
-        3.35,
-        12.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        7.8532,
-        -9.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "gate-blue-slope-a2",
-      "assembly": "bridge-gateway",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "manual-page-28-step-3",
-      "lddRef": "581",
-      "lddDesignID": "3039",
-      "residualStuds": 11.651,
-      "alignedCandidatePosition": [
-        15,
-        3.75,
-        3.5
-      ],
-      "rawCandidateTranslationStud": [
-        15.5,
-        8.2532,
-        -0.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-flame-6",
-      "assembly": "main-temple",
-      "partNo": "6126",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "714",
-      "lddDesignID": "6126",
-      "residualStuds": 11.659,
-      "alignedCandidatePosition": [
-        22.5,
-        3.85,
-        13.5
-      ],
-      "rawCandidateTranslationStud": [
-        23,
-        8.3532,
-        -10.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "boat-fitting-12",
-      "assembly": "boat",
-      "partNo": "3069px23",
-      "color": "Tan",
-      "verification": "inventory+set-photo",
-      "lddRef": "874",
-      "lddDesignID": "3069",
-      "residualStuds": 11.736,
-      "alignedCandidatePosition": [
-        -13.0566,
-        -0.7566,
-        -12.9997
-      ],
-      "rawCandidateTranslationStud": [
-        -12.5567,
-        3.7467,
-        15.9997
-      ],
-      "rawCandidateMatrix3": [
-        -0.999391,
-        -0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-red-arch-2",
-      "assembly": "main-temple",
-      "partNo": "3455",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "451",
-      "lddDesignID": "3455",
-      "residualStuds": 11.92,
-      "alignedCandidatePosition": [
-        18,
-        17.75,
-        3.5
-      ],
-      "rawCandidateTranslationStud": [
-        18.5,
-        22.2532,
-        -0.5
       ],
       "rawCandidateMatrix3": [
         1,
@@ -684,11 +901,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "476",
       "lddDesignID": "3009",
-      "residualStuds": 11.937,
+      "residualStuds": 10.024,
       "alignedCandidatePosition": [
         16,
-        11.75,
-        9.5
+        13.5879,
+        -7.175
       ],
       "rawCandidateTranslationStud": [
         16.5,
@@ -708,23 +925,54 @@
       ]
     },
     {
-      "modelPartId": "gate-blue-cap-2",
-      "assembly": "bridge-gateway",
-      "partNo": "3040",
-      "color": "Blue",
-      "verification": "manual-page-30-visible",
-      "lddRef": "569",
-      "lddDesignID": "3040",
-      "residualStuds": 12.036,
+      "modelPartId": "temple-upper-brick-6",
+      "assembly": "main-temple",
+      "partNo": "3009",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "494",
+      "lddDesignID": "3009",
+      "residualStuds": 10.173,
       "alignedCandidatePosition": [
-        15,
-        11.35,
-        3.5
+        17,
+        11.1879,
+        -1.175
       ],
       "rawCandidateTranslationStud": [
-        15.5,
-        15.8532,
+        17.5,
+        13.8532,
         -0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-mid-2",
+      "assembly": "main-temple",
+      "partNo": "3004",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "524",
+      "lddDesignID": "3004",
+      "residualStuds": 10.346,
+      "alignedCandidatePosition": [
+        17,
+        13.1879,
+        -10.175
+      ],
+      "rawCandidateTranslationStud": [
+        17.5,
+        15.8532,
+        -9.5
       ],
       "rawCandidateMatrix3": [
         0,
@@ -739,23 +987,23 @@
       ]
     },
     {
-      "modelPartId": "temple-blue-slope-3",
+      "modelPartId": "temple-blue-slope-5",
       "assembly": "main-temple",
       "partNo": "3039",
       "color": "Blue",
       "verification": "inventory+set-photo",
-      "lddRef": "587",
+      "lddRef": "581",
       "lddDesignID": "3039",
-      "residualStuds": 12.166,
+      "residualStuds": 10.736,
       "alignedCandidatePosition": [
         15,
-        3.75,
-        11.5
+        5.5879,
+        -1.175
       ],
       "rawCandidateTranslationStud": [
         15.5,
         8.2532,
-        -8.5
+        -0.5
       ],
       "rawCandidateMatrix3": [
         -1,
@@ -770,18 +1018,731 @@
       ]
     },
     {
-      "modelPartId": "temple-black-core-6",
+      "modelPartId": "temple-mid-8",
+      "assembly": "main-temple",
+      "partNo": "3004",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "395",
+      "lddDesignID": "3004",
+      "residualStuds": 11.017,
+      "alignedCandidatePosition": [
+        16,
+        14.3879,
+        3.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        17.0532,
+        4.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-1",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "703",
+      "lddDesignID": "6091",
+      "residualStuds": 11.155,
+      "alignedCandidatePosition": [
+        16,
+        16.7879,
+        -10.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        19.4532,
+        -9.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-1",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "538",
+      "lddDesignID": "2454",
+      "residualStuds": 11.323,
+      "alignedCandidatePosition": [
+        16,
+        5.1879,
+        -10.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        7.8532,
+        -9.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-8",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "413",
+      "lddDesignID": "2454",
+      "residualStuds": 11.323,
+      "alignedCandidatePosition": [
+        23,
+        5.1879,
+        5.825
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        7.8532,
+        6.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-red-cap-1",
+      "assembly": "bridge-gateway",
+      "partNo": "3040",
+      "color": "Red",
+      "verification": "manual-page-30-visible",
+      "lddRef": "277",
+      "lddDesignID": "3040",
+      "residualStuds": 11.583,
+      "alignedCandidatePosition": [
+        -7,
+        5.588,
+        4.825
+      ],
+      "rawCandidateTranslationStud": [
+        -6.5,
+        8.2532,
+        5.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-flame-4",
+      "assembly": "main-temple",
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "676",
+      "lddDesignID": "6126",
+      "residualStuds": 11.593,
+      "alignedCandidatePosition": [
+        22.5,
+        5.6879,
+        4.825
+      ],
+      "rawCandidateTranslationStud": [
+        23,
+        8.3532,
+        5.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-band-4",
+      "assembly": "main-temple",
+      "partNo": "3008",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "480",
+      "lddDesignID": "3008",
+      "residualStuds": 11.795,
+      "alignedCandidatePosition": [
+        16,
+        13.5879,
+        -1.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        16.2532,
+        -0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "trap-yellow-core",
+      "assembly": "trap-platform",
+      "partNo": "3020",
+      "color": "Yellow",
+      "verification": "inventory+set-photo",
+      "lddRef": "722",
+      "lddDesignID": "3020",
+      "residualStuds": 11.899,
+      "alignedCandidatePosition": [
+        -10,
+        8.388,
+        3.825
+      ],
+      "rawCandidateTranslationStud": [
+        -9.5,
+        11.0532,
+        4.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "ruby",
+      "assembly": "trap-platform",
+      "partNo": "30153",
+      "color": "Trans-Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "744",
+      "lddDesignID": "30153",
+      "residualStuds": 11.933,
+      "alignedCandidatePosition": [
+        -9,
+        10.788,
+        3.325
+      ],
+      "rawCandidateTranslationStud": [
+        -8.5,
+        13.4532,
+        4
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-side-arch-2",
+      "assembly": "main-temple",
+      "partNo": "3455",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "530",
+      "lddDesignID": "3455",
+      "residualStuds": 11.938,
+      "alignedCandidatePosition": [
+        16,
+        11.5879,
+        -15.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        14.2532,
+        -14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-blue-slope-4",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "416",
+      "lddDesignID": "3039",
+      "residualStuds": 11.972,
+      "alignedCandidatePosition": [
+        21,
+        5.1879,
+        2.825
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        7.8532,
+        3.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-printed-band-1",
+      "assembly": "main-temple",
+      "partNo": "3008px24",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "509",
+      "lddDesignID": "3008",
+      "residualStuds": 12.15,
+      "alignedCandidatePosition": [
+        16,
+        13.1879,
+        -16.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        15.8532,
+        -15.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-cap-1",
+      "assembly": "bridge-gateway",
+      "partNo": "3040",
+      "color": "Blue",
+      "verification": "manual-page-30-visible",
+      "lddRef": "738",
+      "lddDesignID": "3040",
+      "residualStuds": 12.333,
+      "alignedCandidatePosition": [
+        -9,
+        5.5879,
+        5.825
+      ],
+      "rawCandidateTranslationStud": [
+        -8.5,
+        8.2532,
+        6.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "trap-floor",
+      "assembly": "trap-platform",
+      "partNo": "3031",
+      "color": "Green",
+      "verification": "inventory+set-photo",
+      "lddRef": "728",
+      "lddDesignID": "3031",
+      "residualStuds": 12.412,
+      "alignedCandidatePosition": [
+        -12,
+        5.188,
+        4.825
+      ],
+      "rawCandidateTranslationStud": [
+        -11.5,
+        7.8532,
+        5.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-upper-brick-1",
+      "assembly": "main-temple",
+      "partNo": "3009",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "407",
+      "lddDesignID": "3009",
+      "residualStuds": 12.578,
+      "alignedCandidatePosition": [
+        18,
+        11.5879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        14.2532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "pickaxe-2",
+      "assembly": "accessories",
+      "partNo": "3841",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "926",
+      "lddDesignID": "3841",
+      "residualStuds": 12.77,
+      "alignedCandidatePosition": [
+        20.5,
+        -2.1278,
+        12.825
+      ],
+      "rawCandidateTranslationStud": [
+        21,
+        0.5375,
+        13.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "gate-red-upper-a",
+      "assembly": "bridge-gateway",
+      "partNo": "3020",
+      "color": "Red",
+      "verification": "manual-page-28-step-5",
+      "lddRef": "582",
+      "lddDesignID": "3020",
+      "residualStuds": 12.774,
+      "alignedCandidatePosition": [
+        14,
+        5.1879,
+        -2.175
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        7.8532,
+        -1.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-cap-2",
+      "assembly": "bridge-gateway",
+      "partNo": "3040",
+      "color": "Blue",
+      "verification": "manual-page-30-visible",
+      "lddRef": "397",
+      "lddDesignID": "3040",
+      "residualStuds": 12.92,
+      "alignedCandidatePosition": [
+        16,
+        14.3879,
+        4.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        17.0532,
+        5.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "hammer",
+      "assembly": "accessories",
+      "partNo": "4522",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "927",
+      "lddDesignID": "4522",
+      "residualStuds": 12.999,
+      "alignedCandidatePosition": [
+        20.5,
+        -1.8278,
+        17.825
+      ],
+      "rawCandidateTranslationStud": [
+        21,
+        0.8375,
+        18.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-flame-2",
+      "assembly": "main-temple",
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "714",
+      "lddDesignID": "6126",
+      "residualStuds": 13.134,
+      "alignedCandidatePosition": [
+        22.5,
+        5.6879,
+        -11.175
+      ],
+      "rawCandidateTranslationStud": [
+        23,
+        8.3532,
+        -10.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-body-2",
+      "assembly": "car",
+      "partNo": "32000",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "383",
+      "lddDesignID": "32000",
+      "residualStuds": 13.134,
+      "alignedCandidatePosition": [
+        16,
+        11.5879,
+        6.825
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        14.2532,
+        7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-red-arch-1",
+      "assembly": "main-temple",
+      "partNo": "3455",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "451",
+      "lddDesignID": "3455",
+      "residualStuds": 13.486,
+      "alignedCandidatePosition": [
+        18,
+        19.5879,
+        -1.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        22.2532,
+        -0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-mid-4",
+      "assembly": "main-temple",
+      "partNo": "3004",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "403",
+      "lddDesignID": "3004",
+      "residualStuds": 13.555,
+      "alignedCandidatePosition": [
+        21,
+        13.1879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        15.8532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-black-core-2",
       "assembly": "main-temple",
       "partNo": "30145",
       "color": "Black",
       "verification": "inventory+set-photo",
       "lddRef": "521",
       "lddDesignID": "30145",
-      "residualStuds": 12.857,
+      "residualStuds": 13.582,
       "alignedCandidatePosition": [
         18,
-        11.35,
-        11.5
+        13.1879,
+        -9.175
       ],
       "rawCandidateTranslationStud": [
         18.5,
@@ -801,23 +1762,54 @@
       ]
     },
     {
-      "modelPartId": "temple-flame-2",
-      "assembly": "main-temple",
-      "partNo": "6126",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "676",
-      "lddDesignID": "6126",
-      "residualStuds": 12.866,
+      "modelPartId": "gate-red-cap-2",
+      "assembly": "bridge-gateway",
+      "partNo": "3040",
+      "color": "Red",
+      "verification": "manual-page-30-visible",
+      "lddRef": "282",
+      "lddDesignID": "3040",
+      "residualStuds": 13.936,
       "alignedCandidatePosition": [
-        22.5,
-        3.85,
-        -2.5
+        -7,
+        5.5879,
+        1.825
       ],
       "rawCandidateTranslationStud": [
-        23,
-        8.3532,
-        5.5
+        -6.5,
+        8.2532,
+        2.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-black-core-4",
+      "assembly": "main-temple",
+      "partNo": "30145",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "392",
+      "lddDesignID": "30145",
+      "residualStuds": 14.146,
+      "alignedCandidatePosition": [
+        19,
+        13.1879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        15.8532,
+        0.5
       ],
       "rawCandidateMatrix3": [
         -1,
@@ -839,11 +1831,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "387",
       "lddDesignID": "3039",
-      "residualStuds": 13.01,
+      "residualStuds": 14.172,
       "alignedCandidatePosition": [
         18,
-        16.15,
-        2.5
+        17.9879,
+        -0.175
       ],
       "rawCandidateTranslationStud": [
         18.5,
@@ -863,328 +1855,18 @@
       ]
     },
     {
-      "modelPartId": "temple-black-core-4",
-      "assembly": "main-temple",
-      "partNo": "30145",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "392",
-      "lddDesignID": "30145",
-      "residualStuds": 13.126,
-      "alignedCandidatePosition": [
-        19,
-        11.35,
-        2.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        15.8532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-flame-4",
-      "assembly": "main-temple",
-      "partNo": "6126",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "695",
-      "lddDesignID": "6126",
-      "residualStuds": 13.399,
-      "alignedCandidatePosition": [
-        22.5,
-        3.85,
-        0.5
-      ],
-      "rawCandidateTranslationStud": [
-        23,
-        8.3532,
-        2.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-band-3",
-      "assembly": "main-temple",
-      "partNo": "3008",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "480",
-      "lddDesignID": "3008",
-      "residualStuds": 13.476,
-      "alignedCandidatePosition": [
-        16,
-        11.75,
-        3.5
-      ],
-      "rawCandidateTranslationStud": [
-        16.5,
-        16.2532,
-        -0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "gate-red-cap-2",
-      "assembly": "bridge-gateway",
-      "partNo": "3040",
-      "color": "Red",
-      "verification": "manual-page-30-visible",
-      "lddRef": "481",
-      "lddDesignID": "3040",
-      "residualStuds": 13.948,
-      "alignedCandidatePosition": [
-        17,
-        12.95,
-        3.5
-      ],
-      "rawCandidateTranslationStud": [
-        17.5,
-        17.4532,
-        -0.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "gate-blue-cap-1",
-      "assembly": "bridge-gateway",
-      "partNo": "3040",
-      "color": "Blue",
-      "verification": "manual-page-30-visible",
-      "lddRef": "577",
-      "lddDesignID": "3040",
-      "residualStuds": 13.959,
-      "alignedCandidatePosition": [
-        15,
-        11.35,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        15.5,
-        15.8532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "temple-blue-slope-2",
-      "assembly": "main-temple",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "416",
-      "lddDesignID": "3039",
-      "residualStuds": 14.074,
-      "alignedCandidatePosition": [
-        21,
-        3.35,
-        -0.5
-      ],
-      "rawCandidateTranslationStud": [
-        21.5,
-        7.8532,
-        3.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "gate-red-cap-1",
-      "assembly": "bridge-gateway",
-      "partNo": "3040",
-      "color": "Red",
-      "verification": "manual-page-30-visible",
-      "lddRef": "282",
-      "lddDesignID": "3040",
-      "residualStuds": 14.243,
-      "alignedCandidatePosition": [
-        -7,
-        3.75,
-        0.5
-      ],
-      "rawCandidateTranslationStud": [
-        -6.5,
-        8.2532,
-        2.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        -1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "trapdoor-panel",
-      "assembly": "trap-platform",
-      "partNo": "3034",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "806",
-      "lddDesignID": "3034",
-      "residualStuds": 15.091,
-      "alignedCandidatePosition": [
-        -18.012,
-        -2.3303,
-        -13.5
-      ],
-      "rawCandidateTranslationStud": [
-        -17.512,
-        2.1729,
-        16.5
-      ],
-      "rawCandidateMatrix3": [
-        0.999391,
-        0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-black-core-5",
-      "assembly": "main-temple",
-      "partNo": "30145",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "474",
-      "lddDesignID": "30145",
-      "residualStuds": 15.821,
-      "alignedCandidatePosition": [
-        19,
-        11.75,
-        5.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        16.2532,
-        -2.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-red-plate-3",
-      "assembly": "main-temple",
-      "partNo": "3022",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "305",
-      "lddDesignID": "3022",
-      "residualStuds": 15.882,
-      "alignedCandidatePosition": [
-        -6,
-        3.35,
-        8.5
-      ],
-      "rawCandidateTranslationStud": [
-        -5.5,
-        7.8532,
-        -5.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-flame-5",
+      "modelPartId": "temple-flame-7",
       "assembly": "main-temple",
       "partNo": "6126",
       "color": "Trans-Neon Orange",
       "verification": "inventory+set-photo",
       "lddRef": "713",
       "lddDesignID": "6126",
-      "residualStuds": 15.998,
+      "residualStuds": 14.35,
       "alignedCandidatePosition": [
         22.5,
-        3.85,
-        16.5
+        5.6879,
+        -14.175
       ],
       "rawCandidateTranslationStud": [
         23,
@@ -1204,116 +1886,23 @@
       ]
     },
     {
-      "modelPartId": "temple-mid-9",
+      "modelPartId": "temple-gray-curve-5",
       "assembly": "main-temple",
-      "partNo": "3010",
-      "color": "Black",
+      "partNo": "6091",
+      "color": "Light Gray",
       "verification": "inventory+set-photo",
-      "lddRef": "918",
-      "lddDesignID": "3010",
-      "residualStuds": 16.363,
+      "lddRef": "709",
+      "lddDesignID": "6091",
+      "residualStuds": 14.629,
       "alignedCandidatePosition": [
-        14,
-        -4.0657,
-        -11.5
+        16,
+        16.7879,
+        -15.175
       ],
       "rawCandidateTranslationStud": [
-        14.5,
-        0.4375,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-blue-slope-5",
-      "assembly": "main-temple",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "390",
-      "lddDesignID": "3039",
-      "residualStuds": 17.642,
-      "alignedCandidatePosition": [
-        22,
-        16.15,
-        2.5
-      ],
-      "rawCandidateTranslationStud": [
-        22.5,
-        20.6532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-upper-brick-5",
-      "assembly": "main-temple",
-      "partNo": "3009",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "495",
-      "lddDesignID": "3009",
-      "residualStuds": 17.699,
-      "alignedCandidatePosition": [
-        17,
-        9.35,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        17.5,
-        13.8532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "car-yellow-detail-2",
-      "assembly": "car",
-      "partNo": "4865",
-      "color": "Yellow",
-      "verification": "inventory+set-photo",
-      "lddRef": "691",
-      "lddDesignID": "4865",
-      "residualStuds": 18.275,
-      "alignedCandidatePosition": [
-        19,
-        11.35,
-        0.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        15.8532,
-        2.5
+        16.5,
+        19.4532,
+        -14.5
       ],
       "rawCandidateMatrix3": [
         -1,
@@ -1333,421 +1922,18 @@
       "partNo": "3022",
       "color": "Red",
       "verification": "inventory+set-photo",
-      "lddRef": "275",
+      "lddRef": "305",
       "lddDesignID": "3022",
-      "residualStuds": 18.337,
+      "residualStuds": 14.865,
       "alignedCandidatePosition": [
-        -8,
-        3.35,
-        -1.5
+        -6,
+        5.1879,
+        -6.175
       ],
       "rawCandidateTranslationStud": [
-        -7.5,
+        -5.5,
         7.8532,
-        4.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-red-curve-1",
-      "assembly": "main-temple",
-      "partNo": "6091",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "725",
-      "lddDesignID": "6091",
-      "residualStuds": 18.499,
-      "alignedCandidatePosition": [
-        -9,
-        6.15,
-        -1.5
-      ],
-      "rawCandidateTranslationStud": [
-        -8.5,
-        10.6532,
-        4.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-flame-3",
-      "assembly": "main-temple",
-      "partNo": "6126",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "659",
-      "lddDesignID": "6126",
-      "residualStuds": 18.696,
-      "alignedCandidatePosition": [
-        19,
-        24.475,
-        5.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        28.9782,
-        -2.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        -1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "temple-red-arch-1",
-      "assembly": "main-temple",
-      "partNo": "3455",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "456",
-      "lddDesignID": "3455",
-      "residualStuds": 18.764,
-      "alignedCandidatePosition": [
-        18,
-        17.75,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        18.5,
-        22.2532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-mid-10",
-      "assembly": "main-temple",
-      "partNo": "3010",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "915",
-      "lddDesignID": "3010",
-      "residualStuds": 18.914,
-      "alignedCandidatePosition": [
-        14,
-        -4.0657,
-        -14.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        0.4375,
-        17.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-black-core-3",
-      "assembly": "main-temple",
-      "partNo": "30145",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "475",
-      "lddDesignID": "30145",
-      "residualStuds": 18.929,
-      "alignedCandidatePosition": [
-        19,
-        11.75,
-        9.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        16.2532,
-        -6.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "gate-red-lower-b",
-      "assembly": "bridge-gateway",
-      "partNo": "3020",
-      "color": "Red",
-      "verification": "manual-page-28-step-2",
-      "lddRef": "528",
-      "lddDesignID": "3020",
-      "residualStuds": 19.013,
-      "alignedCandidatePosition": [
-        17,
-        12.55,
-        16.5
-      ],
-      "rawCandidateTranslationStud": [
-        17.5,
-        17.0532,
-        -13.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "temple-black-core-2",
-      "assembly": "main-temple",
-      "partNo": "30145",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "393",
-      "lddDesignID": "30145",
-      "residualStuds": 19.295,
-      "alignedCandidatePosition": [
-        23,
-        11.35,
-        2.5
-      ],
-      "rawCandidateTranslationStud": [
-        23.5,
-        15.8532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "gate-blue-slope-b1",
-      "assembly": "bridge-gateway",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "manual-page-28-step-3",
-      "lddRef": "543",
-      "lddDesignID": "3039",
-      "residualStuds": 20.061,
-      "alignedCandidatePosition": [
-        21,
-        3.35,
-        15.5
-      ],
-      "rawCandidateTranslationStud": [
-        21.5,
-        7.8532,
-        -12.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "car-yellow-detail-1",
-      "assembly": "car",
-      "partNo": "4865",
-      "color": "Yellow",
-      "verification": "inventory+set-photo",
-      "lddRef": "693",
-      "lddDesignID": "4865",
-      "residualStuds": 20.346,
-      "alignedCandidatePosition": [
-        21,
-        11.35,
-        0.5
-      ],
-      "rawCandidateTranslationStud": [
-        21.5,
-        15.8532,
-        2.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-black-arch-top-2",
-      "assembly": "main-temple",
-      "partNo": "3659",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "909",
-      "lddDesignID": "3659",
-      "residualStuds": 20.748,
-      "alignedCandidatePosition": [
-        14,
-        -2.8657,
-        -11.5
-      ],
-      "rawCandidateTranslationStud": [
-        14.5,
-        1.6375,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "spear-3",
-      "assembly": "accessories",
-      "partNo": "4497",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "958",
-      "lddDesignID": "4497",
-      "residualStuds": 20.909,
-      "alignedCandidatePosition": [
-        23.8,
-        12.86,
-        -1.5
-      ],
-      "rawCandidateTranslationStud": [
-        24.3,
-        17.3632,
-        4.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        -1,
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0
-      ]
-    },
-    {
-      "modelPartId": "car-body-5",
-      "assembly": "car",
-      "partNo": "3020",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "459",
-      "lddDesignID": "3020",
-      "residualStuds": 21.29,
-      "alignedCandidatePosition": [
-        22,
-        18.95,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        22.5,
-        23.4532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-red-curve-2",
-      "assembly": "main-temple",
-      "partNo": "6091",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "729",
-      "lddDesignID": "6091",
-      "residualStuds": 22.231,
-      "alignedCandidatePosition": [
-        -9,
-        6.15,
-        -0.5
-      ],
-      "rawCandidateTranslationStud": [
-        -8.5,
-        10.6532,
-        3.5
+        -5.5
       ],
       "rawCandidateMatrix3": [
         1,
@@ -1769,11 +1955,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "508",
       "lddDesignID": "3004",
-      "residualStuds": 22.339,
+      "residualStuds": 15.281,
       "alignedCandidatePosition": [
         16,
-        12.55,
-        15.5
+        14.3879,
+        -13.175
       ],
       "rawCandidateTranslationStud": [
         16.5,
@@ -1793,23 +1979,23 @@
       ]
     },
     {
-      "modelPartId": "temple-red-plate-2",
+      "modelPartId": "temple-mid-10",
       "assembly": "main-temple",
-      "partNo": "3022",
-      "color": "Red",
+      "partNo": "3010",
+      "color": "Black",
       "verification": "inventory+set-photo",
-      "lddRef": "297",
-      "lddDesignID": "3022",
-      "residualStuds": 22.411,
+      "lddRef": "918",
+      "lddDesignID": "3010",
+      "residualStuds": 15.718,
       "alignedCandidatePosition": [
-        -6,
-        3.35,
-        4.5
+        14,
+        -2.2278,
+        13.825
       ],
       "rawCandidateTranslationStud": [
-        -5.5,
-        7.8532,
-        -1.5
+        14.5,
+        0.4375,
+        14.5
       ],
       "rawCandidateMatrix3": [
         1,
@@ -1824,80 +2010,18 @@
       ]
     },
     {
-      "modelPartId": "temple-black-arch-top-1",
-      "assembly": "main-temple",
-      "partNo": "3659",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "914",
-      "lddDesignID": "3659",
-      "residualStuds": 22.55,
-      "alignedCandidatePosition": [
-        17,
-        -2.8657,
-        -11.5
-      ],
-      "rawCandidateTranslationStud": [
-        17.5,
-        1.6375,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "camera",
-      "assembly": "accessories",
-      "partNo": "30148",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "858",
-      "lddDesignID": "30148",
-      "residualStuds": 22.594,
-      "alignedCandidatePosition": [
-        -12.5,
-        5.1712,
-        8
-      ],
-      "rawCandidateTranslationStud": [
-        -12,
-        9.6745,
-        -5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "car-yellow-detail-4",
+      "modelPartId": "car-yellow-detail-2",
       "assembly": "car",
       "partNo": "4865",
       "color": "Yellow",
       "verification": "inventory+set-photo",
       "lddRef": "690",
       "lddDesignID": "4865",
-      "residualStuds": 22.868,
+      "residualStuds": 15.861,
       "alignedCandidatePosition": [
         18,
-        11.35,
-        -2.5
+        13.1879,
+        4.825
       ],
       "rawCandidateTranslationStud": [
         18.5,
@@ -1917,239 +2041,22 @@
       ]
     },
     {
-      "modelPartId": "temple-flame-1",
+      "modelPartId": "temple-mid-1",
       "assembly": "main-temple",
-      "partNo": "6126",
-      "color": "Trans-Neon Orange",
+      "partNo": "3004",
+      "color": "Light Gray",
       "verification": "inventory+set-photo",
-      "lddRef": "438",
-      "lddDesignID": "6126",
-      "residualStuds": 23.098,
-      "alignedCandidatePosition": [
-        19,
-        24.55,
-        8.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        29.0532,
-        -5.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        -1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "temple-band-1",
-      "assembly": "main-temple",
-      "partNo": "3008",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "501",
-      "lddDesignID": "3008",
-      "residualStuds": 23.208,
-      "alignedCandidatePosition": [
-        23,
-        9.35,
-        10.5
-      ],
-      "rawCandidateTranslationStud": [
-        23.5,
-        13.8532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "car-body-6",
-      "assembly": "car",
-      "partNo": "3020",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "955",
-      "lddDesignID": "3020",
-      "residualStuds": 23.373,
-      "alignedCandidatePosition": [
-        22,
-        11.75,
-        -0.5
-      ],
-      "rawCandidateTranslationStud": [
-        22.5,
-        16.2532,
-        3.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-blue-slope-1",
-      "assembly": "main-temple",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "517",
-      "lddDesignID": "3039",
-      "residualStuds": 23.964,
-      "alignedCandidatePosition": [
-        19,
-        16.15,
-        11.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        20.6532,
-        -8.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "car-yellow-detail-3",
-      "assembly": "car",
-      "partNo": "4865",
-      "color": "Yellow",
-      "verification": "inventory+set-photo",
-      "lddRef": "689",
-      "lddDesignID": "4865",
-      "residualStuds": 24.392,
+      "lddRef": "523",
+      "lddDesignID": "3004",
+      "residualStuds": 16.453,
       "alignedCandidatePosition": [
         20,
-        11.35,
-        -2.5
+        13.1879,
+        -9.175
       ],
       "rawCandidateTranslationStud": [
         20.5,
         15.8532,
-        5.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-torch-base-1",
-      "assembly": "main-temple",
-      "partNo": "4070",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "818",
-      "lddDesignID": "4070",
-      "residualStuds": 26.714,
-      "alignedCandidatePosition": [
-        -17.0266,
-        -1.8957,
-        -12.5
-      ],
-      "rawCandidateTranslationStud": [
-        -16.5266,
-        2.6076,
-        15.5
-      ],
-      "rawCandidateMatrix3": [
-        -0.999391,
-        -0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "gate-blue-slope-a1",
-      "assembly": "bridge-gateway",
-      "partNo": "3039",
-      "color": "Blue",
-      "verification": "manual-page-28-step-3",
-      "lddRef": "519",
-      "lddDesignID": "3039",
-      "residualStuds": 27.132,
-      "alignedCandidatePosition": [
-        23,
-        16.15,
-        11.5
-      ],
-      "rawCandidateTranslationStud": [
-        23.5,
-        20.6532,
-        -8.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "temple-black-core-1",
-      "assembly": "main-temple",
-      "partNo": "30145",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "522",
-      "lddDesignID": "30145",
-      "residualStuds": 27.227,
-      "alignedCandidatePosition": [
-        22,
-        11.35,
-        11.5
-      ],
-      "rawCandidateTranslationStud": [
-        22.5,
-        15.8532,
         -8.5
       ],
       "rawCandidateMatrix3": [
@@ -2165,365 +2072,24 @@
       ]
     },
     {
-      "modelPartId": "trap-red-base-4",
-      "assembly": "trap-platform",
-      "partNo": "3003",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "572",
-      "lddDesignID": "3003",
-      "residualStuds": 28.646,
-      "alignedCandidatePosition": [
-        15,
-        11.35,
-        7.5
-      ],
-      "rawCandidateTranslationStud": [
-        15.5,
-        15.8532,
-        -4.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "trap-red-plate-4",
-      "assembly": "trap-platform",
-      "partNo": "3034",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "534",
-      "lddDesignID": "3034",
-      "residualStuds": 29.616,
-      "alignedCandidatePosition": [
-        16,
-        9.35,
-        11.5
-      ],
-      "rawCandidateTranslationStud": [
-        16.5,
-        13.8532,
-        -8.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "trap-blue-base-1",
-      "assembly": "trap-platform",
-      "partNo": "3020",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "911",
-      "lddDesignID": "3020",
-      "residualStuds": 29.74,
-      "alignedCandidatePosition": [
-        16,
-        -1.6657,
-        -11.5
-      ],
-      "rawCandidateTranslationStud": [
-        16.5,
-        2.8375,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "boat-fitting-10",
-      "assembly": "boat",
-      "partNo": "2431",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "490",
-      "lddDesignID": "2431",
-      "residualStuds": 31.304,
-      "alignedCandidatePosition": [
-        19,
-        10.95,
-        3.5
-      ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        15.4532,
-        -0.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "temple-flame-7",
+      "modelPartId": "temple-flame-6",
       "assembly": "main-temple",
       "partNo": "6126",
       "color": "Trans-Neon Orange",
       "verification": "inventory+set-photo",
-      "lddRef": "760",
+      "lddRef": "695",
       "lddDesignID": "6126",
-      "residualStuds": 31.607,
+      "residualStuds": 16.454,
       "alignedCandidatePosition": [
-        -11.5,
-        3.65,
-        13
-      ],
-      "rawCandidateTranslationStud": [
-        -11,
-        8.1532,
-        -10
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        -1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "temple-torch-base-3",
-      "assembly": "main-temple",
-      "partNo": "4070",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "817",
-      "lddDesignID": "4070",
-      "residualStuds": 31.617,
-      "alignedCandidatePosition": [
-        -17.0266,
-        -1.8957,
-        -13.5
-      ],
-      "rawCandidateTranslationStud": [
-        -16.5266,
-        2.6076,
-        16.5
-      ],
-      "rawCandidateMatrix3": [
-        0.999391,
-        0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "gate-red-lower-a",
-      "assembly": "bridge-gateway",
-      "partNo": "3020",
-      "color": "Red",
-      "verification": "manual-page-28-step-2",
-      "lddRef": "433",
-      "lddDesignID": "3020",
-      "residualStuds": 32.491,
-      "alignedCandidatePosition": [
-        22,
-        26.95,
-        8.5
-      ],
-      "rawCandidateTranslationStud": [
         22.5,
-        31.4532,
-        -5.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "boat-fitting-11",
-      "assembly": "boat",
-      "partNo": "4162",
-      "color": "Blue",
-      "verification": "inventory+set-photo",
-      "lddRef": "496",
-      "lddDesignID": "4162",
-      "residualStuds": 32.866,
-      "alignedCandidatePosition": [
-        16,
-        10.95,
-        10.5
+        5.6879,
+        1.825
       ],
       "rawCandidateTranslationStud": [
-        16.5,
-        15.4532,
-        -7.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
-    {
-      "modelPartId": "car-axle-front",
-      "assembly": "car",
-      "partNo": "30157",
-      "color": "Tan",
-      "verification": "instruction-page-7-step-2",
-      "lddRef": "824",
-      "lddDesignID": "30157",
-      "residualStuds": 32.91,
-      "alignedCandidatePosition": [
-        -11.0023,
-        -2.4858,
-        -11.5
-      ],
-      "rawCandidateTranslationStud": [
-        -10.5023,
-        2.0174,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        -0.0349,
-        0.999391,
-        0,
-        -0.999391,
-        -0.0349,
-        0
-      ]
-    },
-    {
-      "modelPartId": "trap-red-base-2",
-      "assembly": "trap-platform",
-      "partNo": "3003",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "389",
-      "lddDesignID": "3003",
-      "residualStuds": 32.943,
-      "alignedCandidatePosition": [
-        19,
-        14.95,
+        23,
+        8.3532,
         2.5
       ],
-      "rawCandidateTranslationStud": [
-        19.5,
-        19.4532,
-        0.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "hammer",
-      "assembly": "accessories",
-      "partNo": "4522",
-      "color": "Black",
-      "verification": "inventory+set-photo",
-      "lddRef": "927",
-      "lddDesignID": "4522",
-      "residualStuds": 33.206,
-      "alignedCandidatePosition": [
-        20.5,
-        -3.6657,
-        -15.5
-      ],
-      "rawCandidateTranslationStud": [
-        21,
-        0.8375,
-        18.5
-      ],
-      "rawCandidateMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "trap-red-plate-2",
-      "assembly": "trap-platform",
-      "partNo": "3034",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "514",
-      "lddDesignID": "3034",
-      "residualStuds": 33.565,
-      "alignedCandidatePosition": [
-        16,
-        10.95,
-        11.5
-      ],
-      "rawCandidateTranslationStud": [
-        16.5,
-        15.4532,
-        -8.5
-      ],
       "rawCandidateMatrix3": [
         1,
         0,
@@ -2537,80 +2103,18 @@
       ]
     },
     {
-      "modelPartId": "temple-torch-base-2",
-      "assembly": "main-temple",
-      "partNo": "4070",
-      "color": "Trans-Neon Orange",
-      "verification": "inventory+set-photo",
-      "lddRef": "814",
-      "lddDesignID": "4070",
-      "residualStuds": 33.748,
-      "alignedCandidatePosition": [
-        -18.0259,
-        -1.9306,
-        -12.5
-      ],
-      "rawCandidateTranslationStud": [
-        -17.526,
-        2.5727,
-        15.5
-      ],
-      "rawCandidateMatrix3": [
-        -0.999391,
-        -0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "car-rear-tire-left",
-      "assembly": "car",
-      "partNo": "2346",
-      "color": "Black",
-      "verification": "instruction-page-8-step-10",
-      "lddRef": "832",
-      "lddDesignID": "2346",
-      "residualStuds": 34.588,
-      "alignedCandidatePosition": [
-        -10.5,
-        -2.5433,
-        -11.0006
-      ],
-      "rawCandidateTranslationStud": [
-        -10,
-        1.9599,
-        14.0006
-      ],
-      "rawCandidateMatrix3": [
-        0.999391,
-        0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "spear-2",
+      "modelPartId": "spear-3",
       "assembly": "accessories",
       "partNo": "4497",
       "color": "Black",
       "verification": "inventory+set-photo",
       "lddRef": "697",
       "lddDesignID": "4497",
-      "residualStuds": 35.017,
+      "residualStuds": 16.819,
       "alignedCandidatePosition": [
         20.5,
-        11.65,
-        13.5
+        13.4879,
+        -11.175
       ],
       "rawCandidateTranslationStud": [
         21,
@@ -2630,6 +2134,1091 @@
       ]
     },
     {
+      "modelPartId": "temple-red-plate-3",
+      "assembly": "main-temple",
+      "partNo": "3022",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "275",
+      "lddDesignID": "3022",
+      "residualStuds": 16.923,
+      "alignedCandidatePosition": [
+        -8,
+        5.188,
+        3.825
+      ],
+      "rawCandidateTranslationStud": [
+        -7.5,
+        7.8532,
+        4.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-3",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "504",
+      "lddDesignID": "2454",
+      "residualStuds": 17.056,
+      "alignedCandidatePosition": [
+        22,
+        5.1879,
+        -1.175
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        7.8532,
+        -0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-black-core-1",
+      "assembly": "main-temple",
+      "partNo": "30145",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "475",
+      "lddDesignID": "30145",
+      "residualStuds": 17.095,
+      "alignedCandidatePosition": [
+        19,
+        13.5879,
+        -7.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        16.2532,
+        -6.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-black-core-3",
+      "assembly": "main-temple",
+      "partNo": "30145",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "474",
+      "lddDesignID": "30145",
+      "residualStuds": 17.136,
+      "alignedCandidatePosition": [
+        19,
+        13.5879,
+        -3.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        16.2532,
+        -2.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-slope-a2",
+      "assembly": "bridge-gateway",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "manual-page-28-step-3",
+      "lddRef": "587",
+      "lddDesignID": "3039",
+      "residualStuds": 17.138,
+      "alignedCandidatePosition": [
+        15,
+        5.5879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        15.5,
+        8.2532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-large-arch-2",
+      "assembly": "main-temple",
+      "partNo": "3308",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "576",
+      "lddDesignID": "3308",
+      "residualStuds": 17.553,
+      "alignedCandidatePosition": [
+        15,
+        10.7879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        15.5,
+        13.4532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-red-lower-a",
+      "assembly": "bridge-gateway",
+      "partNo": "3020",
+      "color": "Red",
+      "verification": "manual-page-28-step-2",
+      "lddRef": "588",
+      "lddDesignID": "3020",
+      "residualStuds": 17.862,
+      "alignedCandidatePosition": [
+        14,
+        5.1879,
+        -10.175
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        7.8532,
+        -9.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-red-arch-2",
+      "assembly": "main-temple",
+      "partNo": "3455",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "456",
+      "lddDesignID": "3455",
+      "residualStuds": 17.948,
+      "alignedCandidatePosition": [
+        18,
+        19.5879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        22.2532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-yellow-detail-1",
+      "assembly": "car",
+      "partNo": "4865",
+      "color": "Yellow",
+      "verification": "inventory+set-photo",
+      "lddRef": "689",
+      "lddDesignID": "4865",
+      "residualStuds": 17.988,
+      "alignedCandidatePosition": [
+        20,
+        13.1879,
+        4.825
+      ],
+      "rawCandidateTranslationStud": [
+        20.5,
+        15.8532,
+        5.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-7",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "663",
+      "lddDesignID": "6091",
+      "residualStuds": 18.041,
+      "alignedCandidatePosition": [
+        18,
+        25.9879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        28.6532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-5",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "415",
+      "lddDesignID": "2454",
+      "residualStuds": 18.154,
+      "alignedCandidatePosition": [
+        23,
+        5.1879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        7.8532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-black-core-6",
+      "assembly": "main-temple",
+      "partNo": "30145",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "393",
+      "lddDesignID": "30145",
+      "residualStuds": 18.191,
+      "alignedCandidatePosition": [
+        23,
+        13.1879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        15.8532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-rear-tire-left",
+      "assembly": "car",
+      "partNo": "2346",
+      "color": "Black",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "829",
+      "lddDesignID": "2346",
+      "residualStuds": 18.207,
+      "alignedCandidatePosition": [
+        -10.5,
+        -0.7053,
+        17.3257
+      ],
+      "rawCandidateTranslationStud": [
+        -10,
+        1.9599,
+        18.0006
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-wheel-3",
+      "assembly": "car",
+      "partNo": "30155",
+      "color": "Light Gray",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "830",
+      "lddDesignID": "30155",
+      "residualStuds": 18.331,
+      "alignedCandidatePosition": [
+        -10.5,
+        -0.7053,
+        18.2157
+      ],
+      "rawCandidateTranslationStud": [
+        -10,
+        1.9599,
+        18.8906
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-side-arch-3",
+      "assembly": "main-temple",
+      "partNo": "3455",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "409",
+      "lddDesignID": "3455",
+      "residualStuds": 18.332,
+      "alignedCandidatePosition": [
+        23,
+        11.5879,
+        0.825
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        14.2532,
+        1.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "car-wheel-1",
+      "assembly": "car",
+      "partNo": "30155",
+      "color": "Light Gray",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "831",
+      "lddDesignID": "30155",
+      "residualStuds": 18.337,
+      "alignedCandidatePosition": [
+        -10.5,
+        -0.7053,
+        13.2157
+      ],
+      "rawCandidateTranslationStud": [
+        -10,
+        1.9599,
+        13.8906
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-print-pillar-1",
+      "assembly": "main-temple",
+      "partNo": "2454px6",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "539",
+      "lddDesignID": "2454",
+      "residualStuds": 18.687,
+      "alignedCandidatePosition": [
+        16,
+        5.1879,
+        -16.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        7.8532,
+        -15.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "car-body-1",
+      "assembly": "car",
+      "partNo": "32000",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "404",
+      "lddDesignID": "32000",
+      "residualStuds": 18.919,
+      "alignedCandidatePosition": [
+        16,
+        11.5879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        14.2532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-flame-1",
+      "assembly": "main-temple",
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "760",
+      "lddDesignID": "6126",
+      "residualStuds": 18.92,
+      "alignedCandidatePosition": [
+        -11.5,
+        5.4879,
+        -10.675
+      ],
+      "rawCandidateTranslationStud": [
+        -11,
+        8.1532,
+        -10
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-red-curve-1",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "729",
+      "lddDesignID": "6091",
+      "residualStuds": 19.051,
+      "alignedCandidatePosition": [
+        -9,
+        7.988,
+        2.825
+      ],
+      "rawCandidateTranslationStud": [
+        -8.5,
+        10.6532,
+        3.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "trapdoor-panel",
+      "assembly": "trap-platform",
+      "partNo": "3034",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "806",
+      "lddDesignID": "3034",
+      "residualStuds": 19.122,
+      "alignedCandidatePosition": [
+        -18.012,
+        -0.4924,
+        15.825
+      ],
+      "rawCandidateTranslationStud": [
+        -17.512,
+        2.1729,
+        16.5
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-blue-slope-3",
+      "assembly": "main-temple",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "390",
+      "lddDesignID": "3039",
+      "residualStuds": 19.225,
+      "alignedCandidatePosition": [
+        22,
+        17.9879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        20.6532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-yellow-detail-4",
+      "assembly": "car",
+      "partNo": "4865",
+      "color": "Yellow",
+      "verification": "inventory+set-photo",
+      "lddRef": "691",
+      "lddDesignID": "4865",
+      "residualStuds": 20.461,
+      "alignedCandidatePosition": [
+        19,
+        13.1879,
+        1.825
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        15.8532,
+        2.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-side-arch-1",
+      "assembly": "main-temple",
+      "partNo": "3455",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "536",
+      "lddDesignID": "3455",
+      "residualStuds": 20.893,
+      "alignedCandidatePosition": [
+        23,
+        11.5879,
+        -15.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        14.2532,
+        -14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-mid-9",
+      "assembly": "main-temple",
+      "partNo": "3010",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "915",
+      "lddDesignID": "3010",
+      "residualStuds": 20.984,
+      "alignedCandidatePosition": [
+        14,
+        -2.2278,
+        16.825
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        0.4375,
+        17.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-axle-front",
+      "assembly": "car",
+      "partNo": "30157",
+      "color": "Tan",
+      "verification": "instruction-page-7-step-2",
+      "lddRef": "824",
+      "lddDesignID": "30157",
+      "residualStuds": 21.018,
+      "alignedCandidatePosition": [
+        -11.0023,
+        -0.6478,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        -10.5023,
+        2.0174,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        -0.0349,
+        0.999391,
+        0,
+        -0.999391,
+        -0.0349,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-band-2",
+      "assembly": "main-temple",
+      "partNo": "3008",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "501",
+      "lddDesignID": "3008",
+      "residualStuds": 21.428,
+      "alignedCandidatePosition": [
+        23,
+        11.1879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        13.8532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-flame-3",
+      "assembly": "main-temple",
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "659",
+      "lddDesignID": "6126",
+      "residualStuds": 21.611,
+      "alignedCandidatePosition": [
+        19,
+        26.3129,
+        -3.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        28.9782,
+        -2.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-pillar-b",
+      "assembly": "bridge-gateway",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "manual-page-28-step-6",
+      "lddRef": "506",
+      "lddDesignID": "2454",
+      "residualStuds": 21.675,
+      "alignedCandidatePosition": [
+        22,
+        5.1879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        7.8532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "trap-tan-cap",
+      "assembly": "trap-platform",
+      "partNo": "3020",
+      "color": "Tan",
+      "verification": "inventory+set-photo",
+      "lddRef": "819",
+      "lddDesignID": "3020",
+      "residualStuds": 21.728,
+      "alignedCandidatePosition": [
+        -14.9998,
+        -0.7874,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        -14.4999,
+        1.8778,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        -0.0349,
+        0.999391,
+        0,
+        -0.999391,
+        -0.0349,
+        0
+      ]
+    },
+    {
+      "modelPartId": "car-body-6",
+      "assembly": "car",
+      "partNo": "3020",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "955",
+      "lddDesignID": "3020",
+      "residualStuds": 21.917,
+      "alignedCandidatePosition": [
+        22,
+        13.5879,
+        2.825
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        16.2532,
+        3.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-mid-5",
+      "assembly": "main-temple",
+      "partNo": "3004",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "453",
+      "lddDesignID": "3004",
+      "residualStuds": 22.067,
+      "alignedCandidatePosition": [
+        21,
+        21.1879,
+        -2.175
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        23.8532,
+        -1.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-yellow-detail-3",
+      "assembly": "car",
+      "partNo": "4865",
+      "color": "Yellow",
+      "verification": "inventory+set-photo",
+      "lddRef": "693",
+      "lddDesignID": "4865",
+      "residualStuds": 22.331,
+      "alignedCandidatePosition": [
+        21,
+        13.1879,
+        1.825
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        15.8532,
+        2.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "boat-fitting-11",
+      "assembly": "boat",
+      "partNo": "4162",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "496",
+      "lddDesignID": "4162",
+      "residualStuds": 22.591,
+      "alignedCandidatePosition": [
+        16,
+        12.7879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        15.4532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-red-curve-2",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "725",
+      "lddDesignID": "6091",
+      "residualStuds": 22.882,
+      "alignedCandidatePosition": [
+        -9,
+        7.988,
+        3.825
+      ],
+      "rawCandidateTranslationStud": [
+        -8.5,
+        10.6532,
+        4.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
       "modelPartId": "car-body-7",
       "assembly": "car",
       "partNo": "3710",
@@ -2637,11 +3226,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "811",
       "lddDesignID": "3710",
-      "residualStuds": 35.347,
+      "residualStuds": 23.17,
       "alignedCandidatePosition": [
         -13.029,
-        -1.7561,
-        -11.5
+        0.0819,
+        13.825
       ],
       "rawCandidateTranslationStud": [
         -12.529,
@@ -2661,23 +3250,23 @@
       ]
     },
     {
-      "modelPartId": "car-front-tire-left",
+      "modelPartId": "car-rear-tire-right",
       "assembly": "car",
-      "partNo": "3483",
+      "partNo": "2346",
       "color": "Black",
       "verification": "instruction-page-8-step-10",
-      "lddRef": "827",
-      "lddDesignID": "3483",
-      "residualStuds": 36.158,
+      "lddRef": "832",
+      "lddDesignID": "2346",
+      "residualStuds": 23.409,
       "alignedCandidatePosition": [
-        -18.4951,
-        -2.8225,
-        -11.0009
+        -10.5,
+        -0.7053,
+        13.3257
       ],
       "rawCandidateTranslationStud": [
-        -17.9951,
-        1.6807,
-        14.0009
+        -10,
+        1.9599,
+        14.0006
       ],
       "rawCandidateMatrix3": [
         0.999391,
@@ -2692,22 +3281,84 @@
       ]
     },
     {
-      "modelPartId": "trap-red-base-3",
-      "assembly": "trap-platform",
-      "partNo": "3003",
-      "color": "Red",
+      "modelPartId": "temple-upper-brick-3",
+      "assembly": "main-temple",
+      "partNo": "3009",
+      "color": "Light Gray",
       "verification": "inventory+set-photo",
-      "lddRef": "518",
-      "lddDesignID": "3003",
-      "residualStuds": 37.447,
+      "lddRef": "535",
+      "lddDesignID": "3009",
+      "residualStuds": 24.152,
       "alignedCandidatePosition": [
         18,
-        14.95,
-        11.5
+        11.5879,
+        -16.175
       ],
       "rawCandidateTranslationStud": [
         18.5,
-        19.4532,
+        14.2532,
+        -15.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-body-9",
+      "assembly": "car",
+      "partNo": "3022",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "297",
+      "lddDesignID": "3022",
+      "residualStuds": 24.337,
+      "alignedCandidatePosition": [
+        -6,
+        5.1879,
+        -2.175
+      ],
+      "rawCandidateTranslationStud": [
+        -5.5,
+        7.8532,
+        -1.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-black-core-5",
+      "assembly": "main-temple",
+      "partNo": "30145",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "522",
+      "lddDesignID": "30145",
+      "residualStuds": 24.941,
+      "alignedCandidatePosition": [
+        22,
+        13.1879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        15.8532,
         -8.5
       ],
       "rawCandidateMatrix3": [
@@ -2723,23 +3374,178 @@
       ]
     },
     {
-      "modelPartId": "trap-red-plate-3",
-      "assembly": "trap-platform",
-      "partNo": "3034",
-      "color": "Red",
+      "modelPartId": "temple-gray-curve-3",
+      "assembly": "main-temple",
+      "partNo": "6091",
+      "color": "Light Gray",
       "verification": "inventory+set-photo",
-      "lddRef": "537",
-      "lddDesignID": "3034",
-      "residualStuds": 37.724,
+      "lddRef": "667",
+      "lddDesignID": "6091",
+      "residualStuds": 24.999,
       "alignedCandidatePosition": [
-        16,
-        9.35,
-        17.5
+        18,
+        25.9879,
+        -9.175
       ],
       "rawCandidateTranslationStud": [
-        16.5,
-        13.8532,
-        -14.5
+        18.5,
+        28.6532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "gate-web-arch",
+      "assembly": "bridge-gateway",
+      "partNo": "3308",
+      "color": "Light Gray",
+      "verification": "manual-page-30-visible",
+      "lddRef": "446",
+      "lddDesignID": "3308",
+      "residualStuds": 25.206,
+      "alignedCandidatePosition": [
+        18,
+        22.3879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        25.0532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-pillar-a",
+      "assembly": "bridge-gateway",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "manual-page-28-step-6",
+      "lddRef": "540",
+      "lddDesignID": "2454",
+      "residualStuds": 25.269,
+      "alignedCandidatePosition": [
+        23,
+        5.1879,
+        -10.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        7.8532,
+        -9.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-black-arch-top-2",
+      "assembly": "main-temple",
+      "partNo": "3659",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "909",
+      "lddDesignID": "3659",
+      "residualStuds": 25.496,
+      "alignedCandidatePosition": [
+        14,
+        -1.0278,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        14.5,
+        1.6375,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-slope-a1",
+      "assembly": "bridge-gateway",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "manual-page-28-step-3",
+      "lddRef": "543",
+      "lddDesignID": "3039",
+      "residualStuds": 25.541,
+      "alignedCandidatePosition": [
+        21,
+        5.1879,
+        -13.175
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        7.8532,
+        -12.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-mid-3",
+      "assembly": "main-temple",
+      "partNo": "3004",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "458",
+      "lddDesignID": "3004",
+      "residualStuds": 25.609,
+      "alignedCandidatePosition": [
+        21,
+        21.1879,
+        -7.175
+      ],
+      "rawCandidateTranslationStud": [
+        21.5,
+        23.8532,
+        -6.5
       ],
       "rawCandidateMatrix3": [
         1,
@@ -2754,23 +3560,85 @@
       ]
     },
     {
-      "modelPartId": "temple-torch-base-4",
-      "assembly": "main-temple",
-      "partNo": "4070",
-      "color": "Trans-Neon Orange",
+      "modelPartId": "trap-red-plate-2",
+      "assembly": "trap-platform",
+      "partNo": "3034",
+      "color": "Red",
       "verification": "inventory+set-photo",
-      "lddRef": "812",
-      "lddDesignID": "4070",
-      "residualStuds": 37.748,
+      "lddRef": "534",
+      "lddDesignID": "3034",
+      "residualStuds": 25.876,
       "alignedCandidatePosition": [
-        -18.0259,
-        -1.9306,
-        -13.5
+        16,
+        11.1879,
+        -9.175
       ],
       "rawCandidateTranslationStud": [
-        -17.526,
-        2.5727,
-        16.5
+        16.5,
+        13.8532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "boat-fitting-10",
+      "assembly": "boat",
+      "partNo": "2431",
+      "color": "Blue",
+      "verification": "inventory+set-photo",
+      "lddRef": "493",
+      "lddDesignID": "2431",
+      "residualStuds": 25.941,
+      "alignedCandidatePosition": [
+        19,
+        12.7879,
+        -8.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        15.4532,
+        -7.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-front-tire-left",
+      "assembly": "car",
+      "partNo": "3483",
+      "color": "Black",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "827",
+      "lddDesignID": "3483",
+      "residualStuds": 26.252,
+      "alignedCandidatePosition": [
+        -18.4951,
+        -0.9845,
+        13.326
+      ],
+      "rawCandidateTranslationStud": [
+        -17.9951,
+        1.6807,
+        14.0009
       ],
       "rawCandidateMatrix3": [
         0.999391,
@@ -2792,11 +3660,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "810",
       "lddDesignID": "3710",
-      "residualStuds": 38.825,
+      "residualStuds": 26.327,
       "alignedCandidatePosition": [
         -16.0272,
-        -1.8608,
-        -11.5
+        -0.0228,
+        13.825
       ],
       "rawCandidateTranslationStud": [
         -15.5272,
@@ -2816,23 +3684,953 @@
       ]
     },
     {
-      "modelPartId": "spear-1",
+      "modelPartId": "trap-red-base-4",
+      "assembly": "trap-platform",
+      "partNo": "3003",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "572",
+      "lddDesignID": "3003",
+      "residualStuds": 26.501,
+      "alignedCandidatePosition": [
+        15,
+        13.1879,
+        -5.175
+      ],
+      "rawCandidateTranslationStud": [
+        15.5,
+        15.8532,
+        -4.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-torch-base-3",
+      "assembly": "main-temple",
+      "partNo": "4070",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "818",
+      "lddDesignID": "4070",
+      "residualStuds": 26.689,
+      "alignedCandidatePosition": [
+        -17.0266,
+        -0.0577,
+        14.825
+      ],
+      "rawCandidateTranslationStud": [
+        -16.5266,
+        2.6076,
+        15.5
+      ],
+      "rawCandidateMatrix3": [
+        -0.999391,
+        -0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-black-arch-top-1",
+      "assembly": "main-temple",
+      "partNo": "3659",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "914",
+      "lddDesignID": "3659",
+      "residualStuds": 26.982,
+      "alignedCandidatePosition": [
+        17,
+        -1.0278,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        17.5,
+        1.6375,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "trap-red-plate-4",
+      "assembly": "trap-platform",
+      "partNo": "3034",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "514",
+      "lddDesignID": "3034",
+      "residualStuds": 27.001,
+      "alignedCandidatePosition": [
+        16,
+        12.7879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        15.4532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-big-1",
+      "assembly": "main-temple",
+      "partNo": "6081",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "820",
+      "lddDesignID": "6081",
+      "residualStuds": 28.281,
+      "alignedCandidatePosition": [
+        -13.015,
+        -0.3179,
+        16.825
+      ],
+      "rawCandidateTranslationStud": [
+        -12.515,
+        2.3474,
+        17.5
+      ],
+      "rawCandidateMatrix3": [
+        -0.999391,
+        -0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "pickaxe-1",
+      "assembly": "accessories",
+      "partNo": "3841",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "968",
+      "lddDesignID": "3841",
+      "residualStuds": 28.728,
+      "alignedCandidatePosition": [
+        -10.1092,
+        0.9471,
+        16.7
+      ],
+      "rawCandidateTranslationStud": [
+        -9.6093,
+        3.6123,
+        17.375
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-chassis",
+      "assembly": "car",
+      "partNo": "3832",
+      "color": "Black",
+      "verification": "instruction-page-7-step-1",
+      "lddRef": "823",
+      "lddDesignID": "3832",
+      "residualStuds": 29.032,
+      "alignedCandidatePosition": [
+        -18.9835,
+        -1.3268,
+        15.825
+      ],
+      "rawCandidateTranslationStud": [
+        -18.4835,
+        1.3385,
+        16.5
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "camera",
+      "assembly": "accessories",
+      "partNo": "30148",
+      "color": "Black",
+      "verification": "inventory+set-photo",
+      "lddRef": "858",
+      "lddDesignID": "30148",
+      "residualStuds": 29.246,
+      "alignedCandidatePosition": [
+        -12.5,
+        7.0092,
+        -5.675
+      ],
+      "rawCandidateTranslationStud": [
+        -12,
+        9.6745,
+        -5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-body-4",
+      "assembly": "car",
+      "partNo": "32000",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "513",
+      "lddDesignID": "32000",
+      "residualStuds": 29.317,
+      "alignedCandidatePosition": [
+        16,
+        11.5879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        14.2532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-axle-rear",
+      "assembly": "car",
+      "partNo": "30157",
+      "color": "Tan",
+      "verification": "instruction-page-7-step-2",
+      "lddRef": "805",
+      "lddDesignID": "30157",
+      "residualStuds": 29.36,
+      "alignedCandidatePosition": [
+        -18.9974,
+        -0.927,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        -18.4974,
+        1.7382,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        -0.0349,
+        0.999391,
+        0,
+        -0.999391,
+        -0.0349,
+        0
+      ]
+    },
+    {
+      "modelPartId": "temple-dark-pillar-7",
+      "assembly": "main-temple",
+      "partNo": "2454",
+      "color": "Dark Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "541",
+      "lddDesignID": "2454",
+      "residualStuds": 30.065,
+      "alignedCandidatePosition": [
+        23,
+        5.1879,
+        -16.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        7.8532,
+        -15.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-slope-b2",
+      "assembly": "bridge-gateway",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "manual-page-28-step-3",
+      "lddRef": "517",
+      "lddDesignID": "3039",
+      "residualStuds": 30.075,
+      "alignedCandidatePosition": [
+        19,
+        17.9879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        20.6532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-wheel-4",
+      "assembly": "car",
+      "partNo": "30155",
+      "color": "Light Gray",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "826",
+      "lddDesignID": "30155",
+      "residualStuds": 30.724,
+      "alignedCandidatePosition": [
+        -18.4951,
+        -0.9845,
+        18.2157
+      ],
+      "rawCandidateTranslationStud": [
+        -17.9951,
+        1.6807,
+        18.8906
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-wheel-2",
+      "assembly": "car",
+      "partNo": "30155",
+      "color": "Light Gray",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "828",
+      "lddDesignID": "30155",
+      "residualStuds": 30.728,
+      "alignedCandidatePosition": [
+        -18.4951,
+        -0.9845,
+        13.2157
+      ],
+      "rawCandidateTranslationStud": [
+        -17.9951,
+        1.6807,
+        13.8906
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "trap-red-base-2",
+      "assembly": "trap-platform",
+      "partNo": "3003",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "518",
+      "lddDesignID": "3003",
+      "residualStuds": 30.809,
+      "alignedCandidatePosition": [
+        18,
+        16.7879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        18.5,
+        19.4532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "car-front-tire-right",
+      "assembly": "car",
+      "partNo": "3483",
+      "color": "Black",
+      "verification": "instruction-page-8-step-10",
+      "lddRef": "825",
+      "lddDesignID": "3483",
+      "residualStuds": 31.149,
+      "alignedCandidatePosition": [
+        -18.4951,
+        -0.9845,
+        18.326
+      ],
+      "rawCandidateTranslationStud": [
+        -17.9951,
+        1.6807,
+        19.0009
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "gate-red-upper-b",
+      "assembly": "bridge-gateway",
+      "partNo": "3020",
+      "color": "Red",
+      "verification": "manual-page-28-step-5",
+      "lddRef": "528",
+      "lddDesignID": "3020",
+      "residualStuds": 31.15,
+      "alignedCandidatePosition": [
+        17,
+        14.3879,
+        -14.175
+      ],
+      "rawCandidateTranslationStud": [
+        17.5,
+        17.0532,
+        -13.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "trap-red-plate-1",
+      "assembly": "trap-platform",
+      "partNo": "3034",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "537",
+      "lddDesignID": "3034",
+      "residualStuds": 31.932,
+      "alignedCandidatePosition": [
+        16,
+        11.1879,
+        -15.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        13.8532,
+        -14.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-gray-curve-big-2",
+      "assembly": "main-temple",
+      "partNo": "6081",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "821",
+      "lddDesignID": "6081",
+      "residualStuds": 31.939,
+      "alignedCandidatePosition": [
+        -16.0132,
+        -0.4226,
+        13.825
+      ],
+      "rawCandidateTranslationStud": [
+        -15.5132,
+        2.2427,
+        14.5
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-torch-base-1",
+      "assembly": "main-temple",
+      "partNo": "4070",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "817",
+      "lddDesignID": "4070",
+      "residualStuds": 32.395,
+      "alignedCandidatePosition": [
+        -17.0266,
+        -0.0577,
+        15.825
+      ],
+      "rawCandidateTranslationStud": [
+        -16.5266,
+        2.6076,
+        16.5
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-flame-5",
+      "assembly": "main-temple",
+      "partNo": "6126",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "438",
+      "lddDesignID": "6126",
+      "residualStuds": 33.263,
+      "alignedCandidatePosition": [
+        19,
+        26.3879,
+        -6.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        29.0532,
+        -5.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "gate-blue-slope-b1",
+      "assembly": "bridge-gateway",
+      "partNo": "3039",
+      "color": "Blue",
+      "verification": "manual-page-28-step-3",
+      "lddRef": "519",
+      "lddDesignID": "3039",
+      "residualStuds": 33.563,
+      "alignedCandidatePosition": [
+        23,
+        17.9879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        23.5,
+        20.6532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "temple-torch-base-4",
+      "assembly": "main-temple",
+      "partNo": "4070",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "814",
+      "lddDesignID": "4070",
+      "residualStuds": 33.726,
+      "alignedCandidatePosition": [
+        -18.0259,
+        -0.0926,
+        14.825
+      ],
+      "rawCandidateTranslationStud": [
+        -17.526,
+        2.5727,
+        15.5
+      ],
+      "rawCandidateMatrix3": [
+        -0.999391,
+        -0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "trap-red-plate-3",
+      "assembly": "trap-platform",
+      "partNo": "3034",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "532",
+      "lddDesignID": "3034",
+      "residualStuds": 33.929,
+      "alignedCandidatePosition": [
+        16,
+        12.7879,
+        -15.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        15.4532,
+        -14.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "boat-fitting-12",
+      "assembly": "boat",
+      "partNo": "3069px23",
+      "color": "Tan",
+      "verification": "inventory+set-photo",
+      "lddRef": "874",
+      "lddDesignID": "3069",
+      "residualStuds": 34.844,
+      "alignedCandidatePosition": [
+        -13.0566,
+        1.0814,
+        15.3247
+      ],
+      "rawCandidateTranslationStud": [
+        -12.5567,
+        3.7467,
+        15.9997
+      ],
+      "rawCandidateMatrix3": [
+        -0.999391,
+        -0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "trap-red-base-3",
+      "assembly": "trap-platform",
+      "partNo": "3003",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "389",
+      "lddDesignID": "3003",
+      "residualStuds": 35.601,
+      "alignedCandidatePosition": [
+        19,
+        16.7879,
+        -0.175
+      ],
+      "rawCandidateTranslationStud": [
+        19.5,
+        19.4532,
+        0.5
+      ],
+      "rawCandidateMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "modelPartId": "car-body-3",
+      "assembly": "car",
+      "partNo": "32000",
+      "color": "Light Gray",
+      "verification": "inventory+set-photo",
+      "lddRef": "531",
+      "lddDesignID": "32000",
+      "residualStuds": 36.4,
+      "alignedCandidatePosition": [
+        16,
+        11.5879,
+        -16.175
+      ],
+      "rawCandidateTranslationStud": [
+        16.5,
+        14.2532,
+        -15.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "gate-red-lower-b",
+      "assembly": "bridge-gateway",
+      "partNo": "3020",
+      "color": "Red",
+      "verification": "manual-page-28-step-2",
+      "lddRef": "433",
+      "lddDesignID": "3020",
+      "residualStuds": 37.645,
+      "alignedCandidatePosition": [
+        22,
+        28.7879,
+        -6.175
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        31.4532,
+        -5.5
+      ],
+      "rawCandidateMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "modelPartId": "trap-red-base-1",
+      "assembly": "trap-platform",
+      "partNo": "3003",
+      "color": "Red",
+      "verification": "inventory+set-photo",
+      "lddRef": "520",
+      "lddDesignID": "3003",
+      "residualStuds": 38.016,
+      "alignedCandidatePosition": [
+        22,
+        16.7879,
+        -9.175
+      ],
+      "rawCandidateTranslationStud": [
+        22.5,
+        19.4532,
+        -8.5
+      ],
+      "rawCandidateMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "temple-torch-base-2",
+      "assembly": "main-temple",
+      "partNo": "4070",
+      "color": "Trans-Neon Orange",
+      "verification": "inventory+set-photo",
+      "lddRef": "812",
+      "lddDesignID": "4070",
+      "residualStuds": 38.4,
+      "alignedCandidatePosition": [
+        -18.0259,
+        -0.0926,
+        15.825
+      ],
+      "rawCandidateTranslationStud": [
+        -17.526,
+        2.5727,
+        16.5
+      ],
+      "rawCandidateMatrix3": [
+        0.999391,
+        0.0349,
+        0,
+        -0.0349,
+        0.999391,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "modelPartId": "spear-2",
       "assembly": "accessories",
       "partNo": "4497",
       "color": "Black",
       "verification": "inventory+set-photo",
-      "lddRef": "957",
+      "lddRef": "958",
       "lddDesignID": "4497",
-      "residualStuds": 39.255,
+      "residualStuds": 38.699,
       "alignedCandidatePosition": [
         23.8,
-        12.86,
-        -0.5
+        14.6979,
+        3.825
       ],
       "rawCandidateTranslationStud": [
         24.3,
         17.3632,
-        3.5
+        4.5
       ],
       "rawCandidateMatrix3": [
         0,
@@ -2854,11 +4652,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "669",
       "lddDesignID": "3938",
-      "residualStuds": 39.53,
+      "residualStuds": 38.858,
       "alignedCandidatePosition": [
         23,
-        20.05,
-        7.5
+        21.8879,
+        -5.175
       ],
       "rawCandidateTranslationStud": [
         23.5,
@@ -2885,11 +4683,11 @@
       "verification": "inventory+set-photo",
       "lddRef": "471",
       "lddDesignID": "3937",
-      "residualStuds": 39.746,
+      "residualStuds": 39.101,
       "alignedCandidatePosition": [
         23,
-        19.35,
-        7.5
+        21.1879,
+        -5.175
       ],
       "rawCandidateTranslationStud": [
         23.5,
@@ -2909,23 +4707,23 @@
       ]
     },
     {
-      "modelPartId": "trap-red-base-1",
+      "modelPartId": "trap-blue-base-1",
       "assembly": "trap-platform",
-      "partNo": "3003",
-      "color": "Red",
+      "partNo": "3020",
+      "color": "Blue",
       "verification": "inventory+set-photo",
-      "lddRef": "391",
-      "lddDesignID": "3003",
-      "residualStuds": 39.966,
+      "lddRef": "459",
+      "lddDesignID": "3020",
+      "residualStuds": 39.211,
       "alignedCandidatePosition": [
-        23,
-        14.95,
-        2.5
+        22,
+        20.7879,
+        -8.175
       ],
       "rawCandidateTranslationStud": [
-        23.5,
-        19.4532,
-        0.5
+        22.5,
+        23.4532,
+        -7.5
       ],
       "rawCandidateMatrix3": [
         -1,
@@ -2940,158 +4738,34 @@
       ]
     },
     {
-      "modelPartId": "car-rear-tire-right",
-      "assembly": "car",
-      "partNo": "2346",
+      "modelPartId": "spear-1",
+      "assembly": "accessories",
+      "partNo": "4497",
       "color": "Black",
-      "verification": "instruction-page-8-step-10",
-      "lddRef": "829",
-      "lddDesignID": "2346",
-      "residualStuds": 40.49,
+      "verification": "inventory+set-photo",
+      "lddRef": "957",
+      "lddDesignID": "4497",
+      "residualStuds": 39.558,
       "alignedCandidatePosition": [
-        -10.5,
-        -2.5433,
-        -15.0006
+        23.8,
+        14.6979,
+        2.825
       ],
       "rawCandidateTranslationStud": [
-        -10,
-        1.9599,
-        18.0006
+        24.3,
+        17.3632,
+        3.5
       ],
       "rawCandidateMatrix3": [
+        0,
+        0,
+        -1,
         -1,
         0,
         0,
         0,
         1,
-        0,
-        0,
-        0,
-        -1
-      ]
-    },
-    {
-      "modelPartId": "car-chassis",
-      "assembly": "car",
-      "partNo": "3832",
-      "color": "Black",
-      "verification": "instruction-page-7-step-1",
-      "lddRef": "823",
-      "lddDesignID": "3832",
-      "residualStuds": 41.505,
-      "alignedCandidatePosition": [
-        -18.9835,
-        -3.1647,
-        -13.5
-      ],
-      "rawCandidateTranslationStud": [
-        -18.4835,
-        1.3385,
-        16.5
-      ],
-      "rawCandidateMatrix3": [
-        0.999391,
-        0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "car-axle-rear",
-      "assembly": "car",
-      "partNo": "30157",
-      "color": "Tan",
-      "verification": "instruction-page-7-step-2",
-      "lddRef": "805",
-      "lddDesignID": "30157",
-      "residualStuds": 41.682,
-      "alignedCandidatePosition": [
-        -18.9974,
-        -2.765,
-        -11.5
-      ],
-      "rawCandidateTranslationStud": [
-        -18.4974,
-        1.7382,
-        14.5
-      ],
-      "rawCandidateMatrix3": [
-        0,
-        0,
-        1,
-        -0.0349,
-        0.999391,
-        0,
-        -0.999391,
-        -0.0349,
         0
-      ]
-    },
-    {
-      "modelPartId": "trap-red-plate-1",
-      "assembly": "trap-platform",
-      "partNo": "3034",
-      "color": "Red",
-      "verification": "inventory+set-photo",
-      "lddRef": "532",
-      "lddDesignID": "3034",
-      "residualStuds": 41.769,
-      "alignedCandidatePosition": [
-        16,
-        10.95,
-        17.5
-      ],
-      "rawCandidateTranslationStud": [
-        16.5,
-        15.4532,
-        -14.5
-      ],
-      "rawCandidateMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "modelPartId": "car-front-tire-right",
-      "assembly": "car",
-      "partNo": "3483",
-      "color": "Black",
-      "verification": "instruction-page-8-step-10",
-      "lddRef": "825",
-      "lddDesignID": "3483",
-      "residualStuds": 42.887,
-      "alignedCandidatePosition": [
-        -18.4951,
-        -2.8225,
-        -16.0009
-      ],
-      "rawCandidateTranslationStud": [
-        -17.9951,
-        1.6807,
-        19.0009
-      ],
-      "rawCandidateMatrix3": [
-        0.999391,
-        0.0349,
-        0,
-        -0.0349,
-        0.999391,
-        0,
-        0,
-        0,
-        1
       ]
     }
   ]

@@ -7,7 +7,7 @@
         "lddRef": "847",
         "lddDesignID": "60169",
         "materialId": "2",
-        "materialName": null,
+        "materialName": "Light Gray",
         "translationStud": [
           21.499993801116943,
           26.278223991394043,
@@ -27,7 +27,7 @@
       }
     ]
   },
-  "count": 38,
+  "count": 57,
   "candidates": [
     {
       "inventoryPartNo": "2431",
@@ -50,6 +50,52 @@
         -1,
         0,
         0
+      ]
+    },
+    {
+      "inventoryPartNo": "2436",
+      "inventoryColor": "Light Gray",
+      "lddRef": "803",
+      "lddDesignID": "2436",
+      "materialId": "2",
+      "translationStud": [
+        -18.511394262313843,
+        2.1379999816417694,
+        15.499999523162842
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        -0.03489954024553299,
+        0.9993908405303955,
+        0,
+        -0.9993908405303955,
+        -0.03489954397082329,
+        0
+      ]
+    },
+    {
+      "inventoryPartNo": "2530",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "759",
+      "lddDesignID": "2530",
+      "materialId": "27",
+      "translationStud": [
+        -9.68390941619873,
+        10.280565023422241,
+        -12.169901132583618
+      ],
+      "matrix3": [
+        -0.9656696915626526,
+        -0.2588185966014862,
+        -0.022248385474085808,
+        -0.2588185966014862,
+        0.9512513875961304,
+        0.16773147881031036,
+        -0.02224821411073208,
+        0.16773150861263275,
+        -0.985581636428833
       ]
     },
     {
@@ -85,6 +131,98 @@
         15.500003099441528,
         1.63749098777771,
         14.499999284744263
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "inventoryPartNo": "3003",
+      "inventoryColor": "Light Gray",
+      "lddRef": "233",
+      "lddDesignID": "3003",
+      "materialId": "2",
+      "translationStud": [
+        -9.50001060962677,
+        7.85322904586792,
+        -14.500008821487427
+      ],
+      "matrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "inventoryPartNo": "30041",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "400",
+      "lddDesignID": "30041",
+      "materialId": "27",
+      "translationStud": [
+        23.4999942779541,
+        15.453225374221802,
+        1.499984860420227
+      ],
+      "matrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "inventoryPartNo": "30042",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "688",
+      "lddDesignID": "30042",
+      "materialId": "27",
+      "translationStud": [
+        23.4999942779541,
+        15.453227758407593,
+        1.4999842643737793
+      ],
+      "matrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "inventoryPartNo": "3007",
+      "inventoryColor": "Light Gray",
+      "lddRef": "505",
+      "lddDesignID": "3007",
+      "materialId": "2",
+      "translationStud": [
+        22.5,
+        6.653227210044861,
+        -7.500002980232239
       ],
       "matrix3": [
         0,
@@ -145,6 +283,29 @@
       ]
     },
     {
+      "inventoryPartNo": "30104",
+      "inventoryColor": "Light Gray",
+      "lddRef": "847",
+      "lddDesignID": "60169",
+      "materialId": "2",
+      "translationStud": [
+        21.499993801116943,
+        26.278223991394043,
+        -2.7474814653396606
+      ],
+      "matrix3": [
+        0.7545786499977112,
+        0.6562096476554871,
+        0,
+        0,
+        0,
+        -1,
+        -0.6562096476554871,
+        0.7545786499977112,
+        0
+      ]
+    },
+    {
       "inventoryPartNo": "30115",
       "inventoryColor": "Black",
       "lddRef": "949",
@@ -191,6 +352,75 @@
       ]
     },
     {
+      "inventoryPartNo": "30132",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "885",
+      "lddDesignID": "30132",
+      "materialId": "27",
+      "translationStud": [
+        8.285492062568665,
+        2.9773342609405518,
+        14.84994888305664
+      ],
+      "matrix3": [
+        -0.9656697511672974,
+        -0.2588183879852295,
+        -0.02224823646247387,
+        -0.2588183879852295,
+        0.9512513875961304,
+        0.1677314043045044,
+        -0.022248299792408943,
+        0.1677313596010208,
+        -0.985581636428833
+      ]
+    },
+    {
+      "inventoryPartNo": "30141",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "941",
+      "lddDesignID": "30141",
+      "materialId": "27",
+      "translationStud": [
+        -12.500011920928955,
+        8.471985459327698,
+        -10.934792757034302
+      ],
+      "matrix3": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "inventoryPartNo": "30147",
+      "inventoryColor": "Light Gray",
+      "lddRef": "800",
+      "lddDesignID": "30147",
+      "materialId": "2",
+      "translationStud": [
+        -18.52535843849182,
+        2.5377562642097473,
+        15.499999523162842
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        -0.03489954024553299,
+        0.9993908405303955,
+        0,
+        -0.9993908405303955,
+        -0.03489954024553299,
+        0
+      ]
+    },
+    {
       "inventoryPartNo": "30148",
       "inventoryColor": "Black",
       "lddRef": "858",
@@ -211,6 +441,75 @@
         0,
         0,
         -1
+      ]
+    },
+    {
+      "inventoryPartNo": "30149",
+      "inventoryColor": "Light Gray",
+      "lddRef": "809",
+      "lddDesignID": "30149",
+      "materialId": "2",
+      "translationStud": [
+        -15.541144609451294,
+        3.0422118306159973,
+        14.500000476837158
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        -0.03489954024553299,
+        0.9993908405303955,
+        0,
+        -0.9993908405303955,
+        -0.03489954024553299,
+        0
+      ]
+    },
+    {
+      "inventoryPartNo": "30156pb01",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "473",
+      "lddDesignID": "30156",
+      "materialId": "27",
+      "translationStud": [
+        17.499992847442627,
+        16.25322937965393,
+        -6.500019431114197
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "inventoryPartNo": "30162",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "886",
+      "lddDesignID": "30162",
+      "materialId": "27",
+      "translationStud": [
+        7.853878736495972,
+        3.4624311327934265,
+        17.260674238204956
+      ],
+      "matrix3": [
+        -0.25881829857826233,
+        0.9512514472007751,
+        -0.16773134469985962,
+        0.022248145192861557,
+        -0.16773134469985962,
+        -0.985581636428833,
+        -0.9656698703765869,
+        -0.25881829857826233,
+        0.022248364984989166
       ]
     },
     {
@@ -329,6 +628,29 @@
       ]
     },
     {
+      "inventoryPartNo": "30240",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "771",
+      "lddDesignID": "30240",
+      "materialId": "27",
+      "translationStud": [
+        13.499996662139893,
+        16.55323028564453,
+        -2.0874983072280884
+      ],
+      "matrix3": [
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
       "inventoryPartNo": "3031",
       "inventoryColor": "Green",
       "lddRef": "728",
@@ -395,6 +717,52 @@
         0,
         0,
         1
+      ]
+    },
+    {
+      "inventoryPartNo": "3035",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "525",
+      "lddDesignID": "3035",
+      "materialId": "27",
+      "translationStud": [
+        16.499993801116943,
+        15.453224182128906,
+        -10.50000548362732
+      ],
+      "matrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "inventoryPartNo": "3035",
+      "inventoryColor": "Light Gray",
+      "lddRef": "477",
+      "lddDesignID": "3035",
+      "materialId": "2",
+      "translationStud": [
+        16.49999499320984,
+        15.853229761123657,
+        -7.500020861625671
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
       ]
     },
     {
@@ -567,6 +935,29 @@
       "translationStud": [
         23.4999942779541,
         23.45322608947754,
+        -7.500019669532776
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "inventoryPartNo": "3460",
+      "inventoryColor": "Light Gray",
+      "lddRef": "467",
+      "lddDesignID": "3460",
+      "materialId": "2",
+      "translationStud": [
+        23.4999942779541,
+        15.853229761123657,
         -7.500019669532776
       ],
       "matrix3": [
@@ -789,6 +1180,29 @@
       ]
     },
     {
+      "inventoryPartNo": "4863",
+      "inventoryColor": "Light Gray",
+      "lddRef": "913",
+      "lddDesignID": "4863",
+      "materialId": "2",
+      "translationStud": [
+        16.500002145767212,
+        3.237490952014923,
+        14.499999284744263
+      ],
+      "matrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
       "inventoryPartNo": "4865",
       "inventoryColor": "Red",
       "lddRef": "917",
@@ -809,6 +1223,29 @@
         -1,
         0,
         0
+      ]
+    },
+    {
+      "inventoryPartNo": "4871",
+      "inventoryColor": "Dark Gray",
+      "lddRef": "441",
+      "lddDesignID": "4871",
+      "materialId": "27",
+      "translationStud": [
+        20.49999713897705,
+        29.053223133087158,
+        -3.5000205039978027
+      ],
+      "matrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
       ]
     },
     {
