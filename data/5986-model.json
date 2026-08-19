@@ -1,41 +1,29 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "coordinateSystem": "x/z in LEGO stud pitches; y is bottom elevation; one brick = 1.2 units; one plate = 0.4 units",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
-    "inventory": "https://www.bricklink.com/catalogItemInv.asp?S=5986-1&bt=0&sortAsc=A&sortBy=0&v=0",
+    "inventory": "https://www.bricklink.com/catalogItemInv.asp?S=5986-1",
     "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins"
   },
-  "simulation": { "gravity": 18, "connectionBreakImpulse": 5.2 },
-  "parts": [
-    {"id":"baseplate","partNo":"30271px1","color":"Green","shape":"baseplate","size":[32,48,0.35],"position":[0,0,0],"anchored":true,"interactive":false,"verification":"inventory+set-layout"},
-
-    {"id":"bridge-core","partNo":"4202","color":"Green","position":[-9,0.35,8],"verification":"manual-page-28-step-1"},
-    {"id":"bridge-red-lower-a","partNo":"3020","color":"Red","position":[-9,1.55,4],"verification":"manual-page-28-step-2"},
-    {"id":"bridge-red-lower-b","partNo":"3020","color":"Red","position":[-9,1.55,12],"verification":"manual-page-28-step-2"},
-    {"id":"bridge-blue-a1","partNo":"3039","color":"Blue","position":[-10,1.95,3],"verification":"manual-page-28-step-3"},
-    {"id":"bridge-blue-a2","partNo":"3039","color":"Blue","position":[-8,1.95,3],"verification":"manual-page-28-step-3"},
-    {"id":"bridge-blue-b1","partNo":"3039","color":"Blue","position":[-10,1.95,13],"verification":"manual-page-28-step-3"},
-    {"id":"bridge-blue-b2","partNo":"3039","color":"Blue","position":[-8,1.95,13],"verification":"manual-page-28-step-3"},
-    {"id":"bridge-red-upper-a","partNo":"3020","color":"Red","position":[-9,3.15,4],"verification":"manual-page-28-step-5"},
-    {"id":"bridge-red-upper-b","partNo":"3020","color":"Red","position":[-9,3.15,12],"verification":"manual-page-28-step-5"},
-    {"id":"bridge-pillar-a","partNo":"2454","color":"Dark Gray","position":[-10,3.55,4],"verification":"manual-page-28-continuation"},
-    {"id":"bridge-pillar-b","partNo":"2454","color":"Dark Gray","position":[-8,3.55,4],"verification":"manual-page-28-continuation"},
-
-    {"id":"temple-pillar-1","partNo":"2454","color":"Dark Gray","position":[7,0.35,-8],"verification":"layout-proxy"},
-    {"id":"temple-pillar-2","partNo":"2454","color":"Dark Gray","position":[11,0.35,-8],"verification":"layout-proxy"},
-    {"id":"temple-pillar-3","partNo":"2454","color":"Dark Gray","position":[7,0.35,3],"verification":"layout-proxy"},
-    {"id":"temple-pillar-4","partNo":"2454","color":"Dark Gray","position":[11,0.35,3],"verification":"layout-proxy"},
-    {"id":"temple-pillar-5","partNo":"2454","color":"Dark Gray","position":[13,0.35,-2],"verification":"layout-proxy"},
-    {"id":"temple-pillar-6","partNo":"2454","color":"Dark Gray","position":[13,0.35,2],"verification":"layout-proxy"},
-    {"id":"temple-pillar-7","partNo":"2454","color":"Dark Gray","position":[5,0.35,-2],"verification":"layout-proxy"},
-    {"id":"temple-pillar-8","partNo":"2454","color":"Dark Gray","position":[5,0.35,2],"verification":"layout-proxy"},
-    {"id":"temple-arch-1","partNo":"3308","color":"Light Gray","size":[1,8,2.4],"position":[9,6.35,-8],"rotation":[0,1.5707963268,0],"verification":"layout-proxy"},
-    {"id":"temple-arch-2","partNo":"3308","color":"Light Gray","size":[1,8,2.4],"position":[9,6.35,3],"rotation":[0,1.5707963268,0],"verification":"layout-proxy"},
-    {"id":"temple-wall-print-1","partNo":"3008px24","color":"Dark Gray","position":[13,6.35,-2],"rotation":[0,1.5707963268,0],"verification":"layout-proxy"},
-    {"id":"temple-wall-print-2","partNo":"3008px24","color":"Dark Gray","position":[13,6.35,2],"rotation":[0,1.5707963268,0],"verification":"layout-proxy"},
-    {"id":"rope-bridge","partNo":"2549","color":"Brown","shape":"bridge","position":[-4,0.35,-3],"verification":"inventory+layout-proxy"}
+  "sourceNotes": [
+    "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
+    "Main temple, trap platform, boat and car are inventory-bounded reconstructions aligned to published photographs while full page-by-page transform transcription continues.",
+    "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
+  ],
+  "simulation": {
+    "gravity": 18,
+    "connectionBreakImpulse": 5.2,
+    "waterLevel": 0.22
+  },
+  "partFiles": [
+    "./5986-parts-1.json",
+    "./5986-parts-2.json",
+    "./5986-parts-3.json",
+    "./5986-parts-4.json",
+    "./5986-parts-5.json",
+    "./5986-parts-6.json"
   ]
 }
