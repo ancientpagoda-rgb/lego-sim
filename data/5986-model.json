@@ -1,7 +1,7 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "coordinateSystem": "presentation x/z in LEGO stud pitches; exact instruction transforms may use local subassembly coordinates or LDD stud-normalized coordinates when manual-corroborated",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
@@ -26,10 +26,12 @@
   "sourceNotes": [
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
-    "Page 22 now contributes the Light Gray 30104 chain: the manual identifies the chain step, BrickLink inventory supplies the one occurrence, and LDD alternate design 60169/material 2 supplies a unique corroborating matrix.",
+    "Page 22 contributes the Light Gray 30104 chain: manual step, one inventory occurrence, normalized LDD alias 60169 and a unique matrix agree.",
+    "Page 24 step 19 now contributes the unique Black 30103 bat and Green 30339 palm leaf; both are visible in the final temple step and each maps to one inventory occurrence plus one LDD matrix.",
     "A community LDD 4.3.8 reconstruction by penguinz remains a geometry cross-check; its known raised-baseplate, Sun Disc and decoration substitutions remain non-authoritative.",
-    "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys.",
+    "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys and yields 57 one-to-one anchors.",
     "Imported CAD candidates cannot increase the instruction-exact count without matching manual provenance.",
+    "Repeated page-24 elements are intentionally left unresolved until occurrence-level matching is proven.",
     "All regular-part usage is validated against the BrickLink 172-lot / 420-part inventory snapshot in this repository."
   ],
   "simulation": {
