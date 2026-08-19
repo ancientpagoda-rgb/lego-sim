@@ -1,0 +1,17 @@
+{
+  "policy": "Visual placeholders may remain rendered temporarily, but they are excluded from the 420-part inventory/transform ledger when cross-check evidence disproves their part assignment.",
+  "items": [
+    {
+      "id": "temple-gray-curve-big-1",
+      "partNo": "6081",
+      "color": "Light Gray",
+      "reason": "The two real 6081 occurrences resolve to LDD refs 820/821 at low elevation outside the upper-temple region; the old roof placement is a presentation-only placeholder pending correct part identification."
+    },
+    {
+      "id": "temple-gray-curve-big-2",
+      "partNo": "6081",
+      "color": "Light Gray",
+      "reason": "The two real 6081 occurrences resolve to LDD refs 820/821 at low elevation outside the upper-temple region; the old roof placement is a presentation-only placeholder pending correct part identification."
+    }
+  ]
+}
