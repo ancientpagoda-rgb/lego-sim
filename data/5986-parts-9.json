@@ -1,0 +1,27 @@
+[
+  {
+    "id": "temple-chain-pulley-yellow",
+    "partNo": "4032",
+    "color": "Yellow",
+    "position": [9.0, 14.0, -0.8],
+    "verification": "instruction-page-22-step-12",
+    "assembly": "main-temple",
+    "shape": "round",
+    "size": [2, 2, 0.4],
+    "instructionTransform": {
+      "page": 22,
+      "step": 12,
+      "parent": "ldd-set-origin",
+      "position": [21.499993801116943, 26.278223991394043, -2.0237702131271362],
+      "rotationMatrix3": [1, 0, 0, 0, 0, -1, 0, 1, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "845",
+      "lddDesignID": "4032",
+      "lddMaterialId": "24",
+      "anchorEvidence": "adjacent to exact chain LDD ref 847 and visible as the yellow pulley in manual page 22 step 12"
+    }
+  }
+]
