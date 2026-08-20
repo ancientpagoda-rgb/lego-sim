@@ -9,14 +9,22 @@
     "zMin": -9,
     "zMax": 2
   },
-  "policy": "Structural CAD candidates only. Exact promotion requires visible page-24 instruction evidence and inventory occurrence reconciliation.",
+  "policy": "Raw CAD coordinates are discovery hints only. Exact promotion requires visible page-24 instruction evidence, inventory occurrence reconciliation, and no conflicting instruction-exact claim on the same LDD ref.",
   "counts": {
     "3036|Blue": 1,
     "3039|Dark Gray": 2,
     "3298|Red": 2,
-    "3308|Light Gray": 1,
+    "3308|Light Gray": 0,
     "4589|Yellow": 2,
     "4871|Dark Gray": 1
+  },
+  "rejectedCounts": {
+    "3036|Blue": 0,
+    "3039|Dark Gray": 0,
+    "3298|Red": 0,
+    "3308|Light Gray": 1,
+    "4589|Yellow": 0,
+    "4871|Dark Gray": 0
   },
   "candidates": [
     {
@@ -25,22 +33,8 @@
       "lddRef": "441",
       "lddDesignID": "4871",
       "materialId": "27",
-      "position": [
-        20.49999713897705,
-        29.053223133087158,
-        -3.5000205039978027
-      ],
-      "rotationMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
+      "position": [20.49999713897705, 29.053223133087158, -3.5000205039978027],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1]
     },
     {
       "partNo": "3039",
@@ -48,22 +42,8 @@
       "lddRef": "444",
       "lddDesignID": "3039",
       "materialId": "27",
-      "position": [
-        20.49999475479126,
-        27.853224277496338,
-        -2.5000208616256714
-      ],
-      "rotationMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
+      "position": [20.49999475479126, 27.853224277496338, -2.5000208616256714],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1]
     },
     {
       "partNo": "3039",
@@ -71,22 +51,8 @@
       "lddRef": "445",
       "lddDesignID": "3039",
       "materialId": "27",
-      "position": [
-        21.499996185302734,
-        27.853224277496338,
-        -5.500020384788513
-      ],
-      "rotationMatrix3": [
-        -1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        -1
-      ]
+      "position": [21.499996185302734, 27.853224277496338, -5.500020384788513],
+      "rotationMatrix3": [-1,0,0,0,1,0,0,0,-1]
     },
     {
       "partNo": "3298",
@@ -94,22 +60,8 @@
       "lddRef": "442",
       "lddDesignID": "3298",
       "materialId": "21",
-      "position": [
-        20.49999713897705,
-        27.853224277496338,
-        -4.50002133846283
-      ],
-      "rotationMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
+      "position": [20.49999713897705, 27.853224277496338, -4.50002133846283],
+      "rotationMatrix3": [0,0,1,0,1,0,-1,0,0]
     },
     {
       "partNo": "3298",
@@ -117,22 +69,8 @@
       "lddRef": "443",
       "lddDesignID": "3298",
       "materialId": "21",
-      "position": [
-        21.499996185302734,
-        27.853224277496338,
-        -3.5000211000442505
-      ],
-      "rotationMatrix3": [
-        0,
-        0,
-        -1,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
+      "position": [21.499996185302734, 27.853224277496338, -3.5000211000442505],
+      "rotationMatrix3": [0,0,-1,0,1,0,1,0,0]
     },
     {
       "partNo": "4589",
@@ -140,22 +78,8 @@
       "lddRef": "439",
       "lddDesignID": "4589",
       "materialId": "24",
-      "position": [
-        19.49999451637268,
-        27.853224277496338,
-        -5.500021576881409
-      ],
-      "rotationMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
+      "position": [19.49999451637268, 27.853224277496338, -5.500021576881409],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1]
     },
     {
       "partNo": "4589",
@@ -163,22 +87,8 @@
       "lddRef": "440",
       "lddDesignID": "4589",
       "materialId": "24",
-      "position": [
-        19.499995708465576,
-        27.853224277496338,
-        -2.5000208616256714
-      ],
-      "rotationMatrix3": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ]
+      "position": [19.499995708465576, 27.853224277496338, -2.5000208616256714],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1]
     },
     {
       "partNo": "3036",
@@ -186,45 +96,26 @@
       "lddRef": "437",
       "lddDesignID": "3036",
       "materialId": "23",
-      "position": [
-        18.499995470046997,
-        27.453224658966064,
-        -7.500020861625671
-      ],
-      "rotationMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
-    },
+      "position": [18.499995470046997, 27.453224658966064, -7.500020861625671],
+      "rotationMatrix3": [0,0,1,0,1,0,-1,0,0]
+    }
+  ],
+  "rejected": [
     {
       "partNo": "3308",
       "color": "Light Gray",
       "lddRef": "446",
       "lddDesignID": "3308",
       "materialId": "2",
-      "position": [
-        18.499995470046997,
-        25.053224563598633,
-        -7.500020861625671
-      ],
-      "rotationMatrix3": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        -1,
-        0,
-        0
-      ]
+      "position": [18.499995470046997, 25.053224563598633, -7.500020861625671],
+      "rotationMatrix3": [0,0,1,0,1,0,-1,0,0],
+      "reason": "LDD ref is already claimed by an instruction-exact part from another manual page; raw CAD region cannot override established provenance.",
+      "claimedBy": {
+        "partId": "gate-web-arch",
+        "assembly": "bridge-gateway",
+        "verification": "manual-page-30-visible",
+        "source": "ldd-model-reconciliation"
+      }
     }
   ]
 }
