@@ -1,6 +1,6 @@
 {
   "set": "5986-1",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "policy": "Large presentation geometry is not trusted merely because it looks plausible. Catalog envelopes establish real part dimensions; instruction pages establish assembly layout; exact instructionTransform data remains separate from presentation geometry.",
   "assemblies": [
     {
@@ -25,27 +25,18 @@
       "remainingRisk": "procedural rope sag/rails are presentation geometry and the west landing should still be checked against a traced mold mesh"
     },
     {
-      "id": "rope-bridge",
-      "partNo": "2549",
-      "status": "corrected-catalog-footprint-manual-anchor",
-      "catalogStudEnvelope": [16, 4, 3],
-      "presentation": "16-stud span x 4-stud width across the river; no compensating presentation rotation required after canonicalizing the renderer input",
-      "remainingRisk": "rope sag and rail curvature are procedural rather than molded-part mesh"
-    },
-    {
       "id": "boat-hull",
       "partNo": "33129",
-      "status": "corrected-catalog-envelope-presentation-rebuild-pending",
+      "status": "catalog-envelope-molded-presentation-refit",
       "catalogStudEnvelope": [18, 8, 3.33],
-      "presentation": "8 x 18 x 4 world-unit proxy lowered into river channel",
-      "remainingRisk": "box/cone hull proxy still does not reproduce the real molded bow, gunwales and oarlocks"
+      "presentation": "open brown hull with floor, two gunwales, stern and tapered bow; all boat assembly parts receive the same -1.75 runtime y offset so fittings stay rigidly aligned at the corrected river datum",
+      "remainingRisk": "presentation is still procedural rather than a true 33129 mesh and boat instruction-page provenance has not yet been transcribed"
     },
     {
       "id": "car",
-      "status": "exact-core-expanded-manual-rebuild-in-progress",
+      "status": "exact-core-molded-presentation-rebuild-in-progress",
       "trustedExactCore": ["3832 chassis", "30157 tan axle plates", "30155 wheel hubs", "3483 front tires", "2346 rear tires", "30149 Light Gray two-seat tub", "30147 Light Gray round-top grille"],
-      "correctedCatalogPieces": ["32000 Light Gray: 1 x 2 x 1 Technic brick"],
-      "presentation": "30149 tub centered between exact front/rear axle centers; 30147 grille centered ahead of the front axle; remaining old body proxies stay explicitly non-exact",
+      "presentation": "30149 is rendered as an open two-seat tub with side/rear walls and seat backs; 30147 has a curved grille body, bars and lamps; both remain centered on the exact chassis/axle core",
       "remainingRisk": "window, hood, steering, rear box and repeated plate/brick occurrences still need step-specific manual placement"
     }
   ]
