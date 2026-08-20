@@ -1,6 +1,6 @@
 {
   "name": "lego-sim-5986",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,6 +8,7 @@
     "ledger": "node scripts/transform-ledger.mjs --write",
     "page-ledger": "node scripts/page-ledger.mjs --write",
     "ldd:import": "node scripts/ldd-import.mjs",
-    "check": "node --check src/main.js && node --check src/brick-engine.js && node --check src/twin-status.js && node --check scripts/page-ledger.mjs && node --check scripts/ldd-import.mjs && node --check scripts/ldd-reconcile.mjs && node --check scripts/ldd-unique-inventory.mjs && node --check scripts/ldd-page24-extract.mjs && node --check scripts/ldd-upper-temple-extract.mjs && node --check scripts/ldd-page24-structural-extract.mjs && node --check scripts/source-integrity.mjs && node scripts/validate-model.mjs && node scripts/transform-ledger.mjs --check && node scripts/page-ledger.mjs --check && node scripts/source-integrity.mjs"
+    "solver": "node scripts/full-set-solver.mjs data/5986-ldd-candidates.json --out data/5986-full-set-solver.json",
+    "check": "node --check src/main.js && node --check src/brick-engine.js && node --check src/twin-status.js && node --check scripts/page-ledger.mjs && node --check scripts/ldd-import.mjs && node --check scripts/ldd-reconcile.mjs && node --check scripts/ldd-unique-inventory.mjs && node --check scripts/ldd-page24-extract.mjs && node --check scripts/ldd-upper-temple-extract.mjs && node --check scripts/ldd-page24-structural-extract.mjs && node --check scripts/ldd-structure-inspect.mjs && node --check scripts/full-set-solver.mjs && node --check scripts/source-integrity.mjs && node scripts/validate-model.mjs && node scripts/transform-ledger.mjs --check && node scripts/page-ledger.mjs --check && node scripts/source-integrity.mjs"
   }
 }
