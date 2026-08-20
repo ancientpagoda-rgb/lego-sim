@@ -2,7 +2,7 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.5.5 — crown-support exactification
+## V0.5.6 — provenance hardening
 
 The playable full-set scene sits on a strict **420 regular-part transform ledger**. A part counts as **instruction-exact** only when manual provenance and an explicit `instructionTransform` are both present. CAD-only and photo-aligned geometry never counts as exact.
 
@@ -19,9 +19,22 @@ Current ledger:
 - **9 / 44** manual pages indexed
 - **6** pages currently contributing exact transforms
 
-### Latest exact promotion — page 24 crown support
+### V0.5.6 correction — the 3308 arch stays with the gateway
 
-The page-24 structural pass adds another **8 exact transforms** directly beneath the previously locked upper crown:
+The previous follow-up treated a **Light Gray 3308 arch / LDD ref 446** inside a raw CAD coordinate region as a possible page-24 temple occurrence. Reconciliation shows that ref already belongs to the instruction-exact **`gate-web-arch` on manual page 30**.
+
+V0.5.6 therefore does **not** add or move a 3308. Instead it hardens the source pipeline:
+
+- raw LDD coordinate regions are discovery hints, not assembly authority;
+- the page-24 structural extractor checks proposed refs against current exact parts and the persisted LDD/model reconciliation;
+- ref `446` is now emitted as an explicit **rejected cross-assembly candidate**;
+- `source-integrity.mjs` requires unique LDD refs across exact parts and rejects accepted page-24 candidates that conflict with an exact part from another manual page.
+
+Exact coverage intentionally remains **51 / 420**. None of the v0.5.5 exact transforms were demoted.
+
+### Current page-24 exact cluster
+
+The accepted page-24 crown-support batch remains:
 
 - **1× 3036 Blue 6×8 plate**
 - **2× 3039 Dark Gray 2×2 45° slopes**
@@ -29,15 +42,11 @@ The page-24 structural pass adds another **8 exact transforms** directly beneath
 - **2× 4589 Yellow 1×1 cones**
 - **1× 4871 Dark Gray inverted double slope**
 
-Those eight records occupy one contiguous upper-temple CAD cluster. Each part/color group is unique in the set or the extracted cluster exhausts the full inventory quantity, giving occurrence-level identity when combined with the visible page-24 temple state.
-
-The same filtered extract finds a **Light Gray 3308 arch** in this layer. It remains pending because the presentation model already consumes all three 3308 inventory occurrences; the correct existing proxy needs to be replaced cleanly rather than duplicated.
-
-The prior page-24 exact cluster remains locked: two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, the Black 30103 bat and Green 30339 palm leaf. Page 22's **30104 Light Gray chain** also remains exact via its instruction step, single inventory occurrence, normalized LDD alias `60169`, and unique matrix.
+The earlier page-24 cluster also remains locked: two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, the Black 30103 bat and Green 30339 palm leaf. Page 22's **30104 Light Gray chain** remains exact via its instruction step, inventory occurrence, normalized LDD alias `60169`, and matrix.
 
 ### Reconstruction errors are quarantined, not counted
 
-The two old **6081 Light Gray** roof shapes are incorrect part assignments. The real two 6081 CAD records sit at low elevation outside the upper-temple region. Their old roof shapes remain rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
+The two old **6081 Light Gray** roof shapes are incorrect part assignments. Their old shapes remain rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
 
 This gives the project a hard distinction between **rendered visual parts** and **ledger-positioned inventory parts**. A disproven visual proxy can no longer silently occupy a real inventory occurrence.
 
@@ -47,11 +56,11 @@ The community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` remai
 
 After normalizing the later chain ID and legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys** and exposes **57 one-to-one inventory anchors**. These counts never increase exact coverage by themselves.
 
-Filtered reconciliation files now include:
+Filtered reconciliation files include:
 
 - `data/5986-page24-candidates.json` — page-24 roof/decor candidates;
-- `data/5986-page24-structural-candidates.json` — the crown-support structural batch;
-- `data/5986-upper-temple-candidates.json` — inventory-compatible records from the upper-temple CAD region;
+- `data/5986-page24-structural-candidates.json` — accepted crown-support candidates plus rejected cross-assembly candidates;
+- `data/5986-upper-temple-candidates.json` — inventory-compatible records discovered in the upper-region scan;
 - `data/5986-ledger-exclusions.json` — disproven presentation-only assignments excluded from the inventory ledger.
 
 The full third-party LXF and full 969-record candidate dump remain transient GitHub Actions data.
@@ -61,9 +70,9 @@ The full third-party LXF and full 969-record candidate dump remain transient Git
 Validation checks:
 
 1. `validate-model.mjs` — inventory limits and required assemblies, after ledger exclusions.
-2. `transform-ledger.mjs` — deterministic 420-slot ledger with explicit exact/presentation transform separation and visual-placeholder exclusions.
+2. `transform-ledger.mjs` — deterministic 420-slot ledger with exact/presentation transform separation and visual-placeholder exclusions.
 3. `page-ledger.mjs` — exact tags cannot cite an unindexed manual page.
-4. `source-integrity.mjs` — CAD-only provenance cannot masquerade as exact; LDD-backed exact records need finite positions, 3×3 orientation matrices, LDD record/design IDs, and may not be excluded from the ledger.
+4. `source-integrity.mjs` — CAD-only provenance cannot masquerade as exact; LDD-backed exact records need finite positions, 3×3 orientation matrices, LDD record/design IDs, unique exact LDD refs, and no cross-page reconciliation conflicts.
 
 ### Captured instruction batches
 
@@ -100,7 +109,8 @@ BrickLink inventory ─────────────► 420 deterministic
                       │
                       └────► exact twin dashboard
 
-Disproven visual proxy ──► render only ──► ledger exclusion
+CAD region candidate ─► exact-ref conflict check ─► accept / reject
+Disproven visual proxy ─────────────────────────────► render only
 ```
 
 ## Run locally
