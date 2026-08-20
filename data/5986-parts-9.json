@@ -47,5 +47,54 @@
       "lddMaterialId": "23",
       "anchorEvidence": "nearest Blue 3700 to the exact page-22 chain/pulley anchor and visible as the blue Technic connector in the step-12 crank inset"
     }
+  },
+  {
+    "id": "temple-central-printed-slope",
+    "partNo": "30156pb01",
+    "color": "Dark Gray",
+    "position": [9.0, 8.4, -4.0],
+    "verification": "instruction-page-22-visible-step-10",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "size": [4, 6, 7.2],
+    "instructionTransform": {
+      "page": 22,
+      "step": 10,
+      "parent": "ldd-set-origin",
+      "position": [17.499992847442627, 16.25322937965393, -6.500019431114197],
+      "rotationMatrix3": [0, 0, 1, 0, 1, 0, -1, 0, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "473",
+      "lddDesignID": "30156",
+      "lddMaterialId": "27",
+      "inventoryAlias": "LDD undecorated design 30156 -> inventory decorated 30156pb01",
+      "anchorEvidence": "single inventory occurrence and single CAD record; the distinctive Amazon-pattern sloped facade is visibly present on manual page 22"
+    }
+  },
+  {
+    "id": "temple-central-blue-1x6",
+    "partNo": "3009",
+    "color": "Blue",
+    "position": [9.0, 10.6, -5.0],
+    "verification": "instruction-page-22-visible-step-10",
+    "assembly": "main-temple",
+    "instructionTransform": {
+      "page": 22,
+      "step": 10,
+      "parent": "ldd-set-origin",
+      "position": [16.499993801116943, 16.25322937965393, -6.500019431114197],
+      "rotationMatrix3": [0, 0, 1, 0, 1, 0, -1, 0, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "476",
+      "lddDesignID": "3009",
+      "lddMaterialId": "23",
+      "anchorEvidence": "the set has one Blue 3009 and its single CAD record is immediately adjacent to the unique printed central facade in the page-22 tower layer"
+    }
   }
 ]
