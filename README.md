@@ -2,83 +2,96 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.5.6 — provenance hardening
+## V0.6.0 — full-set exactification solver
 
-The playable full-set scene sits on a strict **420 regular-part transform ledger**. A part counts as **instruction-exact** only when manual provenance and an explicit `instructionTransform` are both present. CAD-only and photo-aligned geometry never counts as exact.
+V0.6 changes the project from page-by-page promotion into one **420-slot full-set solve**. The target is the entire remaining inventory in a single phase, while preserving the same evidence rule: CAD can solve geometry, but only instruction-corroborated occurrences count as exact.
 
-Current ledger:
+Current branch ledger:
 
 - **420** regular-part inventory slots
-- **199** rendered regular-part shapes
-- **197** ledger-positioned regular parts
+- **200** rendered regular-part shapes
+- **198** ledger-positioned regular parts
 - **2** disproven visual placeholders excluded from inventory coverage
-- **51** instruction-exact transforms
+- **52** instruction-exact transforms
 - **146** positioned reconstruction transforms waiting to be replaced
-- **223** inventory slots not yet positioned
-- **369** exact transforms remaining
+- **222** inventory slots not yet positioned
+- **368** exact transforms remaining
 - **9 / 44** manual pages indexed
 - **6** pages currently contributing exact transforms
 
-### V0.5.6 correction — the 3308 arch stays with the gateway
+### One solver for all 420 inventory occurrences
 
-The previous follow-up treated a **Light Gray 3308 arch / LDD ref 446** inside a raw CAD coordinate region as a possible page-24 temple occurrence. Reconciliation shows that ref already belongs to the instruction-exact **`gate-web-arch` on manual page 30**.
+`scripts/full-set-solver.mjs` expands the inventory into 420 deterministic slots and classifies every occurrence in one pass. Non-exact slots fall into explicit buckets rather than an undifferentiated “remaining” number:
 
-V0.5.6 therefore does **not** add or move a 3308. Instead it hardens the source pipeline:
+- `geometry-ready-page-blocked` — the CAD part/color group is complete but manual provenance still gates promotion;
+- `variant-ambiguous-page-blocked` — multiple inventory variants share a base design and cannot be collapsed safely;
+- `cad-overflow-page-blocked` — the community model contains more compatible CAD records than the strict regular-part inventory group;
+- `cad-shortfall` — fewer compatible CAD records exist than inventory occurrences;
+- `no-cad-match` — no compatible CAD geometry is available.
 
-- raw LDD coordinate regions are discovery hints, not assembly authority;
-- the page-24 structural extractor checks proposed refs against current exact parts and the persisted LDD/model reconciliation;
-- ref `446` is now emitted as an explicit **rejected cross-assembly candidate**;
-- `source-integrity.mjs` requires unique LDD refs across exact parts and rejects accepted page-24 candidates that conflict with an exact part from another manual page.
+For interchangeable repeated pieces, the solver only assigns an occurrence-level LDD ref when the whole part/color group is reconciled and any already-exact peers have known claimed refs. Otherwise it records the group as geometry-ready while deliberately withholding individual occurrence identity.
 
-Exact coverage intentionally remains **51 / 420**. None of the v0.5.5 exact transforms were demoted.
+The generated audit is intended to live at `data/5986-full-set-solver.json`. The branch workflow is wired to produce it from the transient full LDD candidate artifact, but until that generated file lands the dashboard explicitly reports **solver audit pending** and counts zero unverified bulk promotions.
 
-### Current page-24 exact cluster
+### LXF structure inspection
 
-The accepted page-24 crown-support batch remains:
+`scripts/ldd-structure-inspect.mjs` inspects `IMAGE100.LXFML` for optional building-instruction and grouping metadata. If the community LDD happens to contain step/group structure, that can accelerate assignment of many CAD records to manual stages. It is still secondary evidence: a discovered LDD step/group is not instruction provenance until reconciled to the 44-page manual.
 
-- **1× 3036 Blue 6×8 plate**
-- **2× 3039 Dark Gray 2×2 45° slopes**
-- **2× 3298 Red 3×2 roof slopes**
-- **2× 4589 Yellow 1×1 cones**
-- **1× 4871 Dark Gray inverted double slope**
+Only tag counts, relevant attribute names, and group-like tag attributes are retained. The LXF body and unresolved third-party transform matrix list remain transient.
 
-The earlier page-24 cluster also remains locked: two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, the Black 30103 bat and Green 30339 palm leaf. Page 22's **30104 Light Gray chain** remains exact via its instruction step, inventory occurrence, normalized LDD alias `60169`, and matrix.
+### Exact transform #52 — page 22 pulley
 
-### Reconstruction errors are quarantined, not counted
+The first promotion produced inside the full-set phase is the **Yellow 4032 pulley** in the page-22 chain/crank mechanism.
 
-The two old **6081 Light Gray** roof shapes are incorrect part assignments. Their old shapes remain rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
+- manual page 22 step 12 visibly places the yellow pulley beside the hanging chain;
+- the already-exact Light Gray 30104 chain is LDD ref `847`;
+- the Yellow 4032 candidate is ref `845`, at the same x/y mechanism anchor immediately beside that chain;
+- the set inventory contains available Yellow 4032 occurrences and the current model previously used none of them.
 
-This gives the project a hard distinction between **rendered visual parts** and **ledger-positioned inventory parts**. A disproven visual proxy can no longer silently occupy a real inventory occurrence.
+That moves the feature branch from **51 → 52 exact transforms** without consuming or reassigning an existing proxy.
+
+### Existing exact anchors remain hard constraints
+
+The prior exact batches are not loosened by the bulk solver. They become hard anchors:
+
+- car pages 7–8;
+- temple page 22 chain/crank anchor;
+- page-24 upper crown/completion cluster;
+- gateway/bridge pages 28 and 30.
+
+The page-30 gateway arch remains a useful conflict example: LDD ref `446` previously appeared inside a raw page-24 coordinate scan, but reconciliation ties it to the instruction-exact `gate-web-arch`. The page-24 extractor therefore rejects it. Raw CAD location can never override established instruction provenance.
 
 ### CAD geometry cross-check
 
 The community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` remains secondary evidence only. The automated cross-check parses **969 / 969 transformation matrices** without committing the original LXF.
 
-After normalizing the later chain ID and legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys** and exposes **57 one-to-one inventory anchors**. These counts never increase exact coverage by themselves.
+After normalizing the later chain ID and legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys** and exposes **57 one-to-one inventory anchors**. Those counts describe available candidate geometry; they do not automatically increase exact coverage.
 
-Filtered reconciliation files include:
+### Reconstruction errors stay quarantined
 
-- `data/5986-page24-candidates.json` — page-24 roof/decor candidates;
-- `data/5986-page24-structural-candidates.json` — accepted crown-support candidates plus rejected cross-assembly candidates;
-- `data/5986-upper-temple-candidates.json` — inventory-compatible records discovered in the upper-region scan;
-- `data/5986-ledger-exclusions.json` — disproven presentation-only assignments excluded from the inventory ledger.
+The two old **6081 Light Gray** roof shapes are disproven part assignments. They remain rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
 
-The full third-party LXF and full 969-record candidate dump remain transient GitHub Actions data.
+This preserves a hard distinction between **rendered visual parts** and **ledger-positioned inventory parts**. A visually convenient proxy cannot silently become part of the digital twin.
 
 ### Source-integrity guardrails
 
-Validation checks:
+Validation now checks:
 
-1. `validate-model.mjs` — inventory limits and required assemblies, after ledger exclusions.
-2. `transform-ledger.mjs` — deterministic 420-slot ledger with exact/presentation transform separation and visual-placeholder exclusions.
+1. `validate-model.mjs` — inventory limits and required assemblies after ledger exclusions.
+2. `transform-ledger.mjs` — deterministic 420-slot ledger with exact/presentation transform separation.
 3. `page-ledger.mjs` — exact tags cannot cite an unindexed manual page.
-4. `source-integrity.mjs` — CAD-only provenance cannot masquerade as exact; LDD-backed exact records need finite positions, 3×3 orientation matrices, LDD record/design IDs, unique exact LDD refs, and no cross-page reconciliation conflicts.
+4. `source-integrity.mjs` — CAD-only provenance cannot masquerade as exact; exact LDD refs must be unique; page candidates cannot conflict with exact refs from another page; and any generated full-set solver report must contain exactly 420 unique slots whose exact/remaining totals agree with the live model.
 
-### Captured instruction batches
+### Exact Twin dashboard
 
-Indexed pages include the set overview, character/animal reference, expedition car pages 7–8, temple pages 20, 22 and 24, and bridge/gateway pages 28 and 30.
+`twin-status.html` now has a **V0.6 full-set solver** panel. When `data/5986-full-set-solver.json` exists it shows:
 
-Open `twin-status.html` (or **Exact twin** in the simulation HUD) for the live 420-part coverage dashboard and 44-page transcription map. The dashboard reports visual-only placeholders separately from real inventory coverage.
+- geometry-ready but manual-blocked slots;
+- slots with occurrence-level CAD refs;
+- variant/CAD-overflow ambiguity;
+- CAD shortfall or missing geometry.
+
+When the audit is absent it says so explicitly and continues calculating authoritative exact coverage directly from the model files.
 
 ## Full-set scene already present
 
@@ -97,20 +110,22 @@ Open `twin-status.html` (or **Exact twin** in the simulation HUD) for the live 4
 ## Transform pipeline
 
 ```text
-Official instruction pages ─────────────┐
-                                        │ provenance gate
-Community LDD ── 969 matrices ──────────┤ candidate geometry
-                                        ▼
-BrickLink inventory ─────────────► 420 deterministic slots
-                                        │
-                      ┌─────────────────┼──────────────────┐
-                      ▼                 ▼                  ▼
-              instruction exact   reconstruction     unpositioned
-                      │
-                      └────► exact twin dashboard
+                     ┌─ official instruction pages ─ provenance ─┐
+                     │                                           │
+BrickLink inventory ─┼──────────────► 420 deterministic slots    │
+       420 parts      │                         │                 │
+                     │                         ▼                 │
+Community LDD ────────┴─ 969 matrices ─► full-set solver ◄───────┘
+                                                │
+                       ┌────────────────────────┼──────────────────────┐
+                       ▼                        ▼                      ▼
+              instruction-exact         geometry/page blocked   CAD ambiguous/missing
+                       │
+                       ▼
+                 Exact Twin dashboard
 
-CAD region candidate ─► exact-ref conflict check ─► accept / reject
-Disproven visual proxy ─────────────────────────────► render only
+Existing exact LDD ref ─► hard conflict constraint
+Disproven visual proxy ─► render only / ledger exclusion
 ```
 
 ## Run locally
@@ -129,13 +144,19 @@ npm run ledger
 npm run page-ledger
 ```
 
+With a transient full LDD candidate file available:
+
+```bash
+npm run solver
+```
+
 ## Architecture
 
 ```text
 index.html
   simulation HUD + Exact twin link
 twin-status.html
-  exact / positioned / CAD-cross-check / visual-placeholder dashboard
+  exact / positioned / CAD / full-set-solver / visual-placeholder dashboard
 src/
   main.js
   brick-engine.js
@@ -153,6 +174,8 @@ data/
   5986-page24-candidates.json
   5986-page24-structural-candidates.json
   5986-upper-temple-candidates.json
+  5986-full-set-solver.json              # generated when bulk audit succeeds
+  5986-ldd-structure-summary.json        # generated metadata-only inspection
 scripts/
   validate-model.mjs
   transform-ledger.mjs
@@ -164,10 +187,12 @@ scripts/
   ldd-page24-extract.mjs
   ldd-page24-structural-extract.mjs
   ldd-upper-temple-extract.mjs
+  ldd-structure-inspect.mjs
+  full-set-solver.mjs
 ```
 
 ## Sources and provenance
 
-The LEGO building-instruction sequence is the transform source of truth. The inventory defines the 420-part boundary. The community LDD model is only a geometric cross-check and includes known substitutions, so CAD data cannot become exact without matching manual-page evidence.
+The LEGO building-instruction sequence is the transform source of truth. The inventory defines the 420-part boundary. The community LDD model is a geometric cross-check and acceleration source, not a substitute for manual provenance.
 
 This is a fan-made simulation prototype and is not affiliated with or endorsed by the LEGO Group.
