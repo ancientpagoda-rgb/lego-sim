@@ -36,6 +36,16 @@ function normalizeSpec(input) {
     spec.interactive = false;
     spec.studs = false;
   }
+
+  // The old boat coordinates were already partially lowered before the actual
+  // 18x8 molded hull was introduced. Apply one assembly-wide presentation
+  // offset so hull and fittings remain rigidly aligned while floating at the
+  // corrected -6.45 river datum. Inventory/authoritative transforms are not changed.
+  if (spec.assembly === 'boat' && Array.isArray(spec.position)) {
+    spec.position = [...spec.position];
+    spec.position[1] -= 1.75;
+    spec.presentationDatum = 'molded-river-v0.6.3';
+  }
   return spec;
 }
 
@@ -94,8 +104,6 @@ function rebuildVehicleGrille(group, id, clickable, interactive = true) {
   const grille = new THREE.MeshStandardMaterial({ color: 0x555a59, roughness: 0.82 });
   const lamp = new THREE.MeshStandardMaterial({ color: 0xd6d8cb, roughness: 0.42 });
 
-  // Broad direction is local Z; the part is rotated 90° in the car so this
-  // becomes the two-stud-wide front face.
   addMesh(group, new THREE.BoxGeometry(0.46, 1.35, 1.75), gray, id, clickable, interactive, [-0.04, -0.25, 0]);
   addMesh(group, new THREE.CylinderGeometry(0.72, 0.72, 0.46, 18, 1, false, 0, Math.PI), gray, id, clickable, interactive, [-0.04, 0.42, 0], [0, 0, Math.PI / 2]);
   for (let z = -0.55; z <= 0.55; z += 0.22) {
