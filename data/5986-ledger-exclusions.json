@@ -1,17 +1,30 @@
 {
-  "policy": "Visual placeholders may remain rendered temporarily, but they are excluded from the 420-part inventory/transform ledger when cross-check evidence disproves their part assignment.",
+  "policy": "Visual geometry helpers and disproven presentation placeholders may remain rendered, but they are excluded from the 420-part inventory/transform ledger. Terrain-mold helpers visually decompose the single molded 30271px1 baseplate and never represent additional LEGO inventory pieces.",
   "items": [
-    {
-      "id": "temple-gray-curve-big-1",
-      "partNo": "6081",
-      "color": "Light Gray",
-      "reason": "The two real 6081 occurrences resolve to LDD refs 820/821 at low elevation outside the upper-temple region; the old roof placement is a presentation-only placeholder pending correct part identification."
-    },
-    {
-      "id": "temple-gray-curve-big-2",
-      "partNo": "6081",
-      "color": "Light Gray",
-      "reason": "The two real 6081 occurrences resolve to LDD refs 820/821 at low elevation outside the upper-temple region; the old roof placement is a presentation-only placeholder pending correct part identification."
-    }
+    {"id":"temple-gray-curve-big-1","partNo":"6081","color":"Light Gray","reason":"The two real 6081 occurrences resolve to LDD refs 820/821 at low elevation outside the upper-temple region; the old roof placement is a presentation-only placeholder pending correct part identification."},
+    {"id":"temple-gray-curve-big-2","partNo":"6081","color":"Light Gray","reason":"The two real 6081 occurrences resolve to LDD refs 820/821 at low elevation outside the upper-temple region; the old roof placement is a presentation-only placeholder pending correct part identification."},
+
+    {"id":"terrain-left-center","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-right-center","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lf-north","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lf-south","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lf-west","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lf-east","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lf-pit-floor","partNo":"visual-terrain","color":"Green","reason":"Render-only floor for one molded corner pit of 30271px1; consumes no inventory slot."},
+    {"id":"terrain-lb-north","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lb-south","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lb-west","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lb-east","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-lb-pit-floor","partNo":"visual-terrain","color":"Green","reason":"Render-only floor for one molded corner pit of 30271px1; consumes no inventory slot."},
+    {"id":"terrain-rf-north","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rf-south","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rf-west","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rf-east","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rf-pit-floor","partNo":"visual-terrain","color":"Green","reason":"Render-only floor for one molded corner pit of 30271px1; consumes no inventory slot."},
+    {"id":"terrain-rb-north","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rb-south","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rb-west","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rb-east","partNo":"visual-terrain","color":"Green","reason":"Render-only decomposition of the single molded 30271px1 raised baseplate; consumes no inventory slot."},
+    {"id":"terrain-rb-pit-floor","partNo":"visual-terrain","color":"Green","reason":"Render-only floor for one molded corner pit of 30271px1; consumes no inventory slot."}
   ]
 }
