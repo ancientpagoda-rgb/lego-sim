@@ -12,6 +12,7 @@ on:
       - "scripts/ldd-upper-temple-extract.mjs"
       - "scripts/ldd-page24-structural-extract.mjs"
       - "scripts/ldd-structure-inspect.mjs"
+      - "scripts/ldd-anchor-neighborhoods.mjs"
       - "scripts/full-set-solver.mjs"
       - "data/5986-instruction-sources.json"
       - "data/5986-inventory.csv"
@@ -44,6 +45,8 @@ jobs:
         run: node scripts/ldd-reconcile.mjs data/5986-ldd-candidates.json --out data/5986-ldd-model-matches.json
       - name: Extract unique inventory anchors
         run: node scripts/ldd-unique-inventory.mjs data/5986-ldd-candidates.json --out data/5986-ldd-unique-candidates.json
+      - name: Extract exact-anchor neighborhoods
+        run: node scripts/ldd-anchor-neighborhoods.mjs data/5986-ldd-candidates.json --radius 4 --out data/5986-anchor-neighborhoods.json
       - name: Extract page 24 roof candidates
         run: node scripts/ldd-page24-extract.mjs data/5986-ldd-candidates.json --out data/5986-page24-candidates.json
       - name: Extract upper temple spatial candidates
@@ -66,7 +69,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/5986-ldd-summary.json data/5986-ldd-structure-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json data/5986-page24-candidates.json data/5986-upper-temple-candidates.json data/5986-page24-structural-candidates.json data/5986-full-set-solver.json
+          git add data/5986-ldd-summary.json data/5986-ldd-structure-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json data/5986-anchor-neighborhoods.json data/5986-page24-candidates.json data/5986-upper-temple-candidates.json data/5986-page24-structural-candidates.json data/5986-full-set-solver.json
           if git diff --cached --quiet; then
             echo "LDD reconciliation outputs unchanged"
             exit 0
