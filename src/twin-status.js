@@ -13,6 +13,8 @@ const sourcesEl = document.querySelector('#sources');
 const pagesEl = document.querySelector('#pages');
 const pageGridEl = document.querySelector('#pageGrid');
 const cadDetailsEl = document.querySelector('#cadDetails');
+const solverDetailsEl = document.querySelector('#solverDetails');
+const solverGridEl = document.querySelector('#solverGrid');
 
 const key = (partNo, color) => `${partNo}|${color}`;
 const instructionPage = verification => {
@@ -33,13 +35,26 @@ async function loadOptionalJSON(url) {
   return res.json();
 }
 
+function solverStat(value, label) {
+  const cell = document.createElement('div');
+  cell.className = 'solver-stat';
+  const number = document.createElement('strong');
+  number.textContent = value ?? '—';
+  const caption = document.createElement('span');
+  caption.textContent = label;
+  cell.append(number, caption);
+  return cell;
+}
+
 async function boot() {
-  const [manifest, sourceIndex, inventoryText, cadSummary, exclusions] = await Promise.all([
+  const [manifest, sourceIndex, inventoryText, cadSummary, exclusions, solver, structure] = await Promise.all([
     loadJSON('./data/5986-model.json'),
     loadJSON('./data/5986-instruction-sources.json'),
     fetch('./data/5986-inventory.csv').then(r => { if (!r.ok) throw new Error(`inventory: ${r.status}`); return r.text(); }),
     loadOptionalJSON('./data/5986-ldd-summary.json'),
     loadOptionalJSON('./data/5986-ledger-exclusions.json'),
+    loadOptionalJSON('./data/5986-full-set-solver.json'),
+    loadOptionalJSON('./data/5986-ldd-structure-summary.json'),
   ]);
 
   const renderedParts = (await Promise.all((manifest.partFiles ?? []).map(path => loadJSON(`./data/${path.replace('./', '')}`)))).flat();
@@ -79,12 +94,36 @@ async function boot() {
   exactBar.style.width = `${exact / total * 100}%`;
   positionedBar.style.width = `${positioned / total * 100}%`;
   cadBar.style.width = `${cadMatched / total * 100}%`;
-  subtitle.textContent = `${exact} exact transforms locked · ${total - exact} exact transforms remaining · ${visualPlaceholders} visual-only placeholder${visualPlaceholders === 1 ? '' : 's'}`;
+  subtitle.textContent = `${exact} exact transforms locked · ${total - exact} exact transforms remaining · ${visualPlaceholders} visual-only placeholder${visualPlaceholders === 1 ? '' : 's'} · full-set solver ${solver ? 'audited' : 'audit pending'}`;
 
   if (cadSummary) {
     cadDetailsEl.textContent = `${cadMatched}/${total} inventory units reconcile by LDD design + mapped color; ${cadSummary.recordsWithTransforms}/${cadSummary.brickPartRecords} LDD records contain usable matrices across ${cadSummary.inventoryKeysRepresented} inventory part/color keys. This is candidate geometry only and contributes 0 parts to the instruction-exact total. ${visualPlaceholders} disproven presentation placeholder${visualPlaceholders === 1 ? ' is' : 's are'} rendered but excluded from inventory coverage.`;
   } else {
     cadDetailsEl.textContent = `No persisted LDD reconciliation summary yet. CAD geometry never increases the instruction-exact total by itself. ${visualPlaceholders} visual placeholder${visualPlaceholders === 1 ? ' is' : 's are'} excluded from the ledger.`;
+  }
+
+  solverGridEl.replaceChildren();
+  if (solver) {
+    solverDetailsEl.textContent = `The v0.6 solver expands the inventory to ${solver.targetSlots} deterministic slots and classifies all ${solver.remainingExactTransforms} non-exact occurrences in one pass. Geometry-ready does not mean exact: a manual page/step or visible-state provenance gate is still required before promotion.`;
+    solverGridEl.append(
+      solverStat(solver.geometryReadyButPageBlocked, 'geometry ready, manual blocked'),
+      solverStat(solver.geometryReadyWithOccurrenceRef, 'occurrence-level CAD refs'),
+      solverStat(solver.geometryAmbiguousOrOverflow, 'variant / CAD ambiguity'),
+      solverStat(solver.geometryShortfallOrMissing, 'CAD shortfall / missing'),
+    );
+    if (structure) {
+      const sequence = structure.hasPotentialBuildSequenceMetadata ? 'found potential build-sequence metadata' : 'found no usable build-sequence metadata';
+      const grouping = structure.hasPotentialGroupingMetadata ? 'group metadata is present' : 'group metadata is absent';
+      solverDetailsEl.textContent += ` LXF inspection ${sequence}; ${grouping}. Neither is instruction authority until reconciled to the manual.`;
+    }
+  } else {
+    solverDetailsEl.textContent = `The v0.6 420-slot solver is installed, but its generated branch audit has not landed yet. Current exact coverage remains computed directly from the model; no CAD-only candidate is counted while the audit is absent.`;
+    solverGridEl.append(
+      solverStat(total - exact, 'remaining exact transforms'),
+      solverStat(cadMatched, 'CAD-matched inventory units'),
+      solverStat(sourceIndex.capturedPages.length, `captured manual pages / ${sourceIndex.manualPages}`),
+      solverStat('0', 'unverified solver promotions'),
+    );
   }
 
   const missing = [];
@@ -149,12 +188,19 @@ async function boot() {
     if (page != null && part.instructionTransform?.page != null && Number(part.instructionTransform.page) !== page) errors.push(`${part.id}: instructionTransform page mismatch`);
     if (/^(?:ldd|digital-model)/i.test(String(part.verification ?? ''))) errors.push(`${part.id}: CAD-only verification cannot count as exact`);
   }
-  if (cadSummary?.exactAuthority !== false) errors.push('LDD summary must remain non-authoritative.');
+  if (cadSummary && cadSummary.exactAuthority !== false) errors.push('LDD summary must remain non-authoritative.');
   if (cadSummary && cadSummary.inventoryRegularPartTarget !== total) errors.push(`LDD summary target mismatch: ${cadSummary.inventoryRegularPartTarget}/${total}.`);
   if (cadSummary && cadSummary.recordsWithTransforms < 1) errors.push('LDD cross-check contains no usable transforms.');
+  if (solver) {
+    if (solver.exactAuthority !== false) errors.push('Full-set solver must remain non-authoritative.');
+    if (solver.targetSlots !== total || solver.slots?.length !== total) errors.push(`Full-set solver target mismatch: ${solver.targetSlots}/${solver.slots?.length}/${total}.`);
+    if (solver.currentInstructionExact !== exact) errors.push(`Full-set solver exact count mismatch: ${solver.currentInstructionExact}/${exact}.`);
+    if (solver.remainingExactTransforms !== total - exact) errors.push(`Full-set solver remaining mismatch: ${solver.remainingExactTransforms}/${total - exact}.`);
+  }
+  if (structure && structure.exactAuthority !== false) errors.push('LDD structure inspection must remain non-authoritative.');
 
   validationEl.className = errors.length ? 'error' : 'ok';
-  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} ledger-positioned instances, ${exactPages.size} exact-source pages, ${cadMatched} CAD-matched inventory candidates, ${visualPlaceholders} visual placeholders excluded, explicit local transforms on every exact part, no part/color overuse.`;
+  validationEl.textContent = errors.length ? errors.join(' · ') : `Ledger consistent: ${total} inventory slots, ${positioned} ledger-positioned instances, ${exactPages.size} exact-source pages, ${cadMatched} CAD-matched inventory candidates, ${visualPlaceholders} visual placeholders excluded, explicit local transforms on every exact part, no part/color overuse${solver ? ', full-set solver audit aligned' : ', full-set solver audit pending'}.`;
 }
 
 boot().catch(error => {
