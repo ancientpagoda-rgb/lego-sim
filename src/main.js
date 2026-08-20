@@ -204,7 +204,6 @@ function rockPrints() {
 
 function buildDecor() {
   clearDecor();
-  // River fills the molded channel and runs the entire 48-stud baseplate.
   const waterMat=new THREE.MeshPhysicalMaterial({color:0x397ba3,roughness:.18,metalness:0,transparent:true,opacity:.77,clearcoat:.45});
   const river=new THREE.Mesh(new THREE.BoxGeometry(10.6,.08,47.8),waterMat);river.position.set(-.5,.25,0);river.receiveShadow=true;decorRoot.add(river);
   for(let i=0;i<22;i++){
@@ -213,13 +212,11 @@ function buildDecor() {
   }
   rockPrints();
 
-  // Vegetation positions match the visual balance of the physical set.
   palm(13,-15,1.02,-.04); palm(13,11,.88,.04); palm(-13,14,.9,-.04); palm(-12,-15,.78,.03); palm(5,15,.72,-.02);
   for(const [x,z,s] of [[-14,4,.8],[-10,19,.65],[14,2,.7],[5,-18,.65],[-12,-2,.6],[14,-7,.65]]){
     const bush=new THREE.Mesh(new THREE.IcosahedronGeometry(s,1),material(0x2a5b30,.9));bush.scale.y=.55;bush.position.set(x,.65,z);bush.castShadow=true;decorRoot.add(bush);
   }
 
-  // All eight included minifigures.
   minifig({name:'Johnny Thunder',x:-12,z:-12,torso:0xc6a56d,legs:0x4b3425,hat:'cowboy',goal:[-8,7],speed:1.12});
   minifig({name:'Miss Gail Storm',x:-11,z:10,torso:0x3c7b4d,legs:0xb73531,hat:'pith',goal:[-7,2],speed:1.05});
   minifig({name:'Dr. Charles Lightning',x:-13,z:13,torso:0xe7e2d4,legs:0x3b6c42,hat:'pith',goal:[-10,-2],speed:.92});
@@ -231,11 +228,10 @@ function buildDecor() {
   crocodile(-10,18,.35); snake(-5,-18,0xc63e32,1); snake(-2,-12,0x111111,.9); spider(2.5,10.4,7); scorpion(-13,-7); bat(13,14,-3); parrot(12.3,13.1,5.5);
   web=spiderWeb(2.5,10.5,7,Math.PI/2);
 
-  // Jungle atmosphere: a few drifting firefly-like motes.
   const moteMat=material(0xf6de72,.25,true,.72);
   for(let i=0;i<18;i++){
     const mote=new THREE.Mesh(new THREE.SphereGeometry(.035,6,5),moteMat);mote.position.set((Math.random()-.5)*28,1+Math.random()*10,(Math.random()-.5)*42);decorRoot.add(mote);
-    const base=mote.position.clone(),phase=Math.random()*10;amp=.3+Math.random()*.5;
+    const base=mote.position.clone(), phase=Math.random()*10, amp=.3+Math.random()*.5;
     ambientAnimations.push(t=>{mote.position.y=base.y+Math.sin(t*.8+phase)*amp;mote.position.x=base.x+Math.sin(t*.33+phase)*.25;});
   }
 }
@@ -269,7 +265,6 @@ function updateAgents(dt) {
 }
 
 function updateSetMotion(dt){
-  // The boat gently drifts in the water but remains a single assembly.
   const boatOffset=new THREE.Vector3(Math.sin(elapsed*.28)*.22,Math.sin(elapsed*.9)*.025,(elapsed*.16)%3-1.5);
   setAssemblyOffset('boat',boatOffset);
   for(const fn of ambientAnimations)fn(elapsed);
@@ -316,9 +311,9 @@ async function boot(){
   const response=await fetch('./data/5986-model.json');if(!response.ok)throw new Error(`model load failed: ${response.status}`);modelData=await response.json();
   if(modelData.partFiles?.length){const chunks=await Promise.all(modelData.partFiles.map(async path=>{const r=await fetch(`./data/${path.replace(/^\.\//,'')}`);if(!r.ok)throw new Error(`part chunk load failed: ${path} ${r.status}`);return r.json();}));modelData.parts=chunks.flat();}
   buildWorld();
-  const tied=modelData.parts.filter(p=>String(p.verification).startsWith('manual-page')).length;
+  const tied=modelData.parts.filter(p=>/^(?:manual|instruction)-page-\d+/i.test(String(p.verification ?? ''))).length;
   const assemblies=new Set(modelData.parts.map(p=>p.assembly).filter(Boolean)).size;
-  ui.status.textContent=`V0.3 full-set scene · ${modelData.parts.length} inventory-checked parts · ${tied} instruction-tied · 8 minifigs · ${assemblies} assemblies`;
+  ui.status.textContent=`V${modelData.version ?? '0.6'} · ${modelData.parts.length} rendered parts · ${tied} instruction-exact · 8 minifigs · ${assemblies} assemblies`;
 }
 boot().catch(error=>{console.error(error);ui.status.textContent=`Load error: ${error.message}`;});
 
