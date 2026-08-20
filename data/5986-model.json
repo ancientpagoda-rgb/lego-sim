@@ -1,7 +1,7 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "coordinateSystem": "presentation x/z in LEGO stud pitches; exact instruction transforms may use local subassembly coordinates or LDD stud-normalized coordinates when manual-corroborated",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
@@ -11,6 +11,8 @@
     "manualMirror": "https://lego.brickinstructions.com/lego_instructions/set/5986/Amazon_Ancient_Ruins",
     "geometryCrosscheck": "https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf",
     "geometryCrosscheckSummary": "./5986-ldd-summary.json",
+    "fullSetSolver": "./5986-full-set-solver.json",
+    "lddStructureSummary": "./5986-ldd-structure-summary.json",
     "ledgerExclusions": "./5986-ledger-exclusions.json"
   },
   "transformGoal": {
@@ -21,19 +23,22 @@
     "digitalModelTransformsAreExactWithoutManual": false,
     "rawCadRegionsAreAuthoritative": false,
     "visualPlaceholdersConsumeInventory": false,
+    "bulkSolverMayPromoteWithoutManual": false,
     "ledgerScript": "scripts/transform-ledger.mjs",
     "pageLedgerScript": "scripts/page-ledger.mjs",
     "lddImporter": "scripts/ldd-import.mjs",
+    "fullSetSolverScript": "scripts/full-set-solver.mjs",
     "sourceIntegrityCheck": "scripts/source-integrity.mjs"
   },
   "sourceNotes": [
+    "V0.6.0 introduces a 420-slot full-set solver that classifies every inventory occurrence instead of exactifying one manual page at a time.",
+    "The solver preserves the existing instruction-exact transforms as hard anchors, classifies CAD-complete/ambiguous/missing geometry groups, and withholds occurrence-level LDD refs when interchangeable exact peers make identity ambiguous.",
+    "Page 22 now contributes the Light Gray 30104 chain and adjacent Yellow 4032 pulley; their LDD refs 847 and 845 share the same mechanism anchor and the pulley is visible in manual step 12.",
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
-    "Page 22 contributes the Light Gray 30104 chain using the manual plus the unique LDD 60169/legacy-Grey candidate.",
     "Page 24 contributes the upper crown and completion cluster: bat, palm leaf, two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, one Blue 3036 plate, two Dark Gray 3039 slopes, two Red 3298 slopes, two Yellow 4589 cones and the Dark Gray 4871 inverted slope.",
-    "V0.5.6 corrects the prior 3308 follow-up: spatial candidate LDD ref 446 is reconciled to the already instruction-exact gate-web-arch on manual page 30, so it is rejected as a page-24 candidate rather than duplicated or reassigned.",
-    "Raw LDD coordinate regions are discovery hints only. The page-24 structural extractor now rejects a candidate whenever its LDD ref is already claimed by an exact part from another manual page.",
-    "Source-integrity validation requires unique exact LDD refs and checks accepted page-24 candidates against reconciled exact claims.",
+    "The prior 3308 follow-up remains corrected: LDD ref 446 belongs to the already instruction-exact gate-web-arch on manual page 30 and is rejected from page-24 structural discovery.",
+    "Raw LDD coordinate regions are discovery hints only; exact promotion still requires instruction provenance and conflict-free occurrence identity.",
     "A community LDD 4.3.8 reconstruction by penguinz remains a geometry cross-check; its known raised-baseplate, Sun Disc and decoration substitutions remain non-authoritative.",
     "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys.",
     "Two legacy 6081 roof presentation shapes are retained visually but excluded from the inventory ledger because the spatial CAD extract disproved that assignment.",
@@ -52,6 +57,7 @@
     "./5986-parts-5.json",
     "./5986-parts-6.json",
     "./5986-parts-7.json",
-    "./5986-parts-8.json"
+    "./5986-parts-8.json",
+    "./5986-parts-9.json"
   ]
 }
