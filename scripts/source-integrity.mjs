@@ -44,8 +44,6 @@ for (const part of parts) {
   }
 }
 
-// Reconciliation is non-authoritative, but it can expose a contradiction: an LDD ref proposed
-// for one exact part must not simultaneously reconcile to a different instruction-exact part.
 const matchesUrl = new URL('data/5986-ldd-model-matches.json', root);
 const reconciledExactClaims = new Map();
 if (fs.existsSync(matchesUrl)) {
@@ -97,6 +95,7 @@ if (fs.existsSync(solverUrl)) {
     if (slot.solverState === 'geometry-ready-page-blocked' && slot.candidateLddRef) {
       const ref = String(slot.candidateLddRef);
       if (candidateRefs.has(ref)) errors.push(`full-set solver candidate LDD ref ${ref} assigned more than once`);
+      if (exactRefOwners.has(ref)) errors.push(`full-set solver candidate LDD ref ${ref} reuses exact ref owned by ${exactRefOwners.get(ref).id}`);
       candidateRefs.add(ref);
     }
   }
