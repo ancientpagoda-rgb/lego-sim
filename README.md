@@ -2,46 +2,44 @@
 
 Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
 
-## V0.5.4 — upper-temple exactification
+## V0.5.5 — crown-support exactification
 
 The playable full-set scene sits on a strict **420 regular-part transform ledger**. A part counts as **instruction-exact** only when manual provenance and an explicit `instructionTransform` are both present. CAD-only and photo-aligned geometry never counts as exact.
 
 Current ledger:
 
 - **420** regular-part inventory slots
-- **191** rendered regular-part shapes
-- **189** ledger-positioned regular parts
+- **199** rendered regular-part shapes
+- **197** ledger-positioned regular parts
 - **2** disproven visual placeholders excluded from inventory coverage
-- **43** instruction-exact transforms
+- **51** instruction-exact transforms
 - **146** positioned reconstruction transforms waiting to be replaced
-- **231** inventory slots not yet positioned
-- **377** exact transforms remaining
+- **223** inventory slots not yet positioned
+- **369** exact transforms remaining
 - **9 / 44** manual pages indexed
 - **6** pages currently contributing exact transforms
 
-### Latest exact promotion — page 24 upper temple
+### Latest exact promotion — page 24 crown support
 
-The page-24 spatial reconciliation promotes an eight-transform batch:
+The page-24 structural pass adds another **8 exact transforms** directly beneath the previously locked upper crown:
 
-- **2× 6126 Trans-Neon Orange flames** — the two occurrences isolated in the high-elevation upper-temple cluster.
-- **2× 6091 Light Gray curved slopes** — the curved bodies of the paired gray top fixtures.
-- **2× 4081b Light Gray light-attachment plates** — directly above those 6091 records at matching x/z coordinates.
-- **2× 3039 Blue slopes** — the crown pair immediately below the final bat placement.
+- **1× 3036 Blue 6×8 plate**
+- **2× 3039 Dark Gray 2×2 45° slopes**
+- **2× 3298 Red 3×2 roof slopes**
+- **2× 4589 Yellow 1×1 cones**
+- **1× 4871 Dark Gray inverted double slope**
 
-Together with the already locked page-24 bat and palm leaf, these parts give the upper temple a much stronger occurrence-level reconstruction instead of relying on the older presentation layout.
+Those eight records occupy one contiguous upper-temple CAD cluster. Each part/color group is unique in the set or the extracted cluster exhausts the full inventory quantity, giving occurrence-level identity when combined with the visible page-24 temple state.
 
-Page 22's **30104 Light Gray chain** remains exact via its instruction step, single inventory occurrence, normalized LDD alias `60169`, and unique matrix.
+The same filtered extract finds a **Light Gray 3308 arch** in this layer. It remains pending because the presentation model already consumes all three 3308 inventory occurrences; the correct existing proxy needs to be replaced cleanly rather than duplicated.
 
-### A reconstruction error caught and quarantined
+The prior page-24 exact cluster remains locked: two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, the Black 30103 bat and Green 30339 palm leaf. Page 22's **30104 Light Gray chain** also remains exact via its instruction step, single inventory occurrence, normalized LDD alias `60169`, and unique matrix.
 
-The two old **6081 Light Gray** roof shapes turned out to be incorrect part assignments. The real two 6081 CAD records sit at low elevation outside the upper-temple region. Their old roof shapes are therefore still rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
+### Reconstruction errors are quarantined, not counted
 
-This gives the project a useful distinction:
+The two old **6081 Light Gray** roof shapes are incorrect part assignments. The real two 6081 CAD records sit at low elevation outside the upper-temple region. Their old roof shapes remain rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
 
-- **rendered visual parts** — everything currently drawn in the playable scene;
-- **ledger-positioned parts** — only part assignments still considered valid against the 420-part inventory.
-
-A disproven visual proxy can no longer silently occupy a real inventory occurrence.
+This gives the project a hard distinction between **rendered visual parts** and **ledger-positioned inventory parts**. A disproven visual proxy can no longer silently occupy a real inventory occurrence.
 
 ### CAD geometry cross-check
 
@@ -49,9 +47,10 @@ The community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` remai
 
 After normalizing the later chain ID and legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys** and exposes **57 one-to-one inventory anchors**. These counts never increase exact coverage by themselves.
 
-Additional filtered reconciliation files now include:
+Filtered reconciliation files now include:
 
-- `data/5986-page24-candidates.json` — the small page-24 roof/decor candidate set;
+- `data/5986-page24-candidates.json` — page-24 roof/decor candidates;
+- `data/5986-page24-structural-candidates.json` — the crown-support structural batch;
 - `data/5986-upper-temple-candidates.json` — inventory-compatible records from the upper-temple CAD region;
 - `data/5986-ledger-exclusions.json` — disproven presentation-only assignments excluded from the inventory ledger.
 
@@ -59,7 +58,7 @@ The full third-party LXF and full 969-record candidate dump remain transient Git
 
 ### Source-integrity guardrails
 
-Validation now checks:
+Validation checks:
 
 1. `validate-model.mjs` — inventory limits and required assemblies, after ledger exclusions.
 2. `transform-ledger.mjs` — deterministic 420-slot ledger with explicit exact/presentation transform separation and visual-placeholder exclusions.
@@ -70,7 +69,7 @@ Validation now checks:
 
 Indexed pages include the set overview, character/animal reference, expedition car pages 7–8, temple pages 20, 22 and 24, and bridge/gateway pages 28 and 30.
 
-Open `twin-status.html` (or **Exact twin** in the simulation HUD) for the live 420-part coverage dashboard and 44-page transcription map. The dashboard now reports visual-only placeholders separately from real inventory coverage.
+Open `twin-status.html` (or **Exact twin** in the simulation HUD) for the live 420-part coverage dashboard and 44-page transcription map. The dashboard reports visual-only placeholders separately from real inventory coverage.
 
 ## Full-set scene already present
 
@@ -142,6 +141,7 @@ data/
   5986-ldd-model-matches.json
   5986-ldd-unique-candidates.json
   5986-page24-candidates.json
+  5986-page24-structural-candidates.json
   5986-upper-temple-candidates.json
 scripts/
   validate-model.mjs
@@ -152,6 +152,7 @@ scripts/
   ldd-reconcile.mjs
   ldd-unique-inventory.mjs
   ldd-page24-extract.mjs
+  ldd-page24-structural-extract.mjs
   ldd-upper-temple-extract.mjs
 ```
 
