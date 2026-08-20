@@ -79,6 +79,38 @@ if (fs.existsSync(summaryUrl)) {
   if (!String(summary.retainedData ?? '').includes('summary counts only')) errors.push('persisted LDD data must be summary counts only');
 }
 
+const solverUrl = new URL('data/5986-full-set-solver.json', root);
+if (fs.existsSync(solverUrl)) {
+  const solver = JSON.parse(fs.readFileSync(solverUrl, 'utf8'));
+  const ledgerExact = parts.filter(part => !excludedIds.has(part.id) && isExact(part)).length;
+  if (solver.exactAuthority !== false) errors.push('full-set solver must declare exactAuthority=false');
+  if (solver.targetSlots !== 420 || (solver.slots ?? []).length !== 420) errors.push(`full-set solver must contain exactly 420 slots, got ${solver.targetSlots}/${solver.slots?.length}`);
+  if (solver.currentInstructionExact !== ledgerExact) errors.push(`full-set solver exact count mismatch: ${solver.currentInstructionExact}/${ledgerExact}`);
+  if (solver.remainingExactTransforms !== 420 - ledgerExact) errors.push(`full-set solver remaining count mismatch: ${solver.remainingExactTransforms}/${420 - ledgerExact}`);
+  const slotIds = new Set();
+  const candidateRefs = new Set();
+  for (const slot of solver.slots ?? []) {
+    if (!slot.slotId || slotIds.has(slot.slotId)) errors.push(`full-set solver duplicate/missing slot id: ${slot.slotId}`);
+    slotIds.add(slot.slotId);
+    if (slot.solverState === 'instruction-exact' && !Number.isInteger(slot.manualPage)) errors.push(`${slot.slotId}: solver exact slot lacks manual page`);
+    if (slot.solverState !== 'instruction-exact' && Number.isInteger(slot.manualPage)) errors.push(`${slot.slotId}: non-exact solver slot must not invent manual-page provenance`);
+    if (slot.solverState === 'geometry-ready-page-blocked' && slot.candidateLddRef) {
+      const ref = String(slot.candidateLddRef);
+      if (candidateRefs.has(ref)) errors.push(`full-set solver candidate LDD ref ${ref} assigned more than once`);
+      candidateRefs.add(ref);
+    }
+  }
+  const categorized = Object.values(solver.solverCounts ?? {}).reduce((sum, value) => sum + Number(value || 0), 0);
+  if (categorized !== 420) errors.push(`full-set solver state counts must sum to 420, got ${categorized}`);
+}
+
+const structureUrl = new URL('data/5986-ldd-structure-summary.json', root);
+if (fs.existsSync(structureUrl)) {
+  const structure = JSON.parse(fs.readFileSync(structureUrl, 'utf8'));
+  if (structure.exactAuthority !== false) errors.push('LDD structure inspection must remain non-authoritative');
+  if (!String(structure.retainedData ?? '').includes('no third-party part transform matrices')) errors.push('LDD structure inspection retention policy must exclude transform matrices');
+}
+
 if (errors.length) {
   console.error('5986 source-integrity validation failed:\n' + errors.join('\n'));
   process.exit(1);
