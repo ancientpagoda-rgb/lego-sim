@@ -96,5 +96,77 @@
       "lddMaterialId": "23",
       "anchorEvidence": "the set has one Blue 3009 and its single CAD record is immediately adjacent to the unique printed central facade in the page-22 tower layer"
     }
+  },
+  {
+    "id": "crocodile-body",
+    "partNo": "6026",
+    "color": "Green",
+    "position": [1.5, 0.35, 17.5],
+    "verification": "instruction-page-4-crocodile",
+    "assembly": "crocodile",
+    "shape": "crocodile-body",
+    "studs": false,
+    "instructionTransform": {
+      "page": 4,
+      "parent": "ldd-set-origin",
+      "position": [1.5000008046627045, 0, 17.500003576278687],
+      "rotationMatrix3": [-1, 0, 0, 0, 1, 0, 0, 0, -1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "933",
+      "lddDesignID": "6026",
+      "lddMaterialId": "28",
+      "anchorEvidence": "manual page 4 explicitly shows the crocodile subassembly; body is a unique inventory occurrence and unique CAD record"
+    }
+  },
+  {
+    "id": "crocodile-upper-jaw",
+    "partNo": "6027",
+    "color": "Green",
+    "position": [1.5, 0.55, 17.5],
+    "verification": "instruction-page-4-crocodile",
+    "assembly": "crocodile",
+    "shape": "crocodile-jaw",
+    "studs": false,
+    "instructionTransform": {
+      "page": 4,
+      "parent": "crocodile-body",
+      "position": [1.5000006556510925, 0, 17.500003576278687],
+      "rotationMatrix3": [-1, 0, 0, 0, 1, 0, 0, 0, -1],
+      "coordinateSystem": "LDD set coordinates; attached to crocodile body in manual subassembly"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "932",
+      "lddDesignID": "6027",
+      "lddMaterialId": "28",
+      "anchorEvidence": "manual page 4 explicitly shows the crocodile subassembly; upper jaw is a unique inventory occurrence and unique CAD record"
+    }
+  },
+  {
+    "id": "crocodile-tail",
+    "partNo": "6028",
+    "color": "Green",
+    "position": [1.5, 0.35, 15.5],
+    "verification": "instruction-page-4-crocodile",
+    "assembly": "crocodile",
+    "shape": "crocodile-tail",
+    "studs": false,
+    "instructionTransform": {
+      "page": 4,
+      "parent": "crocodile-body",
+      "position": [1.5000006556510925, 0, 17.500001192092896],
+      "rotationMatrix3": [-1, 0, 0, 0, 1, 0, 0, 0, -1],
+      "coordinateSystem": "LDD set coordinates; attached to crocodile body in manual subassembly"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "934",
+      "lddDesignID": "6028",
+      "lddMaterialId": "28",
+      "anchorEvidence": "manual page 4 explicitly shows the crocodile subassembly; tail is a unique inventory occurrence and unique CAD record"
+    }
   }
 ]
