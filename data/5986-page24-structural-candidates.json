@@ -1,0 +1,230 @@
+{
+  "manualPage": 24,
+  "exactAuthority": false,
+  "region": {
+    "xMin": 17,
+    "xMax": 24,
+    "yMin": 24,
+    "yMax": 31,
+    "zMin": -9,
+    "zMax": 2
+  },
+  "policy": "Structural CAD candidates only. Exact promotion requires visible page-24 instruction evidence and inventory occurrence reconciliation.",
+  "counts": {
+    "3036|Blue": 1,
+    "3039|Dark Gray": 2,
+    "3298|Red": 2,
+    "3308|Light Gray": 1,
+    "4589|Yellow": 2,
+    "4871|Dark Gray": 1
+  },
+  "candidates": [
+    {
+      "partNo": "4871",
+      "color": "Dark Gray",
+      "lddRef": "441",
+      "lddDesignID": "4871",
+      "materialId": "27",
+      "position": [
+        20.49999713897705,
+        29.053223133087158,
+        -3.5000205039978027
+      ],
+      "rotationMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "3039",
+      "color": "Dark Gray",
+      "lddRef": "444",
+      "lddDesignID": "3039",
+      "materialId": "27",
+      "position": [
+        20.49999475479126,
+        27.853224277496338,
+        -2.5000208616256714
+      ],
+      "rotationMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "3039",
+      "color": "Dark Gray",
+      "lddRef": "445",
+      "lddDesignID": "3039",
+      "materialId": "27",
+      "position": [
+        21.499996185302734,
+        27.853224277496338,
+        -5.500020384788513
+      ],
+      "rotationMatrix3": [
+        -1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ]
+    },
+    {
+      "partNo": "3298",
+      "color": "Red",
+      "lddRef": "442",
+      "lddDesignID": "3298",
+      "materialId": "21",
+      "position": [
+        20.49999713897705,
+        27.853224277496338,
+        -4.50002133846283
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "3298",
+      "color": "Red",
+      "lddRef": "443",
+      "lddDesignID": "3298",
+      "materialId": "21",
+      "position": [
+        21.499996185302734,
+        27.853224277496338,
+        -3.5000211000442505
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "4589",
+      "color": "Yellow",
+      "lddRef": "439",
+      "lddDesignID": "4589",
+      "materialId": "24",
+      "position": [
+        19.49999451637268,
+        27.853224277496338,
+        -5.500021576881409
+      ],
+      "rotationMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "4589",
+      "color": "Yellow",
+      "lddRef": "440",
+      "lddDesignID": "4589",
+      "materialId": "24",
+      "position": [
+        19.499995708465576,
+        27.853224277496338,
+        -2.5000208616256714
+      ],
+      "rotationMatrix3": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "partNo": "3036",
+      "color": "Blue",
+      "lddRef": "437",
+      "lddDesignID": "3036",
+      "materialId": "23",
+      "position": [
+        18.499995470046997,
+        27.453224658966064,
+        -7.500020861625671
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    },
+    {
+      "partNo": "3308",
+      "color": "Light Gray",
+      "lddRef": "446",
+      "lddDesignID": "3308",
+      "materialId": "2",
+      "position": [
+        18.499995470046997,
+        25.053224563598633,
+        -7.500020861625671
+      ],
+      "rotationMatrix3": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        -1,
+        0,
+        0
+      ]
+    }
+  ]
+}
