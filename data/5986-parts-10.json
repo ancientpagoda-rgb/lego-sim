@@ -1,0 +1,52 @@
+[
+  {
+    "id": "car-seat-tub",
+    "partNo": "30149",
+    "color": "Light Gray",
+    "position": [10, 1.55, 16.7],
+    "verification": "instruction-page-7-visible",
+    "assembly": "car",
+    "size": [6, 5, 2.4],
+    "studs": false,
+    "instructionTransform": {
+      "page": 7,
+      "parent": "ldd-set-origin",
+      "position": [-15.541144609451294, 3.0422118306159973, 14.500000476837158],
+      "rotationMatrix3": [0, 0, 1, -0.03489954024553299, 0.9993908405303955, 0, -0.9993908405303955, -0.03489954024553299, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "809",
+      "lddDesignID": "30149",
+      "lddMaterialId": "2",
+      "anchorEvidence": "single Light Gray 30149 inventory occurrence; the two-seat vehicle tub is visibly installed during the page-7 car build"
+    }
+  },
+  {
+    "id": "car-front-grille",
+    "partNo": "30147",
+    "color": "Light Gray",
+    "position": [10, 1.95, 12.05],
+    "rotation": [0, 1.5707963267948966, 0],
+    "verification": "instruction-page-8-step-8",
+    "assembly": "car",
+    "size": [1, 2, 2.4],
+    "studs": false,
+    "instructionTransform": {
+      "page": 8,
+      "step": 8,
+      "parent": "ldd-set-origin",
+      "position": [-18.52535843849182, 2.5377562642097473, 15.499999523162842],
+      "rotationMatrix3": [0, 0, 1, -0.03489954024553299, 0.9993908405303955, 0, -0.9993908405303955, -0.03489954024553299, 0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "800",
+      "lddDesignID": "30147",
+      "lddMaterialId": "2",
+      "anchorEvidence": "single Light Gray 30147 inventory occurrence; the round-top grille and lamps are plainly visible at the front of the page-8 vehicle"
+    }
+  }
+]
