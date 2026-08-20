@@ -1,0 +1,187 @@
+[
+  {
+    "id": "temple-crown-inverted-slope",
+    "partNo": "4871",
+    "color": "Dark Gray",
+    "position": [11, 11.55, -4],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "size": [4, 2, 1.2],
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [20.49999713897705, 29.053223133087158, -3.5000205039978027],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "441",
+      "lddDesignID": "4871",
+      "lddMaterialId": "27"
+    }
+  },
+  {
+    "id": "temple-crown-dark-slope-a",
+    "partNo": "3039",
+    "color": "Dark Gray",
+    "position": [11, 10.35, -3],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [20.49999475479126, 27.853224277496338, -2.5000208616256714],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "444",
+      "lddDesignID": "3039",
+      "lddMaterialId": "27"
+    }
+  },
+  {
+    "id": "temple-crown-dark-slope-b",
+    "partNo": "3039",
+    "color": "Dark Gray",
+    "position": [12, 10.35, -6],
+    "rotation": [0,3.141592653589793,0],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [21.499996185302734, 27.853224277496338, -5.500020384788513],
+      "rotationMatrix3": [-1,0,0,0,1,0,0,0,-1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "445",
+      "lddDesignID": "3039",
+      "lddMaterialId": "27"
+    }
+  },
+  {
+    "id": "temple-crown-red-slope-a",
+    "partNo": "3298",
+    "color": "Red",
+    "position": [11, 10.35, -5],
+    "rotation": [0,1.5707963267948966,0],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "size": [3,2,1.2],
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [20.49999713897705, 27.853224277496338, -4.50002133846283],
+      "rotationMatrix3": [0,0,1,0,1,0,-1,0,0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "442",
+      "lddDesignID": "3298",
+      "lddMaterialId": "21"
+    }
+  },
+  {
+    "id": "temple-crown-red-slope-b",
+    "partNo": "3298",
+    "color": "Red",
+    "position": [12, 10.35, -4],
+    "rotation": [0,-1.5707963267948966,0],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "slope",
+    "size": [3,2,1.2],
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [21.499996185302734, 27.853224277496338, -3.5000211000442505],
+      "rotationMatrix3": [0,0,-1,0,1,0,1,0,0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "443",
+      "lddDesignID": "3298",
+      "lddMaterialId": "21"
+    }
+  },
+  {
+    "id": "temple-crown-yellow-cone-a",
+    "partNo": "4589",
+    "color": "Yellow",
+    "position": [10, 10.35, -6],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "round",
+    "size": [1,1,1],
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [19.49999451637268, 27.853224277496338, -5.500021576881409],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "439",
+      "lddDesignID": "4589",
+      "lddMaterialId": "24"
+    }
+  },
+  {
+    "id": "temple-crown-yellow-cone-b",
+    "partNo": "4589",
+    "color": "Yellow",
+    "position": [10, 10.35, -3],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "shape": "round",
+    "size": [1,1,1],
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [19.499995708465576, 27.853224277496338, -2.5000208616256714],
+      "rotationMatrix3": [1,0,0,0,1,0,0,0,1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "440",
+      "lddDesignID": "4589",
+      "lddMaterialId": "24"
+    }
+  },
+  {
+    "id": "temple-crown-blue-plate",
+    "partNo": "3036",
+    "color": "Blue",
+    "position": [9, 9.95, -8],
+    "rotation": [0,1.5707963267948966,0],
+    "verification": "instruction-page-24-visible",
+    "assembly": "main-temple",
+    "size": [6,8,0.4],
+    "instructionTransform": {
+      "page": 24,
+      "parent": "ldd-set-origin",
+      "position": [18.499995470046997, 27.453224658966064, -7.500020861625671],
+      "rotationMatrix3": [0,0,1,0,1,0,-1,0,0],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "437",
+      "lddDesignID": "3036",
+      "lddMaterialId": "23"
+    }
+  }
+]
