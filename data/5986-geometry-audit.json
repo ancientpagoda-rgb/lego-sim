@@ -1,0 +1,49 @@
+{
+  "set": "5986-1",
+  "version": "0.6.1",
+  "policy": "Large presentation geometry is not trusted merely because it looks plausible. Catalog envelopes establish real part dimensions; instruction pages establish assembly layout; exact instructionTransform data remains separate from presentation geometry.",
+  "assemblies": [
+    {
+      "id": "baseplate",
+      "partNo": "30271px1",
+      "status": "rebaselined-catalog-envelope-mold-proxy",
+      "catalogStudEnvelope": [32, 48, 6],
+      "presentation": "single inventory shell at channel floor plus 22 excluded terrain-mold helpers forming four corner pits and side plateaus",
+      "remainingRisk": "pit contours and sloped cliff faces are still simplified box geometry; next pass should follow the actual molded surface/print more closely"
+    },
+    {
+      "id": "rope-bridge",
+      "partNo": "2549",
+      "status": "corrected-catalog-footprint-manual-anchor",
+      "catalogStudEnvelope": [16, 4, 3],
+      "presentation": "16-stud span x 4-stud width, no compensating Y rotation",
+      "remainingRisk": "rope sag and rail curvature are procedural rather than molded-part mesh"
+    },
+    {
+      "id": "boat-hull",
+      "partNo": "33129",
+      "status": "corrected-catalog-envelope-presentation-rebuild-pending",
+      "catalogStudEnvelope": [18, 8, 3.33],
+      "presentation": "8 x 18 x 4 world-unit proxy lowered into river channel",
+      "remainingRisk": "box/cone hull proxy still does not reproduce the real molded bow, gunwales and oarlocks"
+    },
+    {
+      "id": "car",
+      "status": "quarantined-presentation-rebuild-required",
+      "trustedExactCore": ["3832 chassis", "30157 tan axle plates", "30155 wheel hubs", "3483 front tires", "2346 rear tires"],
+      "correctedCatalogPieces": ["32000 Light Gray: 1 x 2 x 1 Technic brick"],
+      "knownMissingOrUnderrepresentedCore": ["30149 Light Gray 6 x 5 x 2 two-seat vehicle base", "30147 Light Gray vehicle grille"],
+      "remainingRisk": "non-exact car-body positions are old scene reconstruction and are tagged presentation-proxy-pending-car-rebuild"
+    },
+    {
+      "id": "main-temple",
+      "status": "mixed-exact-and-reconstruction",
+      "remainingRisk": "large lower/mid temple geometry still inherits early visual layout and should be re-fit to the corrected baseplate before further bulk exactification"
+    },
+    {
+      "id": "bridge-gateway",
+      "status": "manual-anchored-geometry-needs-baseplate-refit",
+      "remainingRisk": "gateway parts are instruction-tied, but the whole assembly presentation origin should be rechecked against the corrected molded baseplate"
+    }
+  ]
+}
