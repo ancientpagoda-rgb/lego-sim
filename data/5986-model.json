@@ -13,6 +13,7 @@
     "geometryCrosscheckSummary": "./5986-ldd-summary.json",
     "fullSetSolver": "./5986-full-set-solver.json",
     "lddStructureSummary": "./5986-ldd-structure-summary.json",
+    "anchorNeighborhoods": "./5986-anchor-neighborhoods.json",
     "ledgerExclusions": "./5986-ledger-exclusions.json"
   },
   "transformGoal": {
@@ -28,13 +29,17 @@
     "pageLedgerScript": "scripts/page-ledger.mjs",
     "lddImporter": "scripts/ldd-import.mjs",
     "fullSetSolverScript": "scripts/full-set-solver.mjs",
+    "anchorNeighborhoodScript": "scripts/ldd-anchor-neighborhoods.mjs",
     "sourceIntegrityCheck": "scripts/source-integrity.mjs"
   },
   "sourceNotes": [
     "V0.6.0 introduces a 420-slot full-set solver that classifies every inventory occurrence instead of exactifying one manual page at a time.",
-    "The solver preserves the existing instruction-exact transforms as hard anchors, classifies CAD-complete/ambiguous/missing geometry groups, and withholds occurrence-level LDD refs when interchangeable exact peers make identity ambiguous.",
-    "Page 22 now contributes the Light Gray 30104 chain and adjacent Yellow 4032 pulley; their LDD refs 847 and 845 share the same mechanism anchor and the pulley is visible in manual step 12.",
-    "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
+    "The solver preserves existing instruction-exact transforms as hard anchors, classifies CAD-complete/ambiguous/missing geometry groups, and withholds occurrence-level LDD refs when interchangeable exact peers make identity ambiguous.",
+    "Page 4 contributes the complete crocodile subassembly: unique Green 6026 body, 6027 upper jaw and 6028 tail with LDD refs 933, 932 and 934.",
+    "Page 22 contributes the Light Gray 30104 chain, Yellow 4032 pulley, Blue 3700 crank connector, unique Dark Gray 30156pb01 printed sloped facade, unique Blue 3009 brick, White 3937 / Yellow 3938 hinge pair and Black 3176 plate-with-hole.",
+    "The page-22 White 3937 and Yellow 3938 occurrences were relocated from an earlier trapdoor presentation proxy rather than duplicated, reducing reconstruction count while preserving the 420-slot inventory boundary.",
+    "Exact-anchor neighborhood extraction now finds inventory-compatible CAD records near every exact CAD-backed anchor so captured pages can promote local mechanisms in clusters instead of one part at a time.",
+    "Gateway placements tagged manual-page-28/manual-page-30 remain tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
     "Page 24 contributes the upper crown and completion cluster: bat, palm leaf, two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, one Blue 3036 plate, two Dark Gray 3039 slopes, two Red 3298 slopes, two Yellow 4589 cones and the Dark Gray 4871 inverted slope.",
     "The prior 3308 follow-up remains corrected: LDD ref 446 belongs to the already instruction-exact gate-web-arch on manual page 30 and is rejected from page-24 structural discovery.",
