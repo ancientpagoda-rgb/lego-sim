@@ -1,22 +1,35 @@
 {
   "set": "5986-1",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "policy": "Large presentation geometry is not trusted merely because it looks plausible. Catalog envelopes establish real part dimensions; instruction pages establish assembly layout; exact instructionTransform data remains separate from presentation geometry.",
   "assemblies": [
     {
       "id": "baseplate",
       "partNo": "30271px1",
-      "status": "rebaselined-catalog-envelope-mold-proxy",
+      "status": "datum-corrected-catalog-envelope-mold-proxy",
       "catalogStudEnvelope": [32, 48, 6],
-      "presentation": "single inventory shell at channel floor plus 22 excluded terrain-mold helpers forming four corner pits and side plateaus",
-      "remainingRisk": "pit contours and sloped cliff faces are still simplified box geometry; next pass should follow the actual molded surface/print more closely"
+      "presentation": "single thin inventory floor shell near the six-brick-deep mold bottom plus 22 excluded terrain-mold helpers; normal land tops resolve to y=0.35, pit floors to about y=-5.35 and river decor to y=-6.45",
+      "remainingRisk": "pit contours and sloped cliff faces remain simplified box geometry rather than a traced molded mesh"
+    },
+    {
+      "id": "main-temple",
+      "status": "footprint-refit-guarded-upper-geometry-mixed",
+      "presentationFootprint": {"xMin":5,"xMax":13,"zMin":-12,"zMax":12},
+      "evidence": "three Green 4201 8x8 floor plates centered at x=9 and z=-8,0,8 sit on the y=0.35 right plateau and terminate at the z=±12 front/back pit boundaries",
+      "remainingRisk": "lower/mid/upper wall layout still mixes instruction-exact parts with early reconstruction and must be rebuilt upward from this guarded footprint"
+    },
+    {
+      "id": "bridge-gateway",
+      "status": "footprint-refit-guarded-manual-anchored",
+      "evidence": "gate-core remains at the exact page-28 origin; corrected 16x4 bridge center follows the page-30 local offset [-6,2,0] in x/z and its gateway-side endpoint meets the gate-core footprint",
+      "remainingRisk": "procedural rope sag/rails are presentation geometry and the west landing should still be checked against a traced mold mesh"
     },
     {
       "id": "rope-bridge",
       "partNo": "2549",
       "status": "corrected-catalog-footprint-manual-anchor",
       "catalogStudEnvelope": [16, 4, 3],
-      "presentation": "16-stud span x 4-stud width, no compensating Y rotation",
+      "presentation": "16-stud span x 4-stud width across the river; no compensating presentation rotation required after canonicalizing the renderer input",
       "remainingRisk": "rope sag and rail curvature are procedural rather than molded-part mesh"
     },
     {
@@ -29,21 +42,11 @@
     },
     {
       "id": "car",
-      "status": "quarantined-presentation-rebuild-required",
-      "trustedExactCore": ["3832 chassis", "30157 tan axle plates", "30155 wheel hubs", "3483 front tires", "2346 rear tires"],
+      "status": "exact-core-expanded-manual-rebuild-in-progress",
+      "trustedExactCore": ["3832 chassis", "30157 tan axle plates", "30155 wheel hubs", "3483 front tires", "2346 rear tires", "30149 Light Gray two-seat tub", "30147 Light Gray round-top grille"],
       "correctedCatalogPieces": ["32000 Light Gray: 1 x 2 x 1 Technic brick"],
-      "knownMissingOrUnderrepresentedCore": ["30149 Light Gray 6 x 5 x 2 two-seat vehicle base", "30147 Light Gray vehicle grille"],
-      "remainingRisk": "non-exact car-body positions are old scene reconstruction and are tagged presentation-proxy-pending-car-rebuild"
-    },
-    {
-      "id": "main-temple",
-      "status": "mixed-exact-and-reconstruction",
-      "remainingRisk": "large lower/mid temple geometry still inherits early visual layout and should be re-fit to the corrected baseplate before further bulk exactification"
-    },
-    {
-      "id": "bridge-gateway",
-      "status": "manual-anchored-geometry-needs-baseplate-refit",
-      "remainingRisk": "gateway parts are instruction-tied, but the whole assembly presentation origin should be rechecked against the corrected molded baseplate"
+      "presentation": "30149 tub centered between exact front/rear axle centers; 30147 grille centered ahead of the front axle; remaining old body proxies stay explicitly non-exact",
+      "remainingRisk": "window, hood, steering, rear box and repeated plate/brick occurrences still need step-specific manual placement"
     }
   ]
 }
