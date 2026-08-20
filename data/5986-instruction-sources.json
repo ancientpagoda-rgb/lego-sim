@@ -20,9 +20,10 @@
     "knownLimitations": [
       "Sun Disc x276 is replaced by 3068b in the LDD model.",
       "Raised baseplate 30271px1 is replaced by a brick-built solution in the LDD model.",
-      "Decorations are missing or incorrect."
+      "Decorations are missing or incorrect.",
+      "Raw LDD coordinate regions are discovery hints and can overlap the apparent bounds of a different assembly; established instruction-page provenance wins any conflict."
     ],
-    "policy": "LDD geometry may accelerate transform solving and detect reconstruction errors, but never counts as instruction-exact without matching manual-page provenance."
+    "policy": "LDD geometry may accelerate transform solving and detect reconstruction errors, but never counts as instruction-exact without matching manual-page provenance. A CAD ref already reconciled to an exact part from another manual page must be rejected as a conflicting candidate."
   },
   "capturedPages": [
     { "page": 1, "image": "https://lego.brickinstructions.com/instructions/05000/5986/001.jpg", "content": "cover / complete-set reference" },
@@ -31,9 +32,9 @@
     { "page": 8, "image": "https://lego.brickinstructions.com/instructions/05000/5986/008.jpg", "content": "expedition car steps 8-10; wheel/tire installation and final car" },
     { "page": 20, "image": "https://lego.brickinstructions.com/instructions/05000/5986/020.jpg", "content": "main raised-platform temple stage" },
     { "page": 22, "image": "https://lego.brickinstructions.com/instructions/05000/5986/022.jpg", "content": "tower steps 9-12 and chain/crank subassembly" },
-    { "page": 24, "image": "https://lego.brickinstructions.com/instructions/05000/5986/024.jpg", "content": "temple completion steps 17-19; upper facade and crown support transcribed through Blue 3036 plate, Dark Gray 3039 pair, Red 3298 pair, Yellow 4589 pair, Dark Gray 4871, upper flames/fixtures, foliage and bat; Light Gray 3308 occurrence remains pending replacement" },
+    { "page": 24, "image": "https://lego.brickinstructions.com/instructions/05000/5986/024.jpg", "content": "temple completion steps 17-19; upper facade and accepted crown-support records transcribed through Blue 3036 plate, Dark Gray 3039 pair, Red 3298 pair, Yellow 4589 pair, Dark Gray 4871, upper flames/fixtures, foliage and bat; spatial 3308 ref 446 rejected because it reconciles to the exact page-30 gateway arch" },
     { "page": 28, "image": "https://lego.brickinstructions.com/instructions/05000/5986/028.jpg", "content": "gateway/bridge steps 1-6" },
-    { "page": 30, "image": "https://lego.brickinstructions.com/instructions/05000/5986/030.jpg", "content": "curved bridge attachment / gateway completion" }
+    { "page": 30, "image": "https://lego.brickinstructions.com/instructions/05000/5986/030.jpg", "content": "curved bridge attachment / gateway completion; gate-web-arch is the exact Light Gray 3308 occurrence that reconciles to LDD ref 446" }
   ],
   "transcriptionPolicy": {
     "exactTransformRequires": [
@@ -45,6 +46,8 @@
     ],
     "verificationPrefix": "manual-page-N or instruction-page-N",
     "photoAlignedTransformsCountAsExact": false,
-    "digitalModelTransformsCountAsExactWithoutManual": false
+    "digitalModelTransformsCountAsExactWithoutManual": false,
+    "rawCadRegionsCountAsAssemblyProof": false,
+    "crossPageExactRefConflictResolution": "existing instruction-exact provenance wins; conflicting CAD candidate is rejected"
   }
 }
