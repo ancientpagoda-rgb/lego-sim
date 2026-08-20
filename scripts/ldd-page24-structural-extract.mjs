@@ -7,6 +7,7 @@ const output = outIndex >= 0 ? process.argv[outIndex + 1] : 'data/5986-page24-st
 const data = JSON.parse(fs.readFileSync(input, 'utf8'));
 const manifest = JSON.parse(fs.readFileSync(new URL('data/5986-model.json', root), 'utf8'));
 const modelParts = (manifest.partFiles ?? []).flatMap(rel => JSON.parse(fs.readFileSync(new URL(`data/${rel.replace('./', '')}`, root), 'utf8')));
+const partById = new Map(modelParts.map(part => [part.id, part]));
 
 const wanted = new Set([
   '3036|Blue',
@@ -18,15 +19,26 @@ const wanted = new Set([
 ]);
 
 const exactRefClaims = new Map();
-for (const part of modelParts) {
+const addClaim = (lddRef, part, source) => {
+  if (!lddRef || !part) return;
   const verification = String(part.verification ?? '');
-  const lddRef = part.geometryCrosscheck?.lddRef;
-  if (!/^(?:manual|instruction)-page-\d+/i.test(verification) || !lddRef) continue;
+  if (!/^(?:manual|instruction)-page-\d+/i.test(verification)) return;
   exactRefClaims.set(String(lddRef), {
     partId: part.id,
     assembly: part.assembly ?? null,
     verification,
+    source,
   });
+};
+
+for (const part of modelParts) addClaim(part.geometryCrosscheck?.lddRef, part, 'part.geometryCrosscheck');
+
+// The reconciliation file can associate an older exact presentation part with an LDD ref
+// even when that part predates explicit geometryCrosscheck metadata. Treat that as a claim too.
+const matchesUrl = new URL('data/5986-ldd-model-matches.json', root);
+if (fs.existsSync(matchesUrl)) {
+  const matches = JSON.parse(fs.readFileSync(matchesUrl, 'utf8'));
+  for (const match of matches.matches ?? []) addClaim(match.lddRef, partById.get(match.modelPartId), 'ldd-model-reconciliation');
 }
 
 const inUpperCrown = ([x, y, z]) => x >= 17 && x <= 24 && y >= 24 && y <= 31 && z >= -9 && z <= 2;
