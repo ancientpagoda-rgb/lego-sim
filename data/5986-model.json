@@ -1,7 +1,7 @@
 {
   "id": "5986-1",
   "name": "Amazon Ancient Ruins",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "coordinateSystem": "presentation x/z in LEGO stud pitches; exact instruction transforms may use local subassembly coordinates or LDD stud-normalized coordinates when manual-corroborated",
   "sources": {
     "instructions": "https://www.lego.com/en-gb/service/building-instructions/5986",
@@ -29,8 +29,8 @@
     "Gateway placements tagged manual-page-28/manual-page-30 are tied directly to instruction scans.",
     "Car chassis/axle/wheel placements tagged instruction-page-7/instruction-page-8 use local subassembly transforms tied to the manual.",
     "Page 22 contributes the Light Gray 30104 chain using the manual plus the unique LDD 60169/legacy-Grey candidate.",
-    "Page 24 now contributes the bat, palm leaf, two 6126 flame occurrences, two 6091 curved fixture bodies, two 4081b light-attachment plates and two Blue 3039 crown slopes.",
-    "The paired 6091 and 4081b records share x/z coordinates in the upper-temple CAD region and correspond to the two identical gray fixtures shown in the page-24 completion step.",
+    "Page 24 contributes the upper crown and completion cluster: bat, palm leaf, two 6126 flames, paired 6091/4081b gray fixtures, two Blue 3039 crown slopes, one Blue 3036 plate, two Dark Gray 3039 slopes, two Red 3298 slopes, two Yellow 4589 cones and the Dark Gray 4871 inverted slope.",
+    "The page-24 structural extractor isolates those eight new inventory occurrences in one contiguous CAD region; the Light Gray 3308 in the same region remains pending because its existing inventory occurrence must be cleanly replaced rather than duplicated.",
     "A community LDD 4.3.8 reconstruction by penguinz remains a geometry cross-check; its known raised-baseplate, Sun Disc and decoration substitutions remain non-authoritative.",
     "After mapping 1999 legacy gray material IDs, the CAD cross-check overlaps 350 of the 420 inventory units across 144 part/color keys.",
     "Two legacy 6081 roof presentation shapes are retained visually but excluded from the inventory ledger because the spatial CAD extract disproved that assignment.",
@@ -49,6 +49,7 @@
     "./5986-parts-4.json",
     "./5986-parts-5.json",
     "./5986-parts-6.json",
-    "./5986-parts-7.json"
+    "./5986-parts-7.json",
+    "./5986-parts-8.json"
   ]
 }
