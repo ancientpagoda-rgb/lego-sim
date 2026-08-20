@@ -168,5 +168,29 @@
       "lddMaterialId": "28",
       "anchorEvidence": "manual page 4 explicitly shows the crocodile subassembly; tail is a unique inventory occurrence and unique CAD record"
     }
+  },
+  {
+    "id": "temple-step11-black-hole-plate",
+    "partNo": "3176",
+    "color": "Black",
+    "position": [10.7, 13.0, -5.5],
+    "verification": "instruction-page-22-step-11",
+    "assembly": "main-temple",
+    "size": [2, 3, 0.4],
+    "instructionTransform": {
+      "page": 22,
+      "step": 11,
+      "parent": "ldd-set-origin",
+      "position": [23.65450143814087, 25.02875328063965, -5.500019788742065],
+      "rotationMatrix3": [-0.9510565400123596, 0.30901700258255005, 0, 0.30901700258255005, 0.9510565400123596, 0, 0, 0, -1],
+      "coordinateSystem": "LDD translation normalized to LEGO stud pitch"
+    },
+    "geometryCrosscheck": {
+      "source": "penguinz LDD 4.3.8 reconstruction",
+      "lddRef": "668",
+      "lddDesignID": "3176",
+      "lddMaterialId": "26",
+      "anchorEvidence": "unique Black 3176 inventory occurrence; visible as the 2x3 plate-with-hole in the page-22 step-11 callout beside the white/yellow hinge pair"
+    }
   }
 ]
