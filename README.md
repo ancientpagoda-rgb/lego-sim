@@ -1,142 +1,133 @@
 # LEGO Sim — 5986 Amazon Ancient Ruins
 
-Browser-based LEGO-world simulation centered on **5986-1 Amazon Ancient Ruins** (1999 Adventurers / Jungle).
+Browser-based digital-twin / play simulation of **LEGO 5986-1 Amazon Ancient Ruins** (Adventurers / Jungle, 1999).
 
-## V0.6.0 — full-set exactification solver
+## V0.6.1 — geometry rebaseline
 
-V0.6 changes the project from page-by-page promotion into one **420-slot full-set solve**. The target is the entire remaining inventory in a single phase, while preserving the same evidence rule: CAD can solve geometry, but only instruction-corroborated occurrences count as exact.
+The project now treats two questions independently:
 
-Current branch ledger:
+1. **Is this inventory occurrence instruction-exact?**
+2. **Is the surrounding presentation geometry actually shaped and scaled like the physical set?**
 
-- **420** regular-part inventory slots
-- **200** rendered regular-part shapes
-- **198** ledger-positioned regular parts
-- **2** disproven visual placeholders excluded from inventory coverage
-- **52** instruction-exact transforms
-- **146** positioned reconstruction transforms waiting to be replaced
-- **222** inventory slots not yet positioned
-- **368** exact transforms remaining
+Earlier versions answered the first question increasingly well while still inheriting some rough V0.3 scene geometry. V0.6.1 stops using that old scene as a geometric premise.
+
+Current feature-branch ledger:
+
+- **420** regular inventory slots
+- **61** instruction-exact transforms
+- **144** positioned reconstruction transforms
+- **215** inventory slots not yet positioned
+- **359** exact transforms remaining
 - **9 / 44** manual pages indexed
-- **6** pages currently contributing exact transforms
+- **7** manual pages currently contributing exact transforms
+- **350 / 420** inventory units represented by the secondary LDD geometry cross-check
+- **24** render-only / disproven visual helpers excluded from the inventory ledger
 
-### One solver for all 420 inventory occurrences
+### Large-geometry audit
 
-`scripts/full-set-solver.mjs` expands the inventory into 420 deterministic slots and classifies every occurrence in one pass. Non-exact slots fall into explicit buckets rather than an undifferentiated “remaining” number:
+`data/5986-geometry-audit.json` is now the presentation-geometry authority for large assemblies.
 
-- `geometry-ready-page-blocked` — the CAD part/color group is complete but manual provenance still gates promotion;
-- `variant-ambiguous-page-blocked` — multiple inventory variants share a base design and cannot be collapsed safely;
-- `cad-overflow-page-blocked` — the community model contains more compatible CAD records than the strict regular-part inventory group;
-- `cad-shortfall` — fewer compatible CAD records exist than inventory occurrences;
-- `no-cad-match` — no compatible CAD geometry is available.
+#### Raised baseplate
 
-For interchangeable repeated pieces, the solver only assigns an occurrence-level LDD ref when the whole part/color group is reconciled and any already-exact peers have known claimed refs. Otherwise it records the group as geometry-ready while deliberately withholding individual occurrence identity.
+The real `30271px1` is a **32 × 48 × 6** raised molded baseplate with four corner pits and the river pattern. The old almost-flat slab plus a few shallow rectangular banks has been retired.
 
-The generated audit is intended to live at `data/5986-full-set-solver.json`. The branch workflow is wired to produce it from the transient full LDD candidate artifact, but until that generated file lands the dashboard explicitly reports **solver audit pending** and counts zero unverified bulk promotions.
+The current scene uses:
 
-### LXF structure inspection
+- one real inventory `30271px1` shell at the channel floor;
+- 22 `terrain-mold` visual helpers to form side plateaus and four corner pits;
+- explicit ledger exclusions for every helper, so they consume **zero** of the 420 inventory slots;
+- the water surface lowered into the molded channel by `src/geometry-rebaseline.js`.
 
-`scripts/ldd-structure-inspect.mjs` inspects `IMAGE100.LXFML` for optional building-instruction and grouping metadata. If the community LDD happens to contain step/group structure, that can accelerate assignment of many CAD records to manual stages. It is still secondary evidence: a discovered LDD step/group is not instruction provenance until reconciled to the 44-page manual.
+The mold is still intentionally simplified into boxes. Sloped cliff faces, pit contours, and print detail are the next baseplate-fidelity step.
 
-Only tag counts, relevant attribute names, and group-like tag attributes are retained. The LXF body and unresolved third-party transform matrix list remain transient.
+#### Rope bridge
 
-### Exact transform #52 — page 22 pulley
+`2549` is **16 × 4 × 3**. The previous `[4,16] + rotation` presentation hit a legacy renderer branch that used the 16-stud dimension as plank width, making the bridge visibly far too wide.
 
-The first promotion produced inside the full-set phase is the **Yellow 4032 pulley** in the page-22 chain/crank mechanism.
+The model now presents it as a 16-stud span × 4-stud width, and the geometry normalization layer canonicalizes any future long-axis bridge input before rendering.
 
-- manual page 22 step 12 visibly places the yellow pulley beside the hanging chain;
-- the already-exact Light Gray 30104 chain is LDD ref `847`;
-- the Yellow 4032 candidate is ref `845`, at the same x/y mechanism anchor immediately beside that chain;
-- the set inventory contains available Yellow 4032 occurrences and the current model previously used none of them.
+#### Boat
 
-That moves the feature branch from **51 → 52 exact transforms** without consuming or reassigning an existing proxy.
+`33129` is **18 × 8 × 3 1/3**. The old 6 × 12 × 1.5 proxy was much too small. It is now represented with an 8 × 18 × 4 world-unit envelope and placed down in the rebaselined river channel.
 
-### Existing exact anchors remain hard constraints
+The procedural box/cone hull is still only an envelope proxy; the real bow, gunwales, and oarlocks remain a geometry-rebuild task.
 
-The prior exact batches are not loosened by the bulk solver. They become hard anchors:
+#### Car
 
-- car pages 7–8;
-- temple page 22 chain/crank anchor;
-- page-24 upper crown/completion cluster;
-- gateway/bridge pages 28 and 30.
+The car is explicitly marked **rebuild required** rather than being silently treated as trustworthy reconstruction.
 
-The page-30 gateway arch remains a useful conflict example: LDD ref `446` previously appeared inside a raw page-24 coordinate scan, but reconciliation ties it to the instruction-exact `gate-web-arch`. The page-24 extractor therefore rejects it. Raw CAD location can never override established instruction provenance.
+Hard exact anchors remain:
 
-### CAD geometry cross-check
+- 3832 Black 2×10 chassis
+- 2× Tan 30157 axle plates
+- 4× Light Gray 30155 wheel hubs
+- 2× Black 3483 front tires
+- 2× Black 2346 rear tires
 
-The community **LEGO Digital Designer 4.3.8** reconstruction by `penguinz` remains secondary evidence only. The automated cross-check parses **969 / 969 transformation matrices** without committing the original LXF.
+The questionable body pieces are tagged `presentation-proxy-pending-car-rebuild`. The four Light Gray `32000` pieces have at least been corrected from the old fake 1×6 plate shape to their real **1×2×1 Technic-brick** envelope.
 
-After normalizing the later chain ID and legacy gray material IDs (`2 → Light Gray`, `27 → Dark Gray`), the CAD model overlaps **350 / 420 inventory units across 144 part/color keys** and exposes **57 one-to-one inventory anchors**. Those counts describe available candidate geometry; they do not automatically increase exact coverage.
+The normalization layer also knows the catalog envelopes for the missing/underrepresented `30149` vehicle base and `30147` grille, and the two tire designs are now rendered as rings instead of solid cylinders.
 
-### Reconstruction errors stay quarantined
+### Geometry normalization layer
 
-The two old **6081 Light Gray** roof shapes are disproven part assignments. They remain rendered temporarily for visual continuity but are listed in `data/5986-ledger-exclusions.json` and consume **zero** inventory slots.
+`src/bootstrap.js` loads `src/geometry-rebaseline.js` before `src/main.js`.
 
-This preserves a hard distinction between **rendered visual parts** and **ledger-positioned inventory parts**. A visually convenient proxy cannot silently become part of the digital twin.
+The rebaseline layer:
 
-### Source-integrity guardrails
+- applies catalog envelopes before `BrickStructure.load()`;
+- canonicalizes bridge span/cross-axis data before the legacy bridge renderer sees it;
+- anchors all `terrain-mold` helpers;
+- rebuilds 3483/2346 tire presentation meshes as toruses;
+- lowers the decorative river and ripple meshes into the molded channel;
+- catches Reset rebuilds without continuously polling the scene.
 
-Validation now checks:
+This leaves authoritative `instructionTransform` data untouched.
 
-1. `validate-model.mjs` — inventory limits and required assemblies after ledger exclusions.
-2. `transform-ledger.mjs` — deterministic 420-slot ledger with exact/presentation transform separation.
-3. `page-ledger.mjs` — exact tags cannot cite an unindexed manual page.
-4. `source-integrity.mjs` — CAD-only provenance cannot masquerade as exact; exact LDD refs must be unique; page candidates cannot conflict with exact refs from another page; and any generated full-set solver report must contain exactly 420 unique slots whose exact/remaining totals agree with the live model.
+## Full-set exactification solver
 
-### Exact Twin dashboard
+The separate exactification pipeline remains active, but further bulk promotion is intentionally gated behind the geometry rebaseline.
 
-`twin-status.html` now has a **V0.6 full-set solver** panel. When `data/5986-full-set-solver.json` exists it shows:
+`scripts/full-set-solver.mjs` expands the strict inventory into 420 deterministic slots and classifies unresolved occurrences as:
 
-- geometry-ready but manual-blocked slots;
-- slots with occurrence-level CAD refs;
-- variant/CAD-overflow ambiguity;
-- CAD shortfall or missing geometry.
+- `geometry-ready-page-blocked`
+- `variant-ambiguous-page-blocked`
+- `cad-overflow-page-blocked`
+- `cad-shortfall`
+- `no-cad-match`
 
-When the audit is absent it says so explicitly and continues calculating authoritative exact coverage directly from the model files.
+CAD alone never increases instruction-exact coverage.
 
-## Full-set scene already present
+`scripts/ldd-anchor-neighborhoods.mjs` uses already-exact CAD-backed parts as local anchors so one captured instruction step can resolve a mechanism cluster without relying on the old playable scene.
 
-- 32×48 raised-baseplate world and river corridor
-- multilevel main temple
-- bridge gateway
-- collapsing suspension bridge and spider web
-- trap platform / ruby / trapdoor area
-- expedition boat and four-wheel car
-- all 8 included minifigures
-- animals, foliage, torches, Sun Disc, ruby and tools
-- `Run traps` control
-- orbit, ground and overhead cameras
-- breakable structural connection graph
+### Recent exact clusters
 
-## Transform pipeline
+Page 22 now includes the chain/crank tower cluster around the exact 30104 chain: Yellow 4032 pulley, Blue 3700 connector, unique Dark Gray 30156pb01 printed facade, unique Blue 3009, White/Yellow 3937/3938 hinge pair, and Black 3176 plate-with-hole.
+
+Page 4 contributes the complete three-piece crocodile: Green 6026 body, 6027 upper jaw, and 6028 tail.
+
+The 3937/3938 pair illustrates the correction rule: those inventory occurrences were **relocated** from an old trapdoor proxy when manual + CAD evidence showed where they actually belong; they were not duplicated.
+
+## Evidence hierarchy
 
 ```text
-                     ┌─ official instruction pages ─ provenance ─┐
-                     │                                           │
-BrickLink inventory ─┼──────────────► 420 deterministic slots    │
-       420 parts      │                         │                 │
-                     │                         ▼                 │
-Community LDD ────────┴─ 969 matrices ─► full-set solver ◄───────┘
-                                                │
-                       ┌────────────────────────┼──────────────────────┐
-                       ▼                        ▼                      ▼
-              instruction-exact         geometry/page blocked   CAD ambiguous/missing
-                       │
-                       ▼
-                 Exact Twin dashboard
-
-Existing exact LDD ref ─► hard conflict constraint
-Disproven visual proxy ─► render only / ledger exclusion
+LEGO instruction pages ───────────────► exact provenance
+BrickLink 420-part inventory ─────────► occurrence boundary
+catalog part dimensions ──────────────► presentation envelopes
+community LDD ────────────────────────► secondary geometry candidates
+old playable scene ───────────────────► presentation hint only
 ```
 
-## Run locally
+A CAD ref already claimed by an instruction-exact occurrence cannot be recycled elsewhere. A visually convenient proxy can be retained only as an explicitly excluded render helper.
+
+## Run
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Open `http://localhost:8000`.
 
-## Validation
+Validation:
 
 ```bash
 npm run check
@@ -144,55 +135,44 @@ npm run ledger
 npm run page-ledger
 ```
 
-With a transient full LDD candidate file available:
+With the transient full LDD candidate artifact available:
 
 ```bash
 npm run solver
+npm run anchors
 ```
 
-## Architecture
+## Key files
 
 ```text
 index.html
-  simulation HUD + Exact twin link
-twin-status.html
-  exact / positioned / CAD / full-set-solver / visual-placeholder dashboard
 src/
+  bootstrap.js
   main.js
   brick-engine.js
+  geometry-rebaseline.js
   twin-status.js
 data/
   5986.json
   5986-model.json
-  5986-instruction-sources.json
   5986-inventory.csv
-  5986-parts-*.json
+  5986-instruction-sources.json
+  5986-geometry-audit.json
+  5986-terrain-geometry.json
   5986-ledger-exclusions.json
+  5986-parts-*.json
   5986-ldd-summary.json
-  5986-ldd-model-matches.json
   5986-ldd-unique-candidates.json
-  5986-page24-candidates.json
-  5986-page24-structural-candidates.json
-  5986-upper-temple-candidates.json
-  5986-full-set-solver.json              # generated when bulk audit succeeds
-  5986-ldd-structure-summary.json        # generated metadata-only inspection
+  5986-ldd-model-matches.json
 scripts/
   validate-model.mjs
   transform-ledger.mjs
   page-ledger.mjs
   source-integrity.mjs
-  ldd-import.mjs
-  ldd-reconcile.mjs
-  ldd-unique-inventory.mjs
-  ldd-page24-extract.mjs
-  ldd-page24-structural-extract.mjs
-  ldd-upper-temple-extract.mjs
-  ldd-structure-inspect.mjs
   full-set-solver.mjs
+  ldd-anchor-neighborhoods.mjs
 ```
 
-## Sources and provenance
-
-The LEGO building-instruction sequence is the transform source of truth. The inventory defines the 420-part boundary. The community LDD model is a geometric cross-check and acceleration source, not a substitute for manual provenance.
+The LEGO instruction sequence is the transform source of truth. Catalog geometry controls large-part dimensions. The community LDD is an acceleration/cross-check source, not a substitute for instructions.
 
 This is a fan-made simulation prototype and is not affiliated with or endorsed by the LEGO Group.
