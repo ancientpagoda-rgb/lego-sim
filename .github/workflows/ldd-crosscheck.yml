@@ -2,7 +2,7 @@ name: Cross-check 5986 LDD geometry
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "v0.6.0-full-set-solver"]
     paths:
       - ".github/workflows/ldd-crosscheck.yml"
       - "scripts/ldd-import.mjs"
@@ -11,6 +11,8 @@ on:
       - "scripts/ldd-page24-extract.mjs"
       - "scripts/ldd-upper-temple-extract.mjs"
       - "scripts/ldd-page24-structural-extract.mjs"
+      - "scripts/ldd-structure-inspect.mjs"
+      - "scripts/full-set-solver.mjs"
       - "data/5986-instruction-sources.json"
       - "data/5986-inventory.csv"
       - "data/5986-model.json"
@@ -36,6 +38,8 @@ jobs:
         run: curl --fail --location --retry 3 --output /tmp/5986.lxf https://www.brickshelf.com/gallery/penguin3332/5986/secret_jungle_temple.lxf
       - name: Parse geometry candidates and safe summary
         run: node scripts/ldd-import.mjs /tmp/5986.lxf --write --summary-out data/5986-ldd-summary.json
+      - name: Inspect hidden LDD structure metadata
+        run: node scripts/ldd-structure-inspect.mjs /tmp/5986.lxf --out data/5986-ldd-structure-summary.json
       - name: Reconcile candidates to current model
         run: node scripts/ldd-reconcile.mjs data/5986-ldd-candidates.json --out data/5986-ldd-model-matches.json
       - name: Extract unique inventory anchors
@@ -46,6 +50,8 @@ jobs:
         run: node scripts/ldd-upper-temple-extract.mjs data/5986-ldd-candidates.json --out data/5986-upper-temple-candidates.json
       - name: Extract page 24 structural candidates
         run: node scripts/ldd-page24-structural-extract.mjs data/5986-ldd-candidates.json --out data/5986-page24-structural-candidates.json
+      - name: Solve all 420 inventory slots
+        run: node scripts/full-set-solver.mjs data/5986-ldd-candidates.json --out data/5986-full-set-solver.json
       - name: Upload transient full transform candidates
         uses: actions/upload-artifact@v4
         with:
@@ -55,15 +61,17 @@ jobs:
       - name: Confirm source-integrity rules
         run: node scripts/source-integrity.mjs
       - name: Commit safe reconciliation outputs
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/5986-ldd-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json data/5986-page24-candidates.json data/5986-upper-temple-candidates.json data/5986-page24-structural-candidates.json
+          git add data/5986-ldd-summary.json data/5986-ldd-structure-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json data/5986-page24-candidates.json data/5986-upper-temple-candidates.json data/5986-page24-structural-candidates.json data/5986-full-set-solver.json
           if git diff --cached --quiet; then
             echo "LDD reconciliation outputs unchanged"
             exit 0
           fi
-          git commit -m "Update LDD model reconciliation"
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+          git commit -m "Update full-set solver reconciliation"
+          git fetch origin "$TARGET_BRANCH"
+          git rebase "origin/$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
