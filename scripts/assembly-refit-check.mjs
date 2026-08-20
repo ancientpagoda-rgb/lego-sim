@@ -21,6 +21,20 @@ for (const part of parts.filter(part => part.assembly === 'terrain-mold')) {
   }
 }
 
+const templeFloors = ['temple-floor-1', 'temple-floor-2', 'temple-floor-3'].map(id => byId.get(id));
+if (templeFloors.some(part => !part)) {
+  errors.push('main-temple 8x24 floor strip is incomplete');
+} else {
+  const zs = templeFloors.map(part => part.position[2]).sort((a, b) => a - b);
+  if (zs.join(',') !== '-8,0,8') errors.push(`temple floor centers must remain -8,0,8, got ${zs}`);
+  for (const part of templeFloors) {
+    if (!near(part.position[0], 9)) errors.push(`${part.id}: temple floor x must remain 9`);
+    if (!near(part.position[1], 0.35)) errors.push(`${part.id}: temple floor bottom must remain on 0.35 build datum`);
+  }
+  const footprint = { xMin: 5, xMax: 13, zMin: -12, zMax: 12 };
+  if (!near(footprint.zMin, -12) || !near(footprint.zMax, 12)) errors.push('temple footprint must remain flush with right-side pit boundaries at z=±12');
+}
+
 const gate = byId.get('gate-core');
 const bridge = byId.get('rope-bridge');
 if (!gate || !bridge) errors.push('gateway/bridge anchors missing');
@@ -34,7 +48,7 @@ else {
     errors.push(`rope-bridge presentation center ${bridge.position} must track exact gate-local offset (${expectedX}, *, ${expectedZ})`);
   }
   const bridgeGatewayEdge = bridge.position[0] + bridge.size[0] / 2;
-  const gateEastEdge = gate.position[0] + 4 / 2; // 4202 presentation footprint is 4 studs across x.
+  const gateEastEdge = gate.position[0] + 4 / 2;
   if (!near(bridgeGatewayEdge, gateEastEdge)) errors.push(`bridge endpoint ${bridgeGatewayEdge} must meet gate-core edge ${gateEastEdge}`);
 }
 
@@ -62,4 +76,4 @@ if (errors.length) {
   console.error('5986 assembly refit validation failed:\n' + errors.join('\n'));
   process.exit(1);
 }
-console.log('5986 assembly refit OK: terrain datum, bridge/gateway attachment, and exact jeep core are internally consistent.');
+console.log('5986 assembly refit OK: terrain datum, temple footprint, bridge/gateway attachment, and exact jeep core are internally consistent.');
