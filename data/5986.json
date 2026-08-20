@@ -3,7 +3,7 @@
   "name": "Amazon Ancient Ruins",
   "theme": "Adventurers / Jungle",
   "year": 1999,
-  "status": "v0.5.5 crown-support exactification",
+  "status": "v0.5.6 provenance hardening",
   "baseplateStuds": [32, 48],
   "model": "./5986-model.json",
   "inventory": "./5986-inventory.csv",
@@ -32,11 +32,12 @@
     "playFeaturesRendered": ["collapsing bridge", "trapdoor", "spider web"]
   },
   "notes": [
-    "V0.5.5 adds eight page-24-visible crown-support transforms: Blue 3036 plate, two Dark Gray 3039 slopes, two Red 3298 slopes, two Yellow 4589 cones and one Dark Gray 4871 inverted slope.",
-    "These eight records form one contiguous CAD cluster directly beneath the previously exact upper-crown pieces and each exhausts a unique or complete part/color inventory group, giving occurrence-level identity.",
-    "The Light Gray 3308 arch found in the same structural extract remains pending because all three 3308 inventory occurrences are already represented in the presentation model and one must be cleanly replaced rather than duplicated.",
+    "V0.5.6 intentionally keeps exact coverage at 51/420 while hardening CAD provenance before the next downward temple batch.",
+    "The prior Light Gray 3308 page-24 follow-up was a false lead: LDD ref 446 reconciles to the already instruction-exact gate-web-arch on manual page 30.",
+    "The page-24 structural candidate file now accepts eight crown-support records and explicitly rejects the cross-assembly 3308 ref 446 instead of treating raw CAD coordinates as authoritative.",
+    "Source-integrity validation now requires unique LDD refs across exact parts and checks accepted page-24 candidates against reconciled exact claims from other manual pages.",
+    "The eight v0.5.5 crown-support transforms remain exact; no part was demoted by this correction.",
     "Two old Light Gray 6081 roof shapes remain visual-only placeholders and are explicitly excluded from the 420-part ledger until relocated to their correct assembly.",
-    "Page 22's chain, the broader page-24 crown cluster, pages 7-8 car transforms, and pages 28/30 bridge-gateway transforms remain instruction-exact.",
     "Instruction-exact slots store explicit instructionTransform data; playable scene coordinates remain separate presentation transforms.",
     "CAD candidates remain non-authoritative until corroborated by captured instruction pages.",
     "World-space convention: one unit equals one LEGO stud pitch."
