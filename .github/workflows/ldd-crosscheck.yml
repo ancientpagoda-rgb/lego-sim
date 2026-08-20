@@ -10,6 +10,7 @@ on:
       - "scripts/ldd-unique-inventory.mjs"
       - "scripts/ldd-page24-extract.mjs"
       - "scripts/ldd-upper-temple-extract.mjs"
+      - "scripts/ldd-page24-structural-extract.mjs"
       - "data/5986-instruction-sources.json"
       - "data/5986-inventory.csv"
       - "data/5986-model.json"
@@ -43,6 +44,8 @@ jobs:
         run: node scripts/ldd-page24-extract.mjs data/5986-ldd-candidates.json --out data/5986-page24-candidates.json
       - name: Extract upper temple spatial candidates
         run: node scripts/ldd-upper-temple-extract.mjs data/5986-ldd-candidates.json --out data/5986-upper-temple-candidates.json
+      - name: Extract page 24 structural candidates
+        run: node scripts/ldd-page24-structural-extract.mjs data/5986-ldd-candidates.json --out data/5986-page24-structural-candidates.json
       - name: Upload transient full transform candidates
         uses: actions/upload-artifact@v4
         with:
@@ -55,7 +58,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/5986-ldd-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json data/5986-page24-candidates.json data/5986-upper-temple-candidates.json
+          git add data/5986-ldd-summary.json data/5986-ldd-model-matches.json data/5986-ldd-unique-candidates.json data/5986-page24-candidates.json data/5986-upper-temple-candidates.json data/5986-page24-structural-candidates.json
           if git diff --cached --quiet; then
             echo "LDD reconciliation outputs unchanged"
             exit 0
