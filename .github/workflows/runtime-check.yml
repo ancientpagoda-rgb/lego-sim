@@ -34,4 +34,5 @@ jobs:
           node --check src/brick-engine.js
           node --check src/twin-status.js
           node --check src/peer-sync.js
+          node --check src/world-terrain.js
           node --check src/world-runtime.js
