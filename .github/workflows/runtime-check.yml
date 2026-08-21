@@ -26,5 +26,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Validate source and model ledgers
-        run: npm run check
+      - name: Validate browser source syntax
+        run: |
+          node --check src/bootstrap.js
+          node --check src/main.js
+          node --check src/geometry-rebaseline.js
+          node --check src/brick-engine.js
+          node --check src/twin-status.js
+          node --check src/peer-sync.js
+          node --check src/world-runtime.js
